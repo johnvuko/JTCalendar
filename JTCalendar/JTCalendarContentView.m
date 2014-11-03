@@ -65,6 +65,8 @@
 
 - (void)configureConstraintsForSubviews
 {
+    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+    
     for(UIView *view in self.subviews){
         [view mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top);

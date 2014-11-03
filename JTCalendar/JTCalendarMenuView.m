@@ -69,6 +69,8 @@
 
 - (void)configureConstraintsForSubviews
 {
+    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+
     CGFloat width = CGRectGetWidth(self.superview.frame);
     CGFloat menuWidth = width / self.calendarManager.calendarAppearance.ratioContentMenu;
     CGFloat offset = (width - menuWidth) / 2.;
@@ -109,6 +111,8 @@
 
 - (void)updateConstraintsForSubviews
 {
+    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+    
     CGFloat width = CGRectGetWidth(self.superview.frame);
     CGFloat menuWidth = width / self.calendarManager.calendarAppearance.ratioContentMenu;
     CGFloat offset = (width - menuWidth) / 2.;
