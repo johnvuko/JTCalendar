@@ -25,6 +25,7 @@
         return nil;
     }
     
+    self->_currentDate = [NSDate date];
     calendarAppearance = [JTCalendarAppearance new];
     
     return self;
@@ -41,6 +42,7 @@
     
     cacheLastWeekMode = self.calendarAppearance.isWeekMode;
     
+    [self.menuMonthsView setCurrentDate:self.currentDate];
     [self.menuMonthsView reloadAppearance];
 }
 
@@ -53,16 +55,12 @@
     [self->_contentView setDelegate:self];
     [self->_contentView setCalendarManager:self];
     
+    [self.contentView setCurrentDate:self.currentDate];
     [self.contentView reloadAppearance];
 }
 
 - (void)reloadData
 {
-    if(!self.currentDate){
-        [self setCurrentDate:[NSDate date]];
-        return; // Because setCurrentDate call reloadData
-    }
-    
     // Position to the middle page
     CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
     self.contentView.contentOffset = CGPointMake(pageWidth * ((NUMBER_PAGES_LOADED / 2)), self.contentView.contentOffset.y);

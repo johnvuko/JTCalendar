@@ -1,7 +1,7 @@
 JTCalendar
 ==========
 
-JTCalendar is a calendar control for iOS easly customizable. You can use it with Auto Layout.
+JTCalendar is a calendar control for iOS easily customizable. You can use it with Auto Layout.
 
 ## Installation
 
@@ -14,6 +14,7 @@ With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
 ![Month](./Screens/month.png "Month View")
 ![Week](./Screens/week.png "Week View")
+![Example](./Screens/example.png "Example View")
 
 ## Usage
 
@@ -91,6 +92,7 @@ self.calendar.calendarAppearance.isWeekMode = YES;
 #### WARNING
 
 When you change the mode, it doesn't change the height of `calendarContentView`, you have to do it yourself.
+See the project in example for more details.
 
 ### Customize the design
 
@@ -145,6 +147,12 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 
 // You don't have to call reloadAppearance
 ```
+
+You may also want to open your calendar on a specific date, by defaut it's `[NSDate date].`
+```objective-c
+[self.calendar setCurrentDate:myDate];
+```
+
 
 License
 =======

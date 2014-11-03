@@ -70,6 +70,7 @@ static NSString *kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     {
         dotView = [UIView new];
         [self addSubview:dotView];
+        dotView.hidden = YES;
     }
     
     {

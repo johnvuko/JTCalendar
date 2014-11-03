@@ -2,8 +2,7 @@
 //  AppDelegate.m
 //  Example
 //
-//  Created by Jonathan on 03/11/14.
-//  Copyright (c) 2014 Jonathan Tribouharet. All rights reserved.
+//  Created by Jonathan Tribouharet.
 //
 
 #import "AppDelegate.h"

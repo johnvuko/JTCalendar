@@ -28,7 +28,7 @@
     self.weekDayFormat = JTCalendarWeekDayFormatShort;
     
     self.ratioContentMenu = 2.;
-    self.dayCircleRatio = 8. / 10.;
+    self.dayCircleRatio = 1.;
     self.dayDotRatio = 1. / 9.;
     
     self.menuMonthTextFont = [UIFont systemFontOfSize:17.];
