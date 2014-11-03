@@ -1,0 +1,17 @@
+PODS:
+  - JTCalendar (1.0.0):
+    - Masonry (~> 0.5.0)
+  - Masonry (0.5.3)
+
+DEPENDENCIES:
+  - JTCalendar (from `../`)
+
+EXTERNAL SOURCES:
+  JTCalendar:
+    :path: ../
+
+SPEC CHECKSUMS:
+  JTCalendar: 96521396b0b34220961fb59ed8426dcc527fec19
+  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+
+COCOAPODS: 0.34.4
