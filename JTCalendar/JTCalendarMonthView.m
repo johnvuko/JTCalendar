@@ -84,7 +84,7 @@
         weeksToDisplay = 2.;
     }
     else{
-        weeksToDisplay = (CGFloat)WEEKS_TO_DISPLAY;
+        weeksToDisplay = (CGFloat)(WEEKS_TO_DISPLAY + 1); // + 1 for weekDays
     }
     
     CGFloat y = 0;
