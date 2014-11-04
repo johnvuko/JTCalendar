@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"viewDidLoad");
+    
     self.calendarMenuView = [JTCalendarMenuView new];
     self.calendarContentView = [JTCalendarContentView new];
     
@@ -44,6 +46,8 @@
     [super viewDidAppear:animated];
     
     [self.calendar reloadData]; // Must be call in viewDidAppear
+    
+    NSLog(@"viewDidAppear");
 }
 
 #pragma mark - Buttons callback
@@ -57,7 +61,7 @@
 {
     self.calendar.calendarAppearance.isWeekMode = !self.calendar.calendarAppearance.isWeekMode;
     
-    [self transitionExample2];
+    [self transitionExample];
 }
 
 #pragma mark - JTCalendarDataSource
@@ -74,36 +78,7 @@
 
 #pragma mark - Transition examples
 
-- (void)transitionExample1
-{
-    CGFloat newHeight = 300;
-    if(self.calendar.calendarAppearance.isWeekMode){
-        newHeight = 75.;
-    }
-    
-    [UIView animateWithDuration:.5 animations:^{
-        self.calendarContentView.layer.opacity = 0.;
-        
-        [self.calendarContentView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo([NSNumber numberWithFloat:newHeight / 2.]);
-        }];
-        [self.view layoutIfNeeded];
-        
-    } completion:^(BOOL finished) {
-        [self.calendar reloadAppearance];
-        
-        [UIView animateWithDuration:.5 animations:^{
-            self.calendarContentView.layer.opacity = 1;
-            
-            [self.calendarContentView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.equalTo([NSNumber numberWithFloat:newHeight]);
-            }];
-            [self.view layoutIfNeeded];
-        }];
-    }];
-}
-
-- (void)transitionExample2
+- (void)transitionExample
 {
     CGFloat newHeight = 300;
     if(self.calendar.calendarAppearance.isWeekMode){

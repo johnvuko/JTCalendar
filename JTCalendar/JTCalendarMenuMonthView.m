@@ -47,8 +47,6 @@
         
         textLabel.textAlignment = NSTextAlignmentCenter;
     }
-    
-    [self configureConstraintsForSubviews];
 }
 
 - (void)setMonthIndex:(NSInteger)monthIndex
@@ -66,11 +64,11 @@
     textLabel.text = [[dateFormatter standaloneMonthSymbols][monthIndex - 1] capitalizedString];
 }
 
-- (void)configureConstraintsForSubviews
+- (void)layoutSubviews
 {
-    [textLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+    textLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+
+    // No need to call [super layoutSubviews]
 }
 
 - (void)reloadAppearance

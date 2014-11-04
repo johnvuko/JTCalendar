@@ -62,7 +62,7 @@
 
 - (void)layoutSubviews
 {
-    [self updateConstraintsForSubviews];
+    [self configureConstraintsForSubviews];
         
     [super layoutSubviews];
 }
@@ -70,68 +70,22 @@
 - (void)configureConstraintsForSubviews
 {
     self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
-
-    CGFloat width = CGRectGetWidth(self.superview.frame);
-    CGFloat menuWidth = width / self.calendarManager.calendarAppearance.ratioContentMenu;
-    CGFloat offset = (width - menuWidth) / 2.;
     
-    for(UIView *view in monthsViews){
-        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top);
-            make.height.equalTo(self.mas_height);
-            make.width.equalTo(self.mas_width).multipliedBy( 1. / self.calendarManager.calendarAppearance.ratioContentMenu);
-        }];
+    CGFloat x = 0;
+    CGFloat width = self.frame.size.width;
+    CGFloat height = self.frame.size.height;
+    
+    if(self.calendarManager.calendarAppearance.ratioContentMenu != 1.){
+        width = self.frame.size.width / self.calendarManager.calendarAppearance.ratioContentMenu;
+        x = (self.frame.size.width - width) / 2.;
     }
     
-    {
-        UIView *view = monthsViews.firstObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.superview.mas_left).with.offset(offset);
-        }];
+    for(UIView *view in self.subviews){
+        view.frame = CGRectMake(x, 0, width, height);
+        x = CGRectGetMaxX(view.frame);
     }
     
-    {
-        UIView *view = monthsViews.lastObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(view.superview.mas_right).with.offset(offset);
-        }];
-    }
-    
-    for(int i = 0; i < monthsViews.count - 1; ++i){
-        UIView *view = monthsViews[i];
-        UIView *viewNext = monthsViews[i + 1];
-        
-        [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.mas_right);
-        }];
-    }
-}
-
-- (void)updateConstraintsForSubviews
-{
-    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
-    
-    CGFloat width = CGRectGetWidth(self.superview.frame);
-    CGFloat menuWidth = width / self.calendarManager.calendarAppearance.ratioContentMenu;
-    CGFloat offset = (width - menuWidth) / 2.;
-    
-    {
-        UIView *view = monthsViews.firstObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.superview.mas_left).with.offset(offset);
-        }];
-    }
-    
-    {
-        UIView *view = monthsViews.lastObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(view.superview.mas_right).with.offset(offset);
-        }];
-    }
+    self.contentSize = CGSizeMake(width * NUMBER_PAGES_LOADED, height);
 }
 
 - (void)setCurrentDate:(NSDate *)currentDate

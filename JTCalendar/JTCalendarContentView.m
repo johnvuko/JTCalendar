@@ -59,47 +59,29 @@
         [self addSubview:monthView];
         [monthsViews addObject:monthView];
     }
-    
+}
+
+- (void)layoutSubviews
+{
     [self configureConstraintsForSubviews];
+    
+    [super layoutSubviews];
 }
 
 - (void)configureConstraintsForSubviews
 {
     self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+ 
+    CGFloat x = 0;
+    CGFloat width = self.frame.size.width;
+    CGFloat height = self.frame.size.height;
     
     for(UIView *view in self.subviews){
-        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.height.equalTo(self.mas_height);
-            make.width.equalTo(self.mas_width);
-        }];
+        view.frame = CGRectMake(x, 0, width, height);
+        x = CGRectGetMaxX(view.frame);
     }
     
-    {
-        UIView *view = self.subviews.firstObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-        }];
-    }
-    
-    {
-        UIView *view = self.subviews.lastObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.mas_right);
-        }];
-    }
-    
-    for(int i = 0; i < self.subviews.count - 1; ++i){
-        UIView *view = self.subviews[i];
-        UIView *viewNext = self.subviews[i + 1];
-        
-        [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.mas_right);
-        }];
-    }
+    self.contentSize = CGSizeMake(width * NUMBER_PAGES_LOADED, height);
 }
 
 - (void)setCurrentDate:(NSDate *)currentDate

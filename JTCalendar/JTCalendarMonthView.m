@@ -10,6 +10,8 @@
 #import "JTCalendarMonthWeekDaysView.h"
 #import "JTCalendarWeekView.h"
 
+#define WEEKS_TO_DISPLAY 6
+
 @interface JTCalendarMonthView (){
     JTCalendarMonthWeekDaysView *weekdaysView;
     NSArray *weeksViews;
@@ -55,7 +57,7 @@
         [self addSubview:weekdaysView];
     }
     
-    for(int i = 0; i < 6; ++i){ // 6 weeks to display
+    for(int i = 0; i < WEEKS_TO_DISPLAY; ++i){
         UIView *view = [JTCalendarWeekView new];
         
         [views addObject:view];
@@ -76,52 +78,27 @@
 
 - (void)configureConstraintsForSubviews
 {
-    for(UIView *view in self.subviews){
-        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-            make.right.equalTo(self.mas_right);
-        }];
+    CGFloat weeksToDisplay;
+    
+    if(cacheLastWeekMode){
+        weeksToDisplay = 2.;
     }
-
-    {
-        UIView *view = self.subviews.firstObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top);
-        }];
+    else{
+        weeksToDisplay = (CGFloat)WEEKS_TO_DISPLAY;
     }
-
-    {
-        UIView *view = self.subviews.lastObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.mas_bottom);
-        }];
-    }
-
-    for(int i = 0; i < self.subviews.count - 1; ++i){
+    
+    CGFloat y = 0;
+    CGFloat width = self.frame.size.width;
+    CGFloat height = self.frame.size.height / weeksToDisplay;
+    
+    for(int i = 0; i < self.subviews.count; ++i){
         UIView *view = self.subviews[i];
-        UIView *viewNext = self.subviews[i + 1];
         
-        if(cacheLastWeekMode){ // Avoid some visual bug with animations
-            if(i == 0){
-                [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(view.mas_bottom);
-                    make.height.equalTo(view.mas_height);
-                }];
-            }
-            else{
-                [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(view.mas_bottom);
-                    make.height.equalTo(@0);
-                }];
-            }
-        }
-        else{
-            [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(view.mas_bottom);
-                make.height.equalTo(view.mas_height);
-            }];
+        view.frame = CGRectMake(0, y, width, height);
+        y = CGRectGetMaxY(view.frame);
+        
+        if(cacheLastWeekMode && i == weeksToDisplay - 1){
+            height = 0.;
         }
     }
 }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JTCalendar"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "A customizable calendar view for iOS."
   s.homepage     = "https://github.com/jonathantribouharet/JTCalendar"
   s.license      = { :type => 'MIT' }
@@ -9,5 +9,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/jonathantribouharet/JTCalendar.git", :tag => s.version.to_s }
   s.source_files  = 'JTCalendar/*'
   s.requires_arc = true
-  s.dependency 'Masonry', '~> 0.5.0'
 end

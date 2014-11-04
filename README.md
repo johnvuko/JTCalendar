@@ -1,7 +1,7 @@
 JTCalendar
 ==========
 
-JTCalendar is a calendar control for iOS easily customizable. You can use it with Auto Layout.
+JTCalendar is a calendar control for iOS easily customizable.
 
 ## Installation
 

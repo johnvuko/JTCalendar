@@ -48,8 +48,6 @@ static NSArray *cacheDaysOfWeeks;
         
         [self addSubview:view];
     }
-    
-    [self configureConstraintsForSubviews];
 }
 
 - (NSArray *)daysOfWeek
@@ -98,40 +96,18 @@ static NSArray *cacheDaysOfWeeks;
     return cacheDaysOfWeeks;
 }
 
-- (void)configureConstraintsForSubviews
+- (void)layoutSubviews
 {
+    CGFloat x = 0;
+    CGFloat width = self.frame.size.width / 7.;
+    CGFloat height = self.frame.size.height;
+    
     for(UIView *view in self.subviews){
-        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-        }];
+        view.frame = CGRectMake(x, 0, width, height);
+        x = CGRectGetMaxX(view.frame);
     }
     
-    {
-        UIView *view = self.subviews.firstObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-        }];
-    }
-    
-    {
-        UIView *view = self.subviews.lastObject;
-        
-        [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.mas_right);
-        }];
-    }
-    
-    for(int i = 0; i < self.subviews.count - 1; ++i){
-        UIView *view = self.subviews[i];
-        UIView *viewNext = self.subviews[i + 1];
-        
-        [viewNext mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(view.mas_right);
-            make.width.equalTo(view.mas_width);
-        }];
-    }
+    // No need to call [super layoutSubviews]
 }
 
 + (void)beforeReloadAppearance

@@ -89,7 +89,7 @@ static NSString *kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 {
     [self configureConstraintsForSubviews];
     
-    [super layoutSubviews];
+    // No need to call [super layoutSubviews]
 }
 
 // Avoid to calcul constraints (very expensive)

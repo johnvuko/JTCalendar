@@ -7,8 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <Masonry.h>
-
 @interface JTCalendarAppearance : NSObject
 
 typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
