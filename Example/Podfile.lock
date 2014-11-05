@@ -1,17 +1,14 @@
 PODS:
-  - JTCalendar (1.0.3)
-  - Masonry (0.5.3)
+  - JTCalendar (1.0.5)
 
 DEPENDENCIES:
   - JTCalendar (from `../`)
-  - Masonry (~> 0.5.0)
 
 EXTERNAL SOURCES:
   JTCalendar:
     :path: ../
 
 SPEC CHECKSUMS:
-  JTCalendar: 399f8d2b7408e6338ca1bedb08aab0c1af093073
-  Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
+  JTCalendar: 6cd3d06b83b67a669d481b621ab2074744a6aa5d
 
 COCOAPODS: 0.34.4

@@ -11,8 +11,10 @@
 
 @interface ViewController : UIViewController<JTCalendarDataSource>
 
-@property (strong, nonatomic) JTCalendarMenuView *calendarMenuView;
-@property (strong, nonatomic) JTCalendarContentView *calendarContentView;
+@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
+@property (weak, nonatomic) IBOutlet JTCalendarContentView *calendarContentView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
 
 @property (strong, nonatomic) JTCalendar *calendar;
 

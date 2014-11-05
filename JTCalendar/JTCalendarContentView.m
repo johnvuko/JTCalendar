@@ -76,7 +76,7 @@
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     
-    for(UIView *view in self.subviews){
+    for(UIView *view in monthsViews){
         view.frame = CGRectMake(x, 0, width, height);
         x = CGRectGetMaxX(view.frame);
     }

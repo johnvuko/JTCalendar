@@ -80,7 +80,7 @@
         x = (self.frame.size.width - width) / 2.;
     }
     
-    for(UIView *view in self.subviews){
+    for(UIView *view in monthsViews){
         view.frame = CGRectMake(x, 0, width, height);
         x = CGRectGetMaxX(view.frame);
     }
