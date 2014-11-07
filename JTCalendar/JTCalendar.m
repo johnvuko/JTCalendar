@@ -12,6 +12,7 @@
 @interface JTCalendar(){
     JTCalendarAppearance *calendarAppearance;
     BOOL cacheLastWeekMode;
+    BOOL isContentScrolling;
 }
 
 @end
@@ -25,6 +26,7 @@
         return nil;
     }
     
+    isContentScrolling = NO;
     self->_currentDate = [NSDate date];
     calendarAppearance = [JTCalendarAppearance new];
     
@@ -107,22 +109,39 @@
         return;
     }
     
-    if(sender == self.menuMonthsView){
+    if(sender == self.menuMonthsView && !isContentScrolling){
         self.contentView.contentOffset = CGPointMake(sender.contentOffset.x * calendarAppearance.ratioContentMenu, self.contentView.contentOffset.y);
     }
-    else{
+    else if(sender == self.contentView){
         self.menuMonthsView.contentOffset = CGPointMake(sender.contentOffset.x / calendarAppearance.ratioContentMenu, self.menuMonthsView.contentOffset.y);
     }
 }
 
-// Use for scroll with scrollRectToVisible
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if(scrollView == self.contentView){
+        isContentScrolling = YES;
+    }
+}
+
+// Use for scroll with scrollRectToVisible or setContentOffset
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
+    if(scrollView != self.contentView){
+        return;
+    }
+    
+    isContentScrolling = NO;
     [self updatePage];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    if(scrollView != self.contentView){
+        return;
+    }
+    
+    isContentScrolling = NO;
     [self updatePage];
 }
 
@@ -143,7 +162,7 @@
     if (currentPage == (NUMBER_PAGES_LOADED / 2)){
         return;
     }
-
+    
     NSCalendar *calendar = calendarAppearance.calendar;
     NSDateComponents *dayComponent = [NSDateComponents new];
     

@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLk-nx-MCc" customClass="JTCalendarMenuView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLk-nx-MCc" customClass="JTCalendarMenuView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wRk-E7-7hS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-x3-ghF" customClass="JTCalendarContentView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaV-x3-ghF" customClass="JTCalendarContentView">
                                 <rect key="frame" x="0.0" y="70" width="600" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -60,15 +60,37 @@
                         <constraints>
                             <constraint firstItem="IaV-x3-ghF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="0Sv-uB-Eut"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bLk-nx-MCc" secondAttribute="trailing" id="3Xi-dc-GLe"/>
+                            <constraint firstItem="IaV-x3-ghF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BP3-tk-oFp"/>
                             <constraint firstItem="bLk-nx-MCc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="HVR-vR-z6b"/>
+                            <constraint firstAttribute="trailing" secondItem="IaV-x3-ghF" secondAttribute="trailing" id="ILA-fg-kaE"/>
                             <constraint firstItem="tAZ-Js-Lak" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="Il1-mE-TXp"/>
                             <constraint firstItem="m6a-lR-Xrr" firstAttribute="top" secondItem="IaV-x3-ghF" secondAttribute="bottom" constant="30" id="JGt-zH-o6k"/>
+                            <constraint firstItem="IaV-x3-ghF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PYk-FM-FXS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IaV-x3-ghF" secondAttribute="trailing" id="PvC-p0-iWl"/>
                             <constraint firstItem="bLk-nx-MCc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Rd4-Q9-L4E"/>
+                            <constraint firstItem="bLk-nx-MCc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="WQF-hb-hq1"/>
+                            <constraint firstItem="bLk-nx-MCc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="YQ1-f6-O16"/>
                             <constraint firstItem="tAZ-Js-Lak" firstAttribute="top" secondItem="IaV-x3-ghF" secondAttribute="bottom" constant="30" id="ZYm-cc-wFZ"/>
+                            <constraint firstAttribute="trailing" secondItem="IaV-x3-ghF" secondAttribute="trailing" id="ab3-jD-An0"/>
+                            <constraint firstAttribute="trailing" secondItem="bLk-nx-MCc" secondAttribute="trailing" id="asl-i5-V9P"/>
+                            <constraint firstItem="IaV-x3-ghF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cFY-Hs-lva"/>
+                            <constraint firstAttribute="trailing" secondItem="IaV-x3-ghF" secondAttribute="trailing" id="d19-oL-lkX"/>
                             <constraint firstItem="IaV-x3-ghF" firstAttribute="top" secondItem="bLk-nx-MCc" secondAttribute="bottom" id="rX7-ap-Tfe"/>
+                            <constraint firstAttribute="trailing" secondItem="bLk-nx-MCc" secondAttribute="trailing" id="sT1-xO-UwV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m6a-lR-Xrr" secondAttribute="trailing" constant="30" id="yXq-gU-Nbf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Xi-dc-GLe"/>
+                                <exclude reference="Rd4-Q9-L4E"/>
+                                <exclude reference="WQF-hb-hq1"/>
+                                <exclude reference="asl-i5-V9P"/>
+                                <exclude reference="0Sv-uB-Eut"/>
+                                <exclude reference="BP3-tk-oFp"/>
+                                <exclude reference="ILA-fg-kaE"/>
+                                <exclude reference="PvC-p0-iWl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="calendarContentView" destination="IaV-x3-ghF" id="VFE-26-7W4"/>
