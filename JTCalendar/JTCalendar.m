@@ -12,7 +12,6 @@
 @interface JTCalendar(){
     JTCalendarAppearance *calendarAppearance;
     BOOL cacheLastWeekMode;
-    BOOL isContentScrolling;
 }
 
 @end
@@ -26,7 +25,6 @@
         return nil;
     }
     
-    isContentScrolling = NO;
     self->_currentDate = [NSDate date];
     calendarAppearance = [JTCalendarAppearance new];
     
@@ -67,10 +65,8 @@
     CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
     self.contentView.contentOffset = CGPointMake(pageWidth * ((NUMBER_PAGES_LOADED / 2)), self.contentView.contentOffset.y);
  
-    if(self.calendarAppearance.isWeekMode){
-        CGFloat menuPageWidth = CGRectGetWidth([self.menuMonthsView.subviews.firstObject frame]);
-        self.menuMonthsView.contentOffset = CGPointMake(menuPageWidth * ((NUMBER_PAGES_LOADED / 2)), self.menuMonthsView.contentOffset.y);
-    }
+    CGFloat menuPageWidth = CGRectGetWidth([self.menuMonthsView.subviews.firstObject frame]);
+    self.menuMonthsView.contentOffset = CGPointMake(menuPageWidth * ((NUMBER_PAGES_LOADED / 2)), self.menuMonthsView.contentOffset.y);
     
     [self.contentView reloadData];
 }
@@ -109,10 +105,10 @@
         return;
     }
     
-    if(sender == self.menuMonthsView && !isContentScrolling){
+    if(sender == self.menuMonthsView && self.menuMonthsView.scrollEnabled){
         self.contentView.contentOffset = CGPointMake(sender.contentOffset.x * calendarAppearance.ratioContentMenu, self.contentView.contentOffset.y);
     }
-    else if(sender == self.contentView){
+    else if(sender == self.contentView && self.contentView.scrollEnabled){
         self.menuMonthsView.contentOffset = CGPointMake(sender.contentOffset.x / calendarAppearance.ratioContentMenu, self.menuMonthsView.contentOffset.y);
     }
 }
@@ -120,46 +116,33 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     if(scrollView == self.contentView){
-        isContentScrolling = YES;
+        self.menuMonthsView.scrollEnabled = NO;
+    }
+    else if(scrollView == self.menuMonthsView){
+        self.contentView.scrollEnabled = NO;
     }
 }
 
 // Use for scroll with scrollRectToVisible or setContentOffset
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-    if(scrollView != self.contentView){
-        return;
-    }
-    
-    isContentScrolling = NO;
     [self updatePage];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if(scrollView != self.contentView){
-        return;
-    }
-    
-    isContentScrolling = NO;
     [self updatePage];
 }
 
 - (void)updatePage
 {
-    // Test which methods is the best
-    [self updatePageMethod1];
-}
-
-- (void)updatePageMethod1
-{
     CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
     CGFloat fractionalPage = self.contentView.contentOffset.x / pageWidth;
-    
-    // Faire un truc quand presque sur la bonne page
-    
+        
     int currentPage = roundf(fractionalPage);
     if (currentPage == (NUMBER_PAGES_LOADED / 2)){
+        self.menuMonthsView.scrollEnabled = YES;
+        self.contentView.scrollEnabled = YES;
         return;
     }
     
@@ -174,37 +157,11 @@
     }
     
     NSDate *currentDate = [calendar dateByAddingComponents:dayComponent toDate:self.currentDate options:0];
+    
     [self setCurrentDate:currentDate];
-}
-
-// Doesn't work in weekMode
-- (void)updatePageMethod2
-{
-    CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
-    CGFloat fractionalPage = self.contentView.contentOffset.x / pageWidth;
     
-    int currentPage = roundf(fractionalPage);
-    if (currentPage == (NUMBER_PAGES_LOADED / 2)){
-        return;
-    }
-    
-    int pagesDiff = abs(currentPage - (NUMBER_PAGES_LOADED / 2));
-    if(currentPage < (NUMBER_PAGES_LOADED / 2)){
-        for(int i = 0; i < pagesDiff; ++i){
-            [self.contentView loadPreviousMonth];
-            [self.menuMonthsView loadPreviousMonth];
-        }
-    }
-    else{
-        for(int i = 0; i < pagesDiff; ++i){
-            [self.contentView loadNextMonth];
-            [self.menuMonthsView loadNextMonth];
-        }
-    }
-    
-    self->_currentDate = self.contentView.currentDate;
-    
-    self.contentView.contentOffset = CGPointMake(pageWidth * ((NUMBER_PAGES_LOADED / 2)), self.contentView.contentOffset.y);
+    self.menuMonthsView.scrollEnabled = YES;
+    self.contentView.scrollEnabled = YES;
 }
 
 - (void)loadNextMonth
@@ -213,6 +170,8 @@
         NSLog(@"JTCalendar loadNextMonth ignored");
         return;
     }
+    
+    self.menuMonthsView.scrollEnabled = NO;
     
     CGRect frame = self.contentView.frame;
     frame.origin.x = frame.size.width * ((NUMBER_PAGES_LOADED / 2) + 1);
@@ -226,6 +185,8 @@
         NSLog(@"JTCalendar loadPreviousMonth ignored");
         return;
     }
+    
+    self.menuMonthsView.scrollEnabled = NO;
     
     CGRect frame = self.contentView.frame;
     frame.origin.x = frame.size.width * ((NUMBER_PAGES_LOADED / 2) - 1);
