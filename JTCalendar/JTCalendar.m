@@ -106,6 +106,9 @@
     }
     
     CGFloat ratio = CGRectGetWidth(self.contentView.frame) / CGRectGetWidth(self.menuMonthsView.frame);
+    if(isnan(ratio)){
+        ratio = 1.;
+    }
     ratio *= calendarAppearance.ratioContentMenu;
     
     if(sender == self.menuMonthsView && self.menuMonthsView.scrollEnabled){
