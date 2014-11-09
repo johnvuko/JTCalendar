@@ -66,7 +66,11 @@
     static dispatch_once_t once;
     
     dispatch_once(&once, ^{
+#ifdef __IPHONE_8_0
+        calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
         calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
         calendar.timeZone = [NSTimeZone localTimeZone];
     });
     
