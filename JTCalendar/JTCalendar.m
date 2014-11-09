@@ -12,6 +12,7 @@
 @interface JTCalendar(){
     JTCalendarAppearance *calendarAppearance;
     BOOL cacheLastWeekMode;
+    NSUInteger cacheFirstWeekDay;
 }
 
 @end
@@ -41,6 +42,7 @@
     [self->_menuMonthsView setCalendarManager:self];
     
     cacheLastWeekMode = self.calendarAppearance.isWeekMode;
+    cacheFirstWeekDay = self.calendarAppearance.calendar.firstWeekday;
     
     [self.menuMonthsView setCurrentDate:self.currentDate];
     [self.menuMonthsView reloadAppearance];
@@ -76,8 +78,9 @@
     [self.menuMonthsView reloadAppearance];
     [self.contentView reloadAppearance];
     
-    if(cacheLastWeekMode != self.calendarAppearance.isWeekMode){
+    if(cacheLastWeekMode != self.calendarAppearance.isWeekMode || cacheFirstWeekDay != self.calendarAppearance.calendar.firstWeekday){
         cacheLastWeekMode = self.calendarAppearance.isWeekMode;
+        cacheFirstWeekDay = self.calendarAppearance.calendar.firstWeekday;
         [self setCurrentDate:self.currentDate]; // Reload all data
     }
 }
