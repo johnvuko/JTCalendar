@@ -157,8 +157,11 @@ You may also want to open your calendar on a specific date, by defaut it's `[NSD
 [self.calendar setCurrentDate:myDate];
 ```
 
+## Requirements
 
-License
-=======
+- iOS 7 or higher
+- Automatic Reference Counting (ARC)
+
+## License
 
 JTCalendar is released under the MIT license. See the LICENSE file for more info.
