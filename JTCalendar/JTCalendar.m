@@ -10,7 +10,6 @@
 #define NUMBER_PAGES_LOADED 5 // Must be the same in JTCalendarView, JTCalendarMenuView, JTCalendarContentView
 
 @interface JTCalendar(){
-    JTCalendarAppearance *calendarAppearance;
     BOOL cacheLastWeekMode;
     NSUInteger cacheFirstWeekDay;
 }
@@ -27,7 +26,7 @@
     }
     
     self->_currentDate = [NSDate date];
-    calendarAppearance = [JTCalendarAppearance new];
+    self->_calendarAppearance = [JTCalendarAppearance new];
     self->_dataCache = [JTCalendarDataCache new];
     self.dataCache.calendarManager = self;
     
@@ -96,11 +95,6 @@
     [self.contentView reloadData];
 }
 
-- (JTCalendarAppearance *)calendarAppearance
-{
-    return calendarAppearance;
-}
-
 #pragma mark - UIScrollView delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -113,7 +107,7 @@
     if(isnan(ratio)){
         ratio = 1.;
     }
-    ratio *= calendarAppearance.ratioContentMenu;
+    ratio *= self.calendarAppearance.ratioContentMenu;
     
     if(sender == self.menuMonthsView && self.menuMonthsView.scrollEnabled){
         self.contentView.contentOffset = CGPointMake(sender.contentOffset.x * ratio, self.contentView.contentOffset.y);
@@ -156,7 +150,7 @@
         return;
     }
     
-    NSCalendar *calendar = calendarAppearance.calendar;
+    NSCalendar *calendar = self.calendarAppearance.calendar;
     NSDateComponents *dayComponent = [NSDateComponents new];
     
     if(!self.calendarAppearance.isWeekMode){

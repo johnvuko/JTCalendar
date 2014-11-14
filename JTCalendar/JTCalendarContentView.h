@@ -15,9 +15,6 @@
 
 @property (strong, nonatomic) NSDate *currentDate;
 
-- (void)loadPreviousMonth;
-- (void)loadNextMonth;
-
 - (void)reloadData;
 - (void)reloadAppearance;
 

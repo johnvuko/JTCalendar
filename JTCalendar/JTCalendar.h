@@ -26,8 +26,7 @@
 @property (strong, nonatomic) NSDate *currentDateSelected;
 
 @property (strong, nonatomic, readonly) JTCalendarDataCache *dataCache;
-
-- (JTCalendarAppearance *)calendarAppearance;
+@property (strong, nonatomic, readonly) JTCalendarAppearance *calendarAppearance;
 
 - (void)reloadData;
 - (void)reloadAppearance;
