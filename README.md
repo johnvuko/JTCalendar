@@ -11,7 +11,7 @@ JTCalendar is a calendar control for iOS easily customizable.
 
 With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
-    pod 'JTCalendar', '~> 1.0.0'
+    pod 'JTCalendar', '~> 1.1'
 
 
 ## Screenshots
@@ -155,6 +155,15 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 You may also want to open your calendar on a specific date, by defaut it's `[NSDate date].`
 ```objective-c
 [self.calendar setCurrentDate:myDate];
+```
+
+### Data cache
+
+By default a cache is activated for don't have to call `calendarHaveEvent` intensively. For clean the cache you just have to call `reloadData`.
+
+If you don't want to use this cache you can disable it with:
+```objective-c
+self.calendar.calendarAppearance.useCacheSystem = NO;
 ```
 
 ## Requirements

@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 };
 
 @property (assign, nonatomic) BOOL isWeekMode;
+@property (assign, nonatomic) BOOL useCacheSystem;
 
 // Month
 @property (strong, nonatomic) UIColor *menuMonthTextColor;

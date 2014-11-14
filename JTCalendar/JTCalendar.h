@@ -13,6 +13,8 @@
 #import "JTCalendarMenuView.h"
 #import "JTCalendarContentView.h"
 
+#import "JTCalendarDataCache.h"
+
 @interface JTCalendar : NSObject<UIScrollViewDelegate>
 
 @property (weak, nonatomic) JTCalendarMenuView *menuMonthsView;
@@ -22,6 +24,8 @@
 
 @property (strong, nonatomic) NSDate *currentDate;
 @property (strong, nonatomic) NSDate *currentDateSelected;
+
+@property (strong, nonatomic, readonly) JTCalendarDataCache *dataCache;
 
 - (JTCalendarAppearance *)calendarAppearance;
 

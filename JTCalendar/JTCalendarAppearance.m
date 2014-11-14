@@ -26,6 +26,7 @@
     self.isWeekMode = NO;
     
     self.weekDayFormat = JTCalendarWeekDayFormatShort;
+    self.useCacheSystem = YES;
     
     self.ratioContentMenu = 2.;
     self.dayCircleRatio = 1.;

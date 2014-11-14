@@ -28,6 +28,8 @@
     
     self->_currentDate = [NSDate date];
     calendarAppearance = [JTCalendarAppearance new];
+    self->_dataCache = [JTCalendarDataCache new];
+    self.dataCache.calendarManager = self;
     
     return self;
 }
@@ -63,13 +65,10 @@
 
 - (void)reloadData
 {
-    // Position to the middle page
-    CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
-    self.contentView.contentOffset = CGPointMake(pageWidth * ((NUMBER_PAGES_LOADED / 2)), self.contentView.contentOffset.y);
- 
-    CGFloat menuPageWidth = CGRectGetWidth([self.menuMonthsView.subviews.firstObject frame]);
-    self.menuMonthsView.contentOffset = CGPointMake(menuPageWidth * ((NUMBER_PAGES_LOADED / 2)), self.menuMonthsView.contentOffset.y);
+    // Erase cache
+    [self.dataCache reloadData];
     
+    [self repositionViews];
     [self.contentView reloadData];
 }
 
@@ -81,7 +80,8 @@
     if(cacheLastWeekMode != self.calendarAppearance.isWeekMode || cacheFirstWeekDay != self.calendarAppearance.calendar.firstWeekday){
         cacheLastWeekMode = self.calendarAppearance.isWeekMode;
         cacheFirstWeekDay = self.calendarAppearance.calendar.firstWeekday;
-        [self setCurrentDate:self.currentDate]; // Reload all data
+        
+        [self setCurrentDate:self.currentDate];
     }
 }
 
@@ -92,7 +92,8 @@
     [self.menuMonthsView setCurrentDate:currentDate];
     [self.contentView setCurrentDate:currentDate];
     
-    [self reloadData]; // For be on the good page and update all DayView
+    [self repositionViews];
+    [self.contentView reloadData];
 }
 
 - (JTCalendarAppearance *)calendarAppearance
@@ -171,6 +172,16 @@
     
     self.menuMonthsView.scrollEnabled = YES;
     self.contentView.scrollEnabled = YES;
+}
+
+- (void)repositionViews
+{
+    // Position to the middle page
+    CGFloat pageWidth = CGRectGetWidth(self.contentView.frame);
+    self.contentView.contentOffset = CGPointMake(pageWidth * ((NUMBER_PAGES_LOADED / 2)), self.contentView.contentOffset.y);
+    
+    CGFloat menuPageWidth = CGRectGetWidth([self.menuMonthsView.subviews.firstObject frame]);
+    self.menuMonthsView.contentOffset = CGPointMake(menuPageWidth * ((NUMBER_PAGES_LOADED / 2)), self.menuMonthsView.contentOffset.y);
 }
 
 - (void)loadNextMonth
