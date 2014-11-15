@@ -33,6 +33,13 @@
     return self;
 }
 
+// Bug in iOS
+- (void)dealloc
+{
+    [self->_menuMonthsView setDelegate:nil];
+    [self->_contentView setDelegate:nil];
+}
+
 - (void)setMenuMonthsView:(JTCalendarMenuView *)menuMonthsView
 {
     [self->_menuMonthsView setDelegate:nil];
