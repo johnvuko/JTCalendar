@@ -171,6 +171,10 @@ self.calendar.calendarAppearance.useCacheSystem = NO;
 - iOS 7 or higher
 - Automatic Reference Counting (ARC)
 
+## Author
+
+- [Jonathan Tribouharet](https://github.com/jonathantribouharet) ([@johntribouharet](https://twitter.com/johntribouharet))
+
 ## License
 
 JTCalendar is released under the MIT license. See the LICENSE file for more info.
