@@ -11,7 +11,7 @@ JTCalendar is a calendar control for iOS easily customizable.
 
 With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
-    pod 'JTCalendar', '~> 1.1'
+    pod 'JTCalendar', '~> 1.1.1'
 
 
 ## Screenshots
