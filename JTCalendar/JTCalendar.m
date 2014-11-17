@@ -93,6 +93,8 @@
 
 - (void)setCurrentDate:(NSDate *)currentDate
 {
+    NSAssert(currentDate, @"JTCalendar currentDate cannot be null");
+
     self->_currentDate = currentDate;
     
     [self.menuMonthsView setCurrentDate:currentDate];

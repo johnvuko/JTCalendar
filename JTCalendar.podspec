@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/jonathantribouharet/JTCalendar.git", :tag => s.version.to_s }
   s.source_files  = 'JTCalendar/*'
   s.requires_arc = true
+  s.screenshots   = ["https://raw.githubusercontent.com/jonathantribouharet/JTCalendar/master/Screens/month.png"]
 end
