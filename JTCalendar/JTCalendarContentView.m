@@ -166,6 +166,9 @@
 
 - (void)reloadAppearance
 {
+    // Fix when change mode during scroll
+    self.scrollEnabled = YES;
+    
     for(JTCalendarMonthView *monthView in monthsViews){
         [monthView reloadAppearance];
     }
