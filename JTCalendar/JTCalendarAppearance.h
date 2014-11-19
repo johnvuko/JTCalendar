@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 @property (strong, nonatomic) UIFont *menuMonthTextFont;
 
 @property (assign, nonatomic) CGFloat ratioContentMenu;
+@property (assign, nonatomic) BOOL autoChangeMonth;
 
 // Weekday
 @property (assign, nonatomic) JTCalendarWeekDayFormat weekDayFormat;

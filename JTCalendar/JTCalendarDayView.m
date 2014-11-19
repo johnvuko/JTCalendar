@@ -143,7 +143,7 @@ static NSString *kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     
     [self.calendarManager.dataSource calendarDidDateSelected:self.calendarManager date:self.date];
     
-    if(!self.isOtherMonth){
+    if(!self.isOtherMonth || !self.calendarManager.calendarAppearance.autoChangeMonth){
         return;
     }
     

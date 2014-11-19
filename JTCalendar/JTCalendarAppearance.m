@@ -29,6 +29,8 @@
     self.useCacheSystem = YES;
     
     self.ratioContentMenu = 2.;
+    self.autoChangeMonth = YES;
+    
     self.dayCircleRatio = 1.;
     self.dayDotRatio = 1. / 9.;
     
