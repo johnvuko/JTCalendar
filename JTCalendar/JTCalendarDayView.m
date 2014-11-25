@@ -21,7 +21,7 @@
 }
 @end
 
-static NSString *kJTCalendarDaySelected = @"kJTCalendarDaySelected";
+static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 
 @implementation JTCalendarDayView
 
