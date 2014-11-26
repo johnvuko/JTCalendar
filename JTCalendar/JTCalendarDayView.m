@@ -225,16 +225,18 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         
         opacity = 0.;
     }
-    
-    if(animated){
-        [UIView animateWithDuration:.3 animations:^{
+
+    @autoreleasepool {
+        if(animated){
+            [UIView animateWithDuration:.3 animations:^{
+                circleView.layer.opacity = opacity;
+                circleView.transform = tr;
+            }];
+        }
+        else{
             circleView.layer.opacity = opacity;
             circleView.transform = tr;
-        }];
-    }
-    else{
-        circleView.layer.opacity = opacity;
-        circleView.transform = tr;
+        }
     }
 }
 
