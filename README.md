@@ -13,12 +13,12 @@ With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
     pod 'JTCalendar', '~> 1.1'
 
-
 ## Screenshots
 
+![Example](./Screens/example.gif "Example View")
+![Example](./Screens/example.png "Example View")
 ![Month](./Screens/month.png "Month View")
 ![Week](./Screens/week.png "Week View")
-![Example](./Screens/example.png "Example View")
 
 ## Usage
 
