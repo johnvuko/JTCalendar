@@ -71,24 +71,15 @@ static NSArray *cacheDaysOfWeeks;
         }
     }
     
-    switch(self.calendarManager.calendarAppearance.weekDayFormat){
+    switch(self.calendarManager.calendarAppearance.weekDayFormat) {
         case JTCalendarWeekDayFormatSingle:
-            for(NSInteger i = 0; i < days.count; ++i){
-                NSString *day = days[i];
-                [days replaceObjectAtIndex:i withObject:[[day uppercaseString] substringToIndex:1]];
-            }
+            days = [[dateFormatter veryShortStandaloneWeekdaySymbols] mutableCopy];
             break;
-        case JTCalendarWeekDayFormatShort:
-            for(NSInteger i = 0; i < days.count; ++i){
-                NSString *day = days[i];
-                [days replaceObjectAtIndex:i withObject:[[day uppercaseString] substringToIndex:3]];
-            }
+    case JTCalendarWeekDayFormatShort:
+            days = [[dateFormatter shortStandaloneWeekdaySymbols] mutableCopy];
             break;
-        case JTCalendarWeekDayFormatFull:
-            for(NSInteger i = 0; i < days.count; ++i){
-                NSString *day = days[i];
-                [days replaceObjectAtIndex:i withObject:[day uppercaseString]];
-            }
+    case JTCalendarWeekDayFormatFull:
+            days = [[dateFormatter standaloneWeekdaySymbols] mutableCopy];
             break;
     }
     
