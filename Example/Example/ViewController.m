@@ -7,7 +7,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    NSMutableDictionary *eventsByDate;
+}
 
 @end
 
@@ -30,6 +32,8 @@
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
+    
+    [self createRandomEvents];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,12 +61,21 @@
 
 - (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
 {
-    return (rand() % 10) == 1;
+    NSString *key = [[self dateFormatter] stringFromDate:date];
+    
+    if(eventsByDate[key] && [eventsByDate[key] count] > 0){
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
-    NSLog(@"Date: %@", date);
+    NSString *key = [[self dateFormatter] stringFromDate:date];
+    NSArray *events = eventsByDate[key];
+    
+    NSLog(@"Date: %@ - %ld events", date, [events count]);
 }
 
 #pragma mark - Transition examples
@@ -92,6 +105,38 @@
                                               self.calendarContentView.layer.opacity = 1;
                                           }];
                      }];
+}
+
+#pragma mark - Fake data
+
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd-MM-yyyy";
+    }
+    
+    return dateFormatter;
+}
+
+- (void)createRandomEvents
+{
+    eventsByDate = [NSMutableDictionary new];
+    
+    for(int i = 0; i < 30; ++i){
+        // Generate 30 random dates between now and 60 days later
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
+        
+        // Use the date as key for eventsByDate
+        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
+        
+        if(!eventsByDate[key]){
+            eventsByDate[key] = [NSMutableArray new];
+        }
+             
+        [eventsByDate[key] addObject:randomDate];
+    }
 }
 
 @end

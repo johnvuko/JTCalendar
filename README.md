@@ -82,6 +82,8 @@ Your UIViewController must implement `JTCalendarDataSource`
 
 ```
 
+For more informations about how organize events by date see the Example project.
+
 ### Switch to week view
 
 If you want see just one week at time you can switch when you want between the weekMode.
