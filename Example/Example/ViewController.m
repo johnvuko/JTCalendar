@@ -26,7 +26,7 @@
     {
         self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
-        self.calendar.calendarAppearance.ratioContentMenu = 1.;
+        self.calendar.calendarAppearance.ratioContentMenu = 2.;
     }
     
     [self.calendar setMenuMonthsView:self.calendarMenuView];

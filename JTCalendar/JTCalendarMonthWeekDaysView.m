@@ -57,19 +57,7 @@ static NSArray *cacheDaysOfWeeks;
     }
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    NSMutableArray *days = [[dateFormatter standaloneWeekdaySymbols] mutableCopy];
-        
-    // Redorder days for be conform to calendar
-    {
-        NSCalendar *calendar = self.calendarManager.calendarAppearance.calendar;
-        NSUInteger firstWeekday = (calendar.firstWeekday + 6) % 7; // Sunday == 1, Saturday == 7
-                
-        for(int i = 0; i < firstWeekday; ++i){
-            id day = [days firstObject];
-            [days removeObjectAtIndex:0];
-            [days addObject:day];
-        }
-    }
+    NSMutableArray *days = nil;
     
     switch(self.calendarManager.calendarAppearance.weekDayFormat) {
         case JTCalendarWeekDayFormatSingle:
@@ -86,6 +74,18 @@ static NSArray *cacheDaysOfWeeks;
     for(NSInteger i = 0; i < days.count; ++i){
         NSString *day = days[i];
         [days replaceObjectAtIndex:i withObject:[day uppercaseString]];
+    }
+    
+    // Redorder days for be conform to calendar
+    {
+        NSCalendar *calendar = self.calendarManager.calendarAppearance.calendar;
+        NSUInteger firstWeekday = (calendar.firstWeekday + 6) % 7; // Sunday == 1, Saturday == 7
+        
+        for(int i = 0; i < firstWeekday; ++i){
+            id day = [days firstObject];
+            [days removeObjectAtIndex:0];
+            [days addObject:day];
+        }
     }
     
     cacheDaysOfWeeks = days;
