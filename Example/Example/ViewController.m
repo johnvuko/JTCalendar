@@ -98,6 +98,16 @@
     NSLog(@"Date: %@ - %ld events", date, [events count]);
 }
 
+- (void)calendarDidLoadPreviousPage
+{
+    NSLog(@"Previous page loaded");
+}
+
+- (void)calendarDidLoadNextPage
+{
+    NSLog(@"Next page loaded");
+}
+
 #pragma mark - Transition examples
 
 - (void)transitionExample

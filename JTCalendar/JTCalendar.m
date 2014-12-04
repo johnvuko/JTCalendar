@@ -175,6 +175,17 @@
     
     self.menuMonthsView.scrollEnabled = YES;
     self.contentView.scrollEnabled = YES;
+    
+    if(currentPage < (NUMBER_PAGES_LOADED / 2)){
+        if([self.dataSource respondsToSelector:@selector(calendarDidLoadPreviousPage)]){
+            [self.dataSource calendarDidLoadPreviousPage];
+        }
+    }
+    else if(currentPage > (NUMBER_PAGES_LOADED / 2)){
+        if([self.dataSource respondsToSelector:@selector(calendarDidLoadNextPage)]){
+            [self.dataSource calendarDidLoadNextPage];
+        }
+    }
 }
 
 - (void)repositionViews
