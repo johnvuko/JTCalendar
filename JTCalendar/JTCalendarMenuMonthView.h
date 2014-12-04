@@ -14,6 +14,7 @@
 @property (weak, nonatomic) JTCalendar *calendarManager;
 
 - (void)setMonthIndex:(NSInteger)monthIndex;
+- (void)setCurrentDate:(NSDate *)currentDate;
 
 - (void)reloadAppearance;
 

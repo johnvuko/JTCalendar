@@ -7,6 +7,8 @@
 
 #import "JTCalendarAppearance.h"
 
+#import "JTCalendar.h"
+
 @implementation JTCalendarAppearance
 
 - (instancetype)init
@@ -61,6 +63,24 @@
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
     self.dayDotColorTodayOtherMonth = self.dayDotColorToday;
+    
+    self.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
+        NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;
+        NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
+        NSInteger currentMonthIndex = comps.month;
+        
+        static NSDateFormatter *dateFormatter;
+        if(!dateFormatter){
+            dateFormatter = [NSDateFormatter new];
+            dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
+        }
+        
+        while(currentMonthIndex <= 0){
+            currentMonthIndex += 12;
+        }
+        
+        return [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
+    };
 }
 
 - (NSCalendar *)calendar

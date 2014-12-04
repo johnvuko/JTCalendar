@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class JTCalendar;
+
 @interface JTCalendarAppearance : NSObject
 
 typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
@@ -14,6 +16,8 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
     JTCalendarWeekDayFormatShort,
     JTCalendarWeekDayFormatFull
 };
+
+typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar);
 
 @property (assign, nonatomic) BOOL isWeekMode;
 @property (assign, nonatomic) BOOL useCacheSystem;
@@ -24,6 +28,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 
 @property (assign, nonatomic) CGFloat ratioContentMenu;
 @property (assign, nonatomic) BOOL autoChangeMonth;
+@property (nonatomic, copy) JTCalendarMonthBlock monthBlock;
 
 // Weekday
 @property (assign, nonatomic) JTCalendarWeekDayFormat weekDayFormat;

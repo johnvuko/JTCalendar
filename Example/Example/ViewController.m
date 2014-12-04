@@ -27,6 +27,26 @@
         self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
+        
+        self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
+            NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;
+            NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
+            NSInteger currentMonthIndex = comps.month;
+            
+            static NSDateFormatter *dateFormatter;
+            if(!dateFormatter){
+                dateFormatter = [NSDateFormatter new];
+                dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
+            }
+            
+            while(currentMonthIndex <= 0){
+                currentMonthIndex += 12;
+            }
+            
+            NSString *monthText = [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
+            
+            return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText];
+        };
     }
     
     [self.calendar setMenuMonthsView:self.calendarMenuView];

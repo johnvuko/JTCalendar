@@ -46,22 +46,13 @@
         [self addSubview:textLabel];
         
         textLabel.textAlignment = NSTextAlignmentCenter;
+        textLabel.numberOfLines = 0;
     }
 }
 
-- (void)setMonthIndex:(NSInteger)monthIndex
+- (void)setCurrentDate:(NSDate *)currentDate
 {
-    static NSDateFormatter *dateFormatter;
-    if(!dateFormatter){
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
-    }
-
-    while(monthIndex <= 0){
-        monthIndex += 12;
-    }
-    
-    textLabel.text = [[dateFormatter standaloneMonthSymbols][monthIndex - 1] capitalizedString];
+    textLabel.text = self.calendarManager.calendarAppearance.monthBlock(currentDate, self.calendarManager);
 }
 
 - (void)layoutSubviews
