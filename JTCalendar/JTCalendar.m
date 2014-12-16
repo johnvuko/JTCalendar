@@ -154,7 +154,9 @@
         
     int currentPage = roundf(fractionalPage);
     if (currentPage == (NUMBER_PAGES_LOADED / 2)){
-        self.menuMonthsView.scrollEnabled = YES;
+        if(!self.calendarAppearance.isWeekMode){
+            self.menuMonthsView.scrollEnabled = YES;
+        }
         self.contentView.scrollEnabled = YES;
         return;
     }
@@ -173,7 +175,9 @@
     
     [self setCurrentDate:currentDate];
     
-    self.menuMonthsView.scrollEnabled = YES;
+    if(!self.calendarAppearance.isWeekMode){
+        self.menuMonthsView.scrollEnabled = YES;
+    }
     self.contentView.scrollEnabled = YES;
     
     if(currentPage < (NUMBER_PAGES_LOADED / 2)){

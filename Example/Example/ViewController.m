@@ -28,6 +28,7 @@
         self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
         self.calendar.calendarAppearance.ratioContentMenu = 2.;
         
+        // Customize the text for each month
         self.calendar.calendarAppearance.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
             NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;
             NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
