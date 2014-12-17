@@ -29,6 +29,7 @@
     
     self.weekDayFormat = JTCalendarWeekDayFormatShort;
     self.useCacheSystem = YES;
+    self.focusSelectedDayChangeMode = NO;
     
     self.ratioContentMenu = 2.;
     self.autoChangeMonth = YES;

@@ -21,6 +21,7 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 
 @property (assign, nonatomic) BOOL isWeekMode;
 @property (assign, nonatomic) BOOL useCacheSystem;
+@property (assign, nonatomic) BOOL focusSelectedDayChangeMode;
 
 // Month
 @property (strong, nonatomic) UIColor *menuMonthTextColor;

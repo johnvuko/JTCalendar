@@ -87,7 +87,12 @@
         cacheLastWeekMode = self.calendarAppearance.isWeekMode;
         cacheFirstWeekDay = self.calendarAppearance.calendar.firstWeekday;
         
-        [self setCurrentDate:self.currentDate];
+        if(self.calendarAppearance.focusSelectedDayChangeMode && self.currentDateSelected){
+            [self setCurrentDate:self.currentDateSelected];
+        }
+        else{
+            [self setCurrentDate:self.currentDate];
+        }
     }
 }
 
