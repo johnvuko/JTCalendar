@@ -151,10 +151,6 @@
     for(JTCalendarMonthView *view in monthsViews){
         [view setCalendarManager:calendarManager];
     }
-    
-    for(JTCalendarMonthView *view in monthsViews){
-        [view setCalendarManager:calendarManager];
-    }
 }
 
 - (void)reloadData
