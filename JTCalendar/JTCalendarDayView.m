@@ -10,6 +10,7 @@
 #import "JTCircleView.h"
 
 @interface JTCalendarDayView (){
+    UIView *backgroundView;
     JTCircleView *circleView;
     UILabel *textLabel;
     JTCircleView *dotView;
@@ -58,6 +59,11 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 {
     isSelected = NO;
     self.isOtherMonth = NO;
+
+    {
+        backgroundView = [UIView new];
+        [self addSubview:backgroundView];
+    }
     
     {
         circleView = [JTCircleView new];
@@ -98,7 +104,9 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 - (void)configureConstraintsForSubviews
 {
     textLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    
+    backgroundView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+
+
     CGFloat sizeCircle = MIN(self.frame.size.width, self.frame.size.height);
     CGFloat sizeDot = sizeCircle;
     
@@ -123,7 +131,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
         dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
-        [dateFormatter setDateFormat:@"dd"];
+        [dateFormatter setDateFormat:self.calendarManager.calendarAppearance.dayFormat];
     }
     
     self->_date = date;
@@ -305,6 +313,9 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 {
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = self.calendarManager.calendarAppearance.dayTextFont;
+    backgroundView.backgroundColor = self.calendarManager.calendarAppearance.dayBackgroundColor;
+    backgroundView.layer.borderWidth = self.calendarManager.calendarAppearance.dayBorderWidth;
+    backgroundView.layer.borderColor = self.calendarManager.calendarAppearance.dayBorderColor.CGColor;
     
     [self configureConstraintsForSubviews];
     [self setSelected:isSelected animated:NO];
