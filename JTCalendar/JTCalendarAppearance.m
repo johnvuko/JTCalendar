@@ -33,6 +33,9 @@
     
     self.ratioContentMenu = 2.;
     self.autoChangeMonth = YES;
+    self.autoDissolveMenu = YES;
+    self.autoDissolveMinAlpha = 0.1;
+    self.autoDissolveMaxAlpha = 1.0;
     
     self.dayCircleRatio = 1.;
     self.dayDotRatio = 1. / 9.;
