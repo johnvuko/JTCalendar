@@ -94,7 +94,11 @@
     for(int i = 0; i < self.subviews.count; ++i){
         UIView *view = self.subviews[i];
         
-        view.frame = CGRectMake(0, y, width, height);
+        if ([view isKindOfClass:[JTCalendarMonthWeekDaysView class]] && self.calendarManager.calendarAppearance.weekDayRowHeight) {
+            view.frame = CGRectMake(0, y, width, self.calendarManager.calendarAppearance.weekDayRowHeight);
+        } else {
+            view.frame = CGRectMake(0, y, width, height);
+        }
         y = CGRectGetMaxY(view.frame);
         
         if(cacheLastWeekMode && i == weeksToDisplay - 1){

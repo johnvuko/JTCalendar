@@ -48,6 +48,7 @@ static NSArray *cacheDaysOfWeeks;
         
         [self addSubview:view];
     }
+    [self setBackgroundColor:self.calendarManager.calendarAppearance.weekDayBackgroundColor];
 }
 
 - (NSArray *)daysOfWeek
@@ -121,6 +122,7 @@ static NSArray *cacheDaysOfWeeks;
         
         view.text = [[self daysOfWeek] objectAtIndex:i];
     }
+    [self setBackgroundColor:self.calendarManager.calendarAppearance.weekDayBackgroundColor];
 }
 
 @end

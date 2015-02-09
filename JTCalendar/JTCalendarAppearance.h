@@ -33,8 +33,10 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 
 // Weekday
 @property (assign, nonatomic) JTCalendarWeekDayFormat weekDayFormat;
+@property (strong, nonatomic) UIColor *weekDayBackgroundColor;
 @property (strong, nonatomic) UIColor *weekDayTextColor;
 @property (strong, nonatomic) UIFont *weekDayTextFont;
+@property (assign, nonatomic) CGFloat weekDayRowHeight;
 
 // Day
 @property (strong, nonatomic) UIColor *dayCircleColorSelected;
