@@ -65,6 +65,12 @@
     [self.calendar reloadData]; // Must be call in viewDidAppear
 }
 
+// Update the position of calendar when rotate the screen, call `calendarDidLoadPreviousPage` or `calendarDidLoadNextPage`
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.calendar updatePage];
+}
+
 #pragma mark - Buttons callback
 
 - (IBAction)didGoTodayTouch

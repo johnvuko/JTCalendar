@@ -77,6 +77,12 @@ Your UIViewController must implement `JTCalendarDataSource`
     NSLog(@"%@", date);
 }
 
+// Manage rotation
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.calendar updatePage];
+}
+
 @end
 
 ```

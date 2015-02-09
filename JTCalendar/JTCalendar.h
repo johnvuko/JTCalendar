@@ -34,4 +34,6 @@
 - (void)loadPreviousMonth;
 - (void)loadNextMonth;
 
+- (void)updatePage;
+
 @end
