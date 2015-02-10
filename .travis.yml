@@ -1,0 +1,7 @@
+language: objective-c
+xcode_workspace: Example/Example.xcworkspace
+xcode_scheme: Example
+xcode_sdk: iphonesimulator7.1
+env: CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO
+notifications:
+  email: false

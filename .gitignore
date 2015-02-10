@@ -2,10 +2,6 @@
 #
 .DS_Store
 
-# CocoaPods
-#
-Pods/
-
 # Xcode
 #
 build/

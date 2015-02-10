@@ -1,5 +1,6 @@
 # JTCalendar
 
+[![CI Status](http://img.shields.io/travis/jonathantribouharet/JTCalendar.svg)](https://travis-ci.org/jonathantribouharet/JTCalendar)
 ![Version](https://img.shields.io/cocoapods/v/JTCalendar.svg)
 ![License](https://img.shields.io/cocoapods/l/JTCalendar.svg)
 ![Platform](https://img.shields.io/cocoapods/p/JTCalendar.svg)
