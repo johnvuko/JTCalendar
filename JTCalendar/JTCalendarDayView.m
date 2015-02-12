@@ -144,12 +144,17 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 
 - (void)didTouch
 {
+    if ([self.calendarManager.dataSource respondsToSelector:@selector(calendar:dateCanBeSelected:)]) {
+        if (![self.calendarManager.dataSource calendar:self.calendarManager dateCanBeSelected:self.date]) {
+            return;
+        }
+    }
     [self setSelected:YES animated:YES];
     [self.calendarManager setCurrentDateSelected:self.date];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kJTCalendarDaySelected object:self.date];
     
-    [self.calendarManager.dataSource calendarDidDateSelected:self.calendarManager date:self.date];
+    [self.calendarManager.dataSource calendar:self.calendarManager dateSelected:self.date];
     
     if(!self.isOtherMonth || !self.calendarManager.calendarAppearance.autoChangeMonth){
         return;

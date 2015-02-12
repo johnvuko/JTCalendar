@@ -9,6 +9,7 @@
 
 @interface ViewController (){
     NSMutableDictionary *eventsByDate;
+    NSMutableDictionary *badDates;
 }
 
 @end
@@ -87,7 +88,7 @@
 
 #pragma mark - JTCalendarDataSource
 
-- (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
+- (BOOL)calendar:(JTCalendar *)calendar hasEventForDate:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
     
@@ -98,12 +99,22 @@
     return NO;
 }
 
-- (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
+- (void)calendar:(JTCalendar *)calendar dateSelected:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
     NSArray *events = eventsByDate[key];
     
     NSLog(@"Date: %@ - %ld events", date, [events count]);
+}
+
+- (BOOL) calendar:(JTCalendar *)calendar dateCanBeSelected:(NSDate *)date {
+    NSString *key = [[self dateFormatter] stringFromDate:date];
+    
+    if(badDates[key]){
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)calendarDidLoadPreviousPage
@@ -174,6 +185,21 @@
         }
              
         [eventsByDate[key] addObject:randomDate];
+    }
+    
+    badDates = [NSMutableDictionary new];
+    
+    for(int i = 0; i < 10; ++i){
+        // Generate 30 random dates between now and 60 days later
+        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
+        
+        // Use the date as key for eventsByDate
+        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
+        
+        // don't want to block an event date
+        if (!eventsByDate[key]) {
+            badDates[key] = randomDate;
+        }
     }
 }
 
