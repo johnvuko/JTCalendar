@@ -1,14 +1,14 @@
 PODS:
-  - JTCalendar (1.1)
+  - JTCalendar (1.1.15)
 
 DEPENDENCIES:
-  - JTCalendar (from `../`)
+  - JTCalendar (from `..`)
 
 EXTERNAL SOURCES:
   JTCalendar:
-    :path: ../
+    :path: ..
 
 SPEC CHECKSUMS:
-  JTCalendar: 7ce6f4a3dfea5f808bb9667c93fa366391eef116
+  JTCalendar: 7bea6a5d6e6bc83f4b0e9d2cba9e9dbe0366c563
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0

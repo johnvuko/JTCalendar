@@ -176,6 +176,11 @@
         dayComponent.day = 7 * (currentPage - (NUMBER_PAGES_LOADED / 2));
     }
     
+    if(self.calendarAppearance.readFromRightToLeft){
+        dayComponent.month *= -1;
+        dayComponent.day *= -1;
+    }
+    
     NSDate *currentDate = [calendar dateByAddingComponents:dayComponent toDate:self.currentDate options:0];
     
     [self setCurrentDate:currentDate];
