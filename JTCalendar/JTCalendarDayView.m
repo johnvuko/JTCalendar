@@ -7,13 +7,13 @@
 
 #import "JTCalendarDayView.h"
 
-#import "JTCircleView.h"
+#import "JTDayViewProtocol.h"
 
 @interface JTCalendarDayView (){
     UIView *backgroundView;
-    JTCircleView *circleView;
+    UIView<JTDayViewProtocol> *circleView;
     UILabel *textLabel;
-    JTCircleView *dotView;
+    UIView<JTDayViewProtocol> *dotView;
     
     BOOL isSelected;
     
@@ -64,23 +64,12 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         backgroundView = [UIView new];
         [self addSubview:backgroundView];
     }
-    
-    {
-        circleView = [self.calendarManager.calendarAppearance.circleViewClass new];
-        [self addSubview:circleView];
-    }
-    
+
     {
         textLabel = [UILabel new];
         [self addSubview:textLabel];
     }
-    
-    {
-        dotView = [self.calendarManager.calendarAppearance.circleViewClass new];
-        [self addSubview:dotView];
-        dotView.hidden = YES;
-    }
-    
+
     {
         UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouch)];
 
@@ -106,7 +95,6 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     textLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     backgroundView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 
-
     CGFloat sizeCircle = MIN(self.frame.size.width, self.frame.size.height);
     CGFloat sizeDot = sizeCircle;
     
@@ -115,7 +103,19 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     
     sizeCircle = roundf(sizeCircle);
     sizeDot = roundf(sizeDot);
-    
+
+    if (!circleView) {
+        circleView = [self.calendarManager.calendarAppearance.circleViewClass new];
+        [self addSubview:circleView];
+        [self bringSubviewToFront:textLabel];
+    }
+
+    if (!dotView) {
+        dotView = [self.calendarManager.calendarAppearance.circleViewClass new];
+        [self addSubview:dotView];
+        dotView.hidden = YES;
+    }
+
     circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     circleView.layer.cornerRadius = sizeCircle / 2.;
