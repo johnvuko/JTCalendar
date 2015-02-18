@@ -8,6 +8,7 @@
 #import "JTCalendarAppearance.h"
 
 #import "JTCalendar.h"
+#import "JTCircleView.h"
 
 @implementation JTCalendarAppearance
 
@@ -71,6 +72,8 @@
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
     self.dayDotColorTodayOtherMonth = self.dayDotColorToday;
+
+    self.circleViewClass = [JTCircleView class];
     
     self.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
         NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;

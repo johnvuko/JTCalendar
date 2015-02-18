@@ -66,7 +66,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     }
     
     {
-        circleView = [JTCircleView new];
+        circleView = [self.calendarManager.calendarAppearance.circleViewClass new];
         [self addSubview:circleView];
     }
     
@@ -76,7 +76,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     }
     
     {
-        dotView = [JTCircleView new];
+        dotView = [self.calendarManager.calendarAppearance.circleViewClass new];
         [self addSubview:dotView];
         dotView.hidden = YES;
     }
