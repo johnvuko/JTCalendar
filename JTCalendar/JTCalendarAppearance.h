@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @class JTCalendar;
+@class JTCalendarDayView;
 
 @interface JTCalendarAppearance : NSObject
 
@@ -18,6 +19,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 };
 
 typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar);
+typedef void(^JTCalendarDayViewBlock)(JTCalendarDayView *dayView, NSUInteger numberOfEvents);
 
 @property (assign, nonatomic) BOOL isWeekMode;
 @property (assign, nonatomic) BOOL useCacheSystem;
@@ -43,6 +45,7 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 @property (strong, nonatomic) UIColor *dayCircleColorToday;
 @property (strong, nonatomic) UIColor *dayCircleColorTodayOtherMonth;
 
+@property (assign, nonatomic) BOOL dayDotHidden;
 @property (strong, nonatomic) UIColor *dayDotColor;
 @property (strong, nonatomic) UIColor *dayDotColorSelected;
 @property (strong, nonatomic) UIColor *dayDotColorOtherMonth;
@@ -68,6 +71,8 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 
 @property (assign, nonatomic) CGFloat dayCircleRatio;
 @property (assign, nonatomic) CGFloat dayDotRatio;
+
+@property (nonatomic, copy) JTCalendarDayViewBlock dayViewBlock;
 
 - (NSCalendar *)calendar;
 

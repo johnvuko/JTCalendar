@@ -68,9 +68,9 @@ Your UIViewController must implement `JTCalendarDataSource`
     [self.calendar reloadData]; // Must be call in viewDidAppear
 }
 
-- (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
+- (NSUInteger)calendarNumberOfEvents:(JTCalendar *)calendar date:(NSDate *)date
 {
-    return NO;
+    return 1;
 }
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date

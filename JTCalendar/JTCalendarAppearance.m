@@ -8,6 +8,7 @@
 #import "JTCalendarAppearance.h"
 
 #import "JTCalendar.h"
+#import "JTCalendarDayView.h"
 
 @implementation JTCalendarAppearance
 
@@ -36,6 +37,7 @@
     
     self.dayCircleRatio = 1.;
     self.dayDotRatio = 1. / 9.;
+    self.dayDotHidden = NO;
     
     self.menuMonthTextFont = [UIFont systemFontOfSize:17.];
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
@@ -88,6 +90,10 @@
         }
         
         return [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
+    };
+
+    self.dayViewBlock = ^(JTCalendarDayView *dayView, NSUInteger numberOfEvents) {
+        // no default customisation of day view
     };
 }
 

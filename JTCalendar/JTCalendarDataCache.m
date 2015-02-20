@@ -37,28 +37,41 @@
     [events removeAllObjects];
 }
 
-- (BOOL)haveEvent:(NSDate *)date
+- (NSUInteger)numberOfEvents:(NSDate *)date
 {
     if(!self.calendarManager.dataSource){
         return NO;
     }
     
-    if(!self.calendarManager.calendarAppearance.useCacheSystem){
-        return [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date];
+    if (!self.calendarManager.calendarAppearance.useCacheSystem) {
+        if ([self.calendarManager.dataSource respondsToSelector:@selector(calendarNumberOfEvents:date:)]) {
+            return [self.calendarManager.dataSource calendarNumberOfEvents:self.calendarManager date:date];
+        } else if ([self.calendarManager.dataSource respondsToSelector:@selector(calendarHaveEvent:date:)]) {
+            return [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date] ? 1 : 0;
+        } else {
+            return NO;
+        }
     }
     
-    BOOL haveEvent;
+    NSUInteger numberOfEvents;
     NSString *key = [dateFormatter stringFromDate:date];
     
     if(events[key] != nil){
-        haveEvent = [events[key] boolValue];
+        numberOfEvents = [events[key] unsignedIntegerValue];
     }
     else{
-        haveEvent = [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date];
-        events[key] = [NSNumber numberWithBool:haveEvent];
+        if ([self.calendarManager.dataSource respondsToSelector:@selector(calendarNumberOfEvents:date:)]) {
+            numberOfEvents = [self.calendarManager.dataSource calendarNumberOfEvents:self.calendarManager date:date];
+        } else if ([self.calendarManager.dataSource respondsToSelector:@selector(calendarHaveEvent:date:)]) {
+            numberOfEvents = [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date] ? 1 : 0;
+        } else {
+            numberOfEvents = 0;
+        }
+
+        events[key] = @(numberOfEvents);
     }
     
-    return haveEvent;
+    return numberOfEvents;
 }
 
 @end

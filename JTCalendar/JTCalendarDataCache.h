@@ -14,6 +14,6 @@
 @property (weak, nonatomic) JTCalendar *calendarManager;
 
 - (void)reloadData;
-- (BOOL)haveEvent:(NSDate *)date;
+- (NSUInteger)numberOfEvents:(NSDate *)date;
 
 @end
