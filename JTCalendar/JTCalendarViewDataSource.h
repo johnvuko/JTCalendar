@@ -15,6 +15,7 @@
  * Called to determine whether to show the 'day dot' for a particular date.
  * Note: This method is deprecated. Use `calendarNumberOfEvents` instead.
  */
+@optional
 - (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date __deprecated;
 
 /**
