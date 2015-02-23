@@ -7,8 +7,6 @@
 
 #import "JTCalendar.h"
 
-#define NUMBER_PAGES_LOADED 5 // Must be the same in JTCalendarView, JTCalendarMenuView, JTCalendarContentView
-
 @interface JTCalendar(){
     BOOL cacheLastWeekMode;
     NSUInteger cacheFirstWeekDay;
@@ -17,6 +15,8 @@
 @end
 
 @implementation JTCalendar
+
+NSInteger const NUMBER_PAGES_LOADED = 5;
 
 - (instancetype)init
 {
