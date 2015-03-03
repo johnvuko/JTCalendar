@@ -15,6 +15,7 @@
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date;
 
 @optional
+- (UIColor *)colorForDot:(JTCalendar *)calendar date:(NSDate *)date defaultDotColor:(UIColor *)defaultColor;
 - (void)calendarDidLoadPreviousPage;
 - (void)calendarDidLoadNextPage;
 
