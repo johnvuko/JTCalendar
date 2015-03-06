@@ -55,9 +55,9 @@
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
     
-    [self.calendar reloadData];
-    
     [self createRandomEvents];
+    
+    [self.calendar reloadData];
 }
 
 - (void)viewDidLayoutSubviews
