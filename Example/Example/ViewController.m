@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "JTCalendarDayView.h"
 
 @interface ViewController (){
     NSMutableDictionary *eventsByDate;
@@ -49,6 +50,21 @@
             
             return [NSString stringWithFormat:@"%ld\n%@", comps.year, monthText];
         };
+
+        // Display a 'fill-box' behind each day showing percentage of events for that day
+//        self.calendar.calendarAppearance.dayViewBlock = ^(JTCalendarDayView *dayView, NSUInteger numberOfEvents) {
+//            [[dayView viewWithTag:7777] removeFromSuperview];
+//
+//            if (numberOfEvents == 0) {
+//                return;
+//            }
+//
+//            CGFloat height = dayView.bounds.size.height * fminf((numberOfEvents / 2.0f), 1.0f);
+//            UIView *boxFill = [[UIView alloc] initWithFrame:CGRectMake(0.0f, dayView.bounds.size.height - height, dayView.bounds.size.width, height)];
+//            boxFill.tag = 7777;
+//            boxFill.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.2f];
+//            [dayView insertSubview:boxFill atIndex:0];
+//        };
     }
     
     [self.calendar setMenuMonthsView:self.calendarMenuView];
@@ -81,15 +97,11 @@
 
 #pragma mark - JTCalendarDataSource
 
-- (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
-{
+- (NSUInteger)calendarNumberOfEvents:(JTCalendar *)calendar date:(NSDate *)date {
+
     NSString *key = [[self dateFormatter] stringFromDate:date];
     
-    if(eventsByDate[key] && [eventsByDate[key] count] > 0){
-        return YES;
-    }
-    
-    return NO;
+    return (eventsByDate[key]) ? [eventsByDate[key] count] : 0;
 }
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date

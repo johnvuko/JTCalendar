@@ -68,9 +68,9 @@ Your UIViewController must implement `JTCalendarDataSource`
     [self.calendar repositionViews];
 }
 
-- (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
+- (NSUInteger)calendarNumberOfEvents:(JTCalendar *)calendar date:(NSDate *)date
 {
-    return NO;
+    return 1;
 }
 
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
