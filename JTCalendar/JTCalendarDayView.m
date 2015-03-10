@@ -161,10 +161,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     currentMonthIndex = currentMonthIndex % 12;
     
     if(currentMonthIndex == (calendarMonthIndex + 1) % 12){
-        [self.calendarManager loadNextMonth];
+        [self.calendarManager loadNextPage];
     }
     else if(currentMonthIndex == (calendarMonthIndex + 12 - 1) % 12){
-        [self.calendarManager loadPreviousMonth];
+        [self.calendarManager loadPreviousPage];
     }
 }
 
