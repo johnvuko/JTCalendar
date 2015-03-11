@@ -160,10 +160,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         
     currentMonthIndex = currentMonthIndex % 12;
     
-    if(currentMonthIndex == (calendarMonthIndex + 1) % 12){
+    if(![self.calendarManager calendarIsUsingRangeOfDates] && currentMonthIndex == (calendarMonthIndex + 1) % 12){
         [self.calendarManager loadNextPage];
     }
-    else if(currentMonthIndex == (calendarMonthIndex + 12 - 1) % 12){
+    else if(![self.calendarManager calendarIsUsingRangeOfDates] && currentMonthIndex == (calendarMonthIndex + 12 - 1) % 12){
         [self.calendarManager loadPreviousPage];
     }
 }
@@ -258,6 +258,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     
     BOOL selected = [self isSameDate:[self.calendarManager currentDateSelected]];
     [self setSelected:selected animated:NO];
+    [self styleBackgroundForDateRangeIfNeeded];
 }
 
 - (BOOL)isToday
@@ -316,9 +317,14 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     backgroundView.backgroundColor = self.calendarManager.calendarAppearance.dayBackgroundColor;
     backgroundView.layer.borderWidth = self.calendarManager.calendarAppearance.dayBorderWidth;
     backgroundView.layer.borderColor = self.calendarManager.calendarAppearance.dayBorderColor.CGColor;
-    
+    [self styleBackgroundForDateRangeIfNeeded];
+
     [self configureConstraintsForSubviews];
     [self setSelected:isSelected animated:NO];
 }
 
+- (void)styleBackgroundForDateRangeIfNeeded {
+    JTCalendarDateRange dateRange = [self.calendarManager dateBelongsToSelectedRange:self.date];
+    [self.calendarManager.dateRangeDelegate styleDayBackgroundView:backgroundView forDateInRange:dateRange];
+}
 @end

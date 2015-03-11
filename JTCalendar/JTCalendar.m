@@ -109,6 +109,40 @@
     [self.contentView reloadData];
 }
 
+- (void)setStartDateInRange:(NSDate *)startDateInRange {
+    self->_startDateInRange = startDateInRange;
+    [self reloadAppearance];
+}
+
+- (void)setEndDateInRange:(NSDate *)endDateInRange {
+    if (endDateInRange == nil || [endDateInRange compare:self.startDateInRange] == NSOrderedDescending) {
+        self->_endDateInRange = endDateInRange;
+        [self reloadAppearance];
+    }
+}
+
+- (JTCalendarDateRange)dateBelongsToSelectedRange:(NSDate *)date {
+    if ([self calendarIsUsingRangeOfDates] && self.startDateInRange) {
+        return [self date:date isBetweenDate:self.startDateInRange andDate:self.endDateInRange];
+    } else {
+        return JTCalendarDateNoRangeSelected;
+    }
+}
+
+- (JTCalendarDateRange)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
+{
+    if ([date isEqual:beginDate]) return JTCalendarDateRangeBeginDate;
+    if ([date isEqual:endDate]) return JTCalendarDateRangeEndDate;
+    if (!endDate) endDate = beginDate;
+    if ([date compare:beginDate] == NSOrderedAscending) return JTCalendarDateBeforeRange;
+    if ([date compare:endDate] == NSOrderedDescending) return JTCalendarDateAfterRange;
+    return JTCalendarDateRangeMiddleDate;
+}
+
+- (BOOL)calendarIsUsingRangeOfDates {
+    return self.dateRangeDelegate;
+}
+
 #pragma mark - UIScrollView delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender

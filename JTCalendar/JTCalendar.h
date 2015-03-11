@@ -21,9 +21,13 @@
 @property (weak, nonatomic) JTCalendarContentView *contentView;
 
 @property (weak, nonatomic) id<JTCalendarDataSource> dataSource;
+@property (weak, nonatomic) id<JTCalendarDateRangeDelegate> dateRangeDelegate;
 
 @property (strong, nonatomic) NSDate *currentDate;
 @property (strong, nonatomic) NSDate *currentDateSelected;
+
+@property (strong, nonatomic) NSDate *startDateInRange;
+@property (strong, nonatomic) NSDate *endDateInRange;
 
 @property (strong, nonatomic, readonly) JTCalendarDataCache *dataCache;
 @property (strong, nonatomic, readonly) JTCalendarAppearance *calendarAppearance;
@@ -39,4 +43,6 @@
 
 - (void)repositionViews;
 
+- (JTCalendarDateRange)dateBelongsToSelectedRange:(NSDate *)date;
+- (BOOL)calendarIsUsingRangeOfDates;
 @end
