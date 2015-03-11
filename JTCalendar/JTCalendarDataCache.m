@@ -44,7 +44,7 @@
     }
     
     if(!self.calendarManager.calendarAppearance.useCacheSystem){
-        return [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date];
+        return [self.calendarManager.dataSource calendar:self.calendarManager hasEventForDate:date];
     }
     
     BOOL haveEvent;
@@ -54,7 +54,7 @@
         haveEvent = [events[key] boolValue];
     }
     else{
-        haveEvent = [self.calendarManager.dataSource calendarHaveEvent:self.calendarManager date:date];
+        haveEvent = [self.calendarManager.dataSource calendar:self.calendarManager hasEventForDate:date];
         events[key] = [NSNumber numberWithBool:haveEvent];
     }
     
