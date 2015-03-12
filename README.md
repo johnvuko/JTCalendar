@@ -33,7 +33,7 @@ Your UIViewController must implement `JTCalendarDataSource`
 ```objective-c
 #import <UIKit/UIKit.h>
 
-#import "JTCalendar.h"
+#import <JTCalendar.h>
 
 @interface ViewController : UIViewController<JTCalendarDataSource>
 
@@ -59,13 +59,13 @@ Your UIViewController must implement `JTCalendarDataSource`
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
+    
+    [self.calendar reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLayoutSubviews
 {
-    [super viewDidAppear:animated];
-    
-    [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.calendar repositionViews];
 }
 
 - (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
@@ -76,12 +76,6 @@ Your UIViewController must implement `JTCalendarDataSource`
 - (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date
 {
     NSLog(@"%@", date);
-}
-
-// Manage rotation
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [self.calendar repositionViews];
 }
 
 @end

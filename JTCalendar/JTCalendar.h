@@ -33,8 +33,11 @@ extern NSInteger const NUMBER_PAGES_LOADED;
 - (void)reloadData;
 - (void)reloadAppearance;
 
-- (void)loadPreviousMonth;
-- (void)loadNextMonth;
+- (void)loadPreviousMonth DEPRECATED_MSG_ATTRIBUTE("Use loadPreviousPage instead");
+- (void)loadNextMonth DEPRECATED_MSG_ATTRIBUTE("Use loadNextPage instead");
+
+- (void)loadPreviousPage;
+- (void)loadNextPage;
 
 - (void)repositionViews;
 

@@ -50,6 +50,7 @@
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
     self.pagingEnabled = YES;
+    self.clipsToBounds = YES;
     
     for(int i = 0; i < NUMBER_PAGES_LOADED; ++i){
         JTCalendarMenuMonthView *monthView = [JTCalendarMenuMonthView new];

@@ -217,11 +217,16 @@ NSInteger const NUMBER_PAGES_LOADED = 5;
 
 - (void)loadNextMonth
 {
-    if(self.calendarAppearance.isWeekMode){
-        NSLog(@"JTCalendar loadNextMonth ignored");
-        return;
-    }
-    
+    [self loadNextPage];
+}
+
+- (void)loadPreviousMonth
+{
+    [self loadPreviousPage];
+}
+
+- (void)loadNextPage
+{
     self.menuMonthsView.scrollEnabled = NO;
     
     CGRect frame = self.contentView.frame;
@@ -230,13 +235,8 @@ NSInteger const NUMBER_PAGES_LOADED = 5;
     [self.contentView scrollRectToVisible:frame animated:YES];
 }
 
-- (void)loadPreviousMonth
+- (void)loadPreviousPage
 {
-    if(self.calendarAppearance.isWeekMode){
-        NSLog(@"JTCalendar loadPreviousMonth ignored");
-        return;
-    }
-    
     self.menuMonthsView.scrollEnabled = NO;
     
     CGRect frame = self.contentView.frame;

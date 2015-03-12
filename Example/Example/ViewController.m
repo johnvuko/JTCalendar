@@ -56,17 +56,11 @@
     [self.calendar setDataSource:self];
     
     [self createRandomEvents];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
-    [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.calendar reloadData];
 }
 
-// Update the position of calendar when rotate the screen, call `calendarDidLoadPreviousPage` or `calendarDidLoadNextPage`
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+- (void)viewDidLayoutSubviews
 {
     [self.calendar repositionViews];
 }
