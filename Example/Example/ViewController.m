@@ -81,6 +81,17 @@
 
 #pragma mark - JTCalendarDataSource
 
+- (UIColor *)colorForDot:(JTCalendar *)calendar date:(NSDate *)date defaultDotColor:(UIColor *)defaultColor {
+    
+    NSString *key = [[self dateFormatter] stringFromDate:date];
+
+    if(eventsByDate[key] && [eventsByDate[key] count] > 1){
+        return [UIColor yellowColor];
+    }
+
+    return defaultColor;
+}
+
 - (BOOL)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date
 {
     NSString *key = [[self dateFormatter] stringFromDate:date];
