@@ -18,6 +18,7 @@
     BOOL isSelected;
     
     int cacheIsToday;
+    int cacheIsPreviousDate;
     NSString *cacheCurrentDateText;
 }
 @end
@@ -145,6 +146,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     textLabel.text = [dateFormatter stringFromDate:date];
     
     cacheIsToday = -1;
+    cacheIsPreviousDate = -1;
     cacheCurrentDateText = nil;
 }
 
@@ -240,6 +242,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         opacity = 0.;
     }
     
+    if ([self isPreviousDate]) {
+        dotView.color = [self.calendarManager.calendarAppearance dayDotColorPreviousDate];
+    }
+    
     if(animated){
         [UIView animateWithDuration:.3 animations:^{
             circleView.layer.opacity = opacity;
@@ -281,6 +287,26 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         }
         else{
             cacheIsToday = 0;
+            return NO;
+        }
+    }
+}
+
+- (BOOL)isPreviousDate
+{
+    if(cacheIsPreviousDate == 0){
+        return NO;
+    }
+    else if(cacheIsPreviousDate == 1){
+        return YES;
+    }
+    else{
+        if ([self.date earlierDate:[NSDate date]] == self.date) {
+            cacheIsPreviousDate = 1;
+            return YES;
+        }
+        else{
+            cacheIsPreviousDate = 0;
             return NO;
         }
     }

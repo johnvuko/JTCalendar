@@ -71,6 +71,8 @@
     self.dayTextColorToday = [UIColor whiteColor];
     self.dayDotColorToday = [UIColor whiteColor];
     
+    self.dayDotColorPreviousDate = self.dayDotColor;
+    
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
     self.dayDotColorTodayOtherMonth = self.dayDotColorToday;
