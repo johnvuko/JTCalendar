@@ -69,7 +69,7 @@
 
 - (void)configureConstraintsForSubviews
 {
-    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+    self.contentOffset = CGPointMake(self.contentOffset.x, 6); // Prevent bug when contentOffset.y is negative
  
     CGFloat x = 0;
     CGFloat width = self.frame.size.width;
