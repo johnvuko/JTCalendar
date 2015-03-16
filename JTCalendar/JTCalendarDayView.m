@@ -59,7 +59,13 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 {
     isSelected = NO;
     self.isOtherMonth = NO;
-
+    
+    {
+        dotView = [JTCircleView new];
+        [self addSubview:dotView];
+        dotView.hidden = YES;
+    }
+    
     {
         backgroundView = [UIView new];
         [self addSubview:backgroundView];
@@ -73,12 +79,6 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     {
         textLabel = [UILabel new];
         [self addSubview:textLabel];
-    }
-    
-    {
-        dotView = [JTCircleView new];
-        [self addSubview:dotView];
-        dotView.hidden = YES;
     }
     
     {
@@ -120,9 +120,15 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     circleView.layer.cornerRadius = sizeCircle / 2.;
     
-    dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
-    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeDot * 2.5);
-    dotView.layer.cornerRadius = sizeDot / 2.;
+    if (self.calendarManager.calendarAppearance.dotsAsCircles) {
+        dotView.frame = circleView.frame;
+        dotView.center = circleView.center;
+        dotView.layer.cornerRadius = circleView.layer.cornerRadius;
+    } else {
+        dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
+        dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeDot * 2.5);
+        dotView.layer.cornerRadius = sizeDot / 2.;
+    }
 }
 
 - (void)setDate:(NSDate *)date
