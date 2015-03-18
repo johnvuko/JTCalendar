@@ -6,11 +6,10 @@
 //
 
 #import "JTCalendarContentView.h"
-
 #import "JTCalendar.h"
-
 #import "JTCalendarMonthView.h"
 #import "JTCalendarWeekView.h"
+#import "JTUtils.h"
 
 @interface JTCalendarContentView(){
     NSMutableArray *monthsViews;
@@ -89,6 +88,19 @@
     }
     
     self.contentSize = CGSizeMake(width * NUMBER_PAGES_LOADED, height);
+}
+
+- (BOOL)selectDate:(NSDate *)date {
+    if (!date)
+        return NO;
+    
+    NSDate *dateOnly = [JTUtils dateOnlyFromDate:date];
+    for (JTCalendarMonthView *month in monthsViews) {
+        if ([month selectDate:dateOnly])
+            return YES;
+    }
+    
+    return NO;
 }
 
 - (void)setCurrentDate:(NSDate *)currentDate

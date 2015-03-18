@@ -6,8 +6,8 @@
 //
 
 #import "JTCalendarWeekView.h"
-
 #import "JTCalendarDayView.h"
+#import "JTUtils.h"
 
 @interface JTCalendarWeekView (){
     NSArray *daysViews;
@@ -75,6 +75,22 @@
     }
     
     [super layoutSubviews];
+}
+
+- (BOOL)selectDate:(NSDate *)date {
+    if (!date)
+        return NO;
+    
+    NSDate *dateOnly = [JTUtils dateOnlyFromDate:date];
+    for (JTCalendarDayView *day in daysViews) {
+        NSDate *dayDate = [JTUtils dateOnlyFromDate:day.date];
+        if ([dayDate isEqualToDate:dateOnly]) {
+            [day select];
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 - (void)setBeginningOfWeek:(NSDate *)date

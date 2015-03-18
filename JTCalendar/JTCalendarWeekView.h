@@ -15,6 +15,7 @@
 
 @property (assign, nonatomic) NSUInteger currentMonthIndex;
 
+- (BOOL)selectDate:(NSDate *)date;
 - (void)setBeginningOfWeek:(NSDate *)date;
 - (void)reloadData;
 - (void)reloadAppearance;

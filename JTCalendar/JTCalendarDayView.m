@@ -150,6 +150,11 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     cacheCurrentDateText = nil;
 }
 
+// wrapper for better user-facing name
+- (void)select {
+    [self didTouch];
+}
+
 - (void)didTouch
 {
     [self setSelected:YES animated:YES];
