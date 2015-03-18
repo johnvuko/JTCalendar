@@ -116,7 +116,7 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 
 The call to `reloadAppearance` is expensive, `reloadAppearance` is call by `setMenuMonthsView` and `setContentView`.
 
-For better performance define the appearance just after instanciate `JTCalendar`.
+For better performance, define the appearance right after you instantiate `JTCalendar`.
 
 BAD example:
 ```objective-c

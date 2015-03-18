@@ -10,7 +10,6 @@
 #import "JTCalendar.h"
 #import "JTCalendarMenuMonthView.h"
 
-#define NUMBER_PAGES_LOADED 5 // Must be the same in JTCalendarView, JTCalendarMenuView, JTCalendarContentView
 
 @interface JTCalendarMenuView(){
     NSMutableArray *monthsViews;

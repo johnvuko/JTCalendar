@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) BOOL isOtherMonth;
 
+- (void)select;
 - (void)reloadData;
 - (void)reloadAppearance;
 

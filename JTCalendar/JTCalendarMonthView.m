@@ -9,10 +9,11 @@
 
 #import "JTCalendarMonthWeekDaysView.h"
 #import "JTCalendarWeekView.h"
-
-#define WEEKS_TO_DISPLAY 6
+#import "JTUtils.h"
 
 @interface JTCalendarMonthView (){
+    NSInteger _weeksToDisplay;
+    
     JTCalendarMonthWeekDaysView *weekdaysView;
     NSArray *weeksViews;
     
@@ -31,6 +32,7 @@
         return nil;
     }
     
+    _weeksToDisplay = 6;
     [self commonInit];
     
     return self;
@@ -48,8 +50,20 @@
     return self;
 }
 
+- (void)setWeeksToDisplay:(NSInteger)weeksToDisplay {
+    _weeksToDisplay = fmaxl(weeksToDisplay, 1);
+//    _weeksToDisplay = 6;
+    NSLog(@"weeks:%ld", _weeksToDisplay);
+    
+    [self layoutSubviews];
+}
+
+- (NSInteger)weeksToDisplay {
+    return _weeksToDisplay;
+}
+
 - (void)commonInit
-{    
+{
     NSMutableArray *views = [NSMutableArray new];
     
     {
@@ -57,7 +71,7 @@
         [self addSubview:weekdaysView];
     }
     
-    for(int i = 0; i < WEEKS_TO_DISPLAY; ++i){
+    for(int i = 0; i < self.weeksToDisplay; ++i){
         UIView *view = [JTCalendarWeekView new];
         
         [views addObject:view];
@@ -84,7 +98,7 @@
         weeksToDisplay = 2.;
     }
     else{
-        weeksToDisplay = (CGFloat)(WEEKS_TO_DISPLAY + 1); // + 1 for weekDays
+        weeksToDisplay = (CGFloat)(self.weeksToDisplay + 1); // + 1 for weekDays
     }
     
     CGFloat y = 0;
@@ -101,6 +115,19 @@
             height = 0.;
         }
     }
+}
+
+- (BOOL)selectDate:(NSDate *)date {
+    if (!date)
+        return NO;
+    
+    NSDate *dateOnly = [JTUtils dateOnlyFromDate:date];
+    for (JTCalendarWeekView *week in weeksViews) {
+        if ([week selectDate:dateOnly])
+            return YES;
+    }
+    
+    return NO;
 }
 
 - (void)setBeginningOfMonth:(NSDate *)date
@@ -134,6 +161,10 @@
             break;
         }
     }
+    
+    NSRange weekRange = [calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:currentDate];
+    NSLog(@"date:%@", currentDate);
+    [self setWeeksToDisplay:weekRange.length];
 }
 
 #pragma mark - JTCalendarManager

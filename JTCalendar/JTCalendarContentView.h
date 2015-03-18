@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) NSDate *currentDate;
 
+- (BOOL)selectDate:(NSDate *)date;
 - (void)reloadData;
 - (void)reloadAppearance;
 

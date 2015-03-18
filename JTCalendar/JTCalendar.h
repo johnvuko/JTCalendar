@@ -17,6 +17,8 @@
 
 @interface JTCalendar : NSObject<UIScrollViewDelegate>
 
+extern NSInteger const NUMBER_PAGES_LOADED;
+
 @property (weak, nonatomic) JTCalendarMenuView *menuMonthsView;
 @property (weak, nonatomic) JTCalendarContentView *contentView;
 

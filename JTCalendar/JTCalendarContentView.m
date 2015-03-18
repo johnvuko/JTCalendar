@@ -6,13 +6,10 @@
 //
 
 #import "JTCalendarContentView.h"
-
 #import "JTCalendar.h"
-
 #import "JTCalendarMonthView.h"
 #import "JTCalendarWeekView.h"
-
-#define NUMBER_PAGES_LOADED 5 // Must be the same in JTCalendarView, JTCalendarMenuView, JTCalendarContentView
+#import "JTUtils.h"
 
 @interface JTCalendarContentView(){
     NSMutableArray *monthsViews;
@@ -71,7 +68,7 @@
 
 - (void)configureConstraintsForSubviews
 {
-    self.contentOffset = CGPointMake(self.contentOffset.x, 0); // Prevent bug when contentOffset.y is negative
+    self.contentOffset = CGPointMake(self.contentOffset.x, 6); // Prevent bug when contentOffset.y is negative
  
     CGFloat x = 0;
     CGFloat width = self.frame.size.width;
@@ -91,6 +88,19 @@
     }
     
     self.contentSize = CGSizeMake(width * NUMBER_PAGES_LOADED, height);
+}
+
+- (BOOL)selectDate:(NSDate *)date {
+    if (!date)
+        return NO;
+    
+    NSDate *dateOnly = [JTUtils dateOnlyFromDate:date];
+    for (JTCalendarMonthView *month in monthsViews) {
+        if ([month selectDate:dateOnly])
+            return YES;
+    }
+    
+    return NO;
 }
 
 - (void)setCurrentDate:(NSDate *)currentDate

@@ -49,12 +49,15 @@
     self.dayBorderColor = [UIColor clearColor];
     
     self.menuMonthTextColor = [UIColor blackColor];
+    // week labels (MON, TUE, WED, etc.)
     self.weekDayTextColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
     
     [self setDayDotColorForAll:[UIColor colorWithRed:43./256. green:88./256. blue:134./256. alpha:1.]];
     [self setDayTextColorForAll:[UIColor blackColor]];
     
     self.dayTextColorOtherMonth = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
+    
+    self.dotsAsCircles = NO;
 
     self.dayCircleColorSelected = [UIColor redColor];
     self.dayTextColorSelected = [UIColor whiteColor];
@@ -67,6 +70,8 @@
     self.dayCircleColorToday = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
     self.dayTextColorToday = [UIColor whiteColor];
     self.dayDotColorToday = [UIColor whiteColor];
+    
+    self.dayDotColorPreviousDate = self.dayDotColor;
     
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;

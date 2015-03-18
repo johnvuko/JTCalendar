@@ -18,6 +18,7 @@
     BOOL isSelected;
     
     int cacheIsToday;
+    int cacheIsPreviousDate;
     NSString *cacheCurrentDateText;
 }
 @end
@@ -59,7 +60,13 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 {
     isSelected = NO;
     self.isOtherMonth = NO;
-
+    
+    {
+        dotView = [JTCircleView new];
+        [self addSubview:dotView];
+        dotView.hidden = YES;
+    }
+    
     {
         backgroundView = [UIView new];
         [self addSubview:backgroundView];
@@ -73,12 +80,6 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     {
         textLabel = [UILabel new];
         [self addSubview:textLabel];
-    }
-    
-    {
-        dotView = [JTCircleView new];
-        [self addSubview:dotView];
-        dotView.hidden = YES;
     }
     
     {
@@ -120,9 +121,15 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
     circleView.layer.cornerRadius = sizeCircle / 2.;
     
-    dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
-    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeDot * 2.5);
-    dotView.layer.cornerRadius = sizeDot / 2.;
+    if (self.calendarManager.calendarAppearance.dotsAsCircles) {
+        dotView.frame = circleView.frame;
+        dotView.center = circleView.center;
+        dotView.layer.cornerRadius = circleView.layer.cornerRadius;
+    } else {
+        dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
+        dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeDot * 2.5);
+        dotView.layer.cornerRadius = sizeDot / 2.;
+    }
 }
 
 - (void)setDate:(NSDate *)date
@@ -139,7 +146,13 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     textLabel.text = [dateFormatter stringFromDate:date];
     
     cacheIsToday = -1;
+    cacheIsPreviousDate = -1;
     cacheCurrentDateText = nil;
+}
+
+// wrapper for better user-facing name
+- (void)select {
+    [self didTouch];
 }
 
 - (void)didTouch
@@ -234,6 +247,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         opacity = 0.;
     }
     
+    if ([self isPreviousDate]) {
+        dotView.color = [self.calendarManager.calendarAppearance dayDotColorPreviousDate];
+    }
+    
     if(animated){
         [UIView animateWithDuration:.3 animations:^{
             circleView.layer.opacity = opacity;
@@ -275,6 +292,26 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         }
         else{
             cacheIsToday = 0;
+            return NO;
+        }
+    }
+}
+
+- (BOOL)isPreviousDate
+{
+    if(cacheIsPreviousDate == 0){
+        return NO;
+    }
+    else if(cacheIsPreviousDate == 1){
+        return YES;
+    }
+    else{
+        if ([self.date earlierDate:[NSDate date]] == self.date) {
+            cacheIsPreviousDate = 1;
+            return YES;
+        }
+        else{
+            cacheIsPreviousDate = 0;
             return NO;
         }
     }
