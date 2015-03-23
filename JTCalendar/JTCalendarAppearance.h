@@ -25,46 +25,46 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 @property (assign, nonatomic) BOOL readFromRightToLeft; // For language read from right to left
 
 // Month
-@property (strong, nonatomic) UIColor *menuMonthTextColor;
-@property (strong, nonatomic) UIFont *menuMonthTextFont;
+@property (nonatomic) UIColor *menuMonthTextColor;
+@property (nonatomic) UIFont *menuMonthTextFont;
 
 @property (assign, nonatomic) CGFloat ratioContentMenu;
 @property (assign, nonatomic) BOOL autoChangeMonth;
-@property (nonatomic, copy) JTCalendarMonthBlock monthBlock;
+@property (copy, nonatomic) JTCalendarMonthBlock monthBlock;
 
 // Weekday
 @property (assign, nonatomic) JTCalendarWeekDayFormat weekDayFormat;
-@property (strong, nonatomic) UIColor *weekDayTextColor;
-@property (strong, nonatomic) UIFont *weekDayTextFont;
+@property (nonatomic) UIColor *weekDayTextColor;
+@property (nonatomic) UIFont *weekDayTextFont;
 
 // Day
-@property (strong, nonatomic) UIColor *dayCircleColorSelected;
-@property (strong, nonatomic) UIColor *dayCircleColorSelectedOtherMonth;
-@property (strong, nonatomic) UIColor *dayCircleColorToday;
-@property (strong, nonatomic) UIColor *dayCircleColorTodayOtherMonth;
+@property (nonatomic) UIColor *dayCircleColorSelected;
+@property (nonatomic) UIColor *dayCircleColorSelectedOtherMonth;
+@property (nonatomic) UIColor *dayCircleColorToday;
+@property (nonatomic) UIColor *dayCircleColorTodayOtherMonth;
 
-@property (strong, nonatomic) UIColor *dayDotColor;
-@property (strong, nonatomic) UIColor *dayDotColorSelected;
-@property (strong, nonatomic) UIColor *dayDotColorOtherMonth;
-@property (strong, nonatomic) UIColor *dayDotColorSelectedOtherMonth;
-@property (strong, nonatomic) UIColor *dayDotColorToday;
-@property (strong, nonatomic) UIColor *dayDotColorTodayOtherMonth;
+@property (nonatomic) UIColor *dayDotColor;
+@property (nonatomic) UIColor *dayDotColorSelected;
+@property (nonatomic) UIColor *dayDotColorOtherMonth;
+@property (nonatomic) UIColor *dayDotColorSelectedOtherMonth;
+@property (nonatomic) UIColor *dayDotColorToday;
+@property (nonatomic) UIColor *dayDotColorTodayOtherMonth;
 
-@property (strong, nonatomic) UIColor *dayTextColor;
-@property (strong, nonatomic) UIColor *dayTextColorSelected;
-@property (strong, nonatomic) UIColor *dayTextColorOtherMonth;
-@property (strong, nonatomic) UIColor *dayTextColorSelectedOtherMonth;
-@property (strong, nonatomic) UIColor *dayTextColorToday;
-@property (strong, nonatomic) UIColor *dayTextColorTodayOtherMonth;
+@property (nonatomic) UIColor *dayTextColor;
+@property (nonatomic) UIColor *dayTextColorSelected;
+@property (nonatomic) UIColor *dayTextColorOtherMonth;
+@property (nonatomic) UIColor *dayTextColorSelectedOtherMonth;
+@property (nonatomic) UIColor *dayTextColorToday;
+@property (nonatomic) UIColor *dayTextColorTodayOtherMonth;
 
-@property (strong, nonatomic) UIFont *dayTextFont;
+@property (nonatomic) UIFont *dayTextFont;
 
-@property (strong, nonatomic) NSString *dayFormat;
+@property (nonatomic) NSString *dayFormat;
 
 // Day Background and Border
-@property (strong, nonatomic) UIColor *dayBackgroundColor;
+@property (nonatomic) UIColor *dayBackgroundColor;
 @property (assign, nonatomic) CGFloat dayBorderWidth;
-@property (assign, nonatomic) UIColor *dayBorderColor;
+@property (nonatomic) UIColor *dayBorderColor;
 
 @property (assign, nonatomic) CGFloat dayCircleRatio;
 @property (assign, nonatomic) CGFloat dayDotRatio;

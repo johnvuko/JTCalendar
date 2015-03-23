@@ -144,6 +144,12 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 
 - (void)didTouch
 {
+    if([self.calendarManager.dataSource respondsToSelector:@selector(calendar:canSelectDate:)]){
+        if(![self.calendarManager.dataSource calendar:self.calendarManager canSelectDate:self.date]){
+            return;
+        }
+    }
+    
     [self setSelected:YES animated:YES];
     [self.calendarManager setCurrentDateSelected:self.date];
     
