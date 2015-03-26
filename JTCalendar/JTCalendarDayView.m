@@ -324,7 +324,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 }
 
 - (void)styleBackgroundForDateRangeIfNeeded {
-    JTCalendarDateRange dateRange = [self.calendarManager dateBelongsToSelectedRange:self.date];
-    [self.calendarManager.dateRangeDelegate styleDayBackgroundView:backgroundView forDateInRange:dateRange];
+    JTCalendarDateRange dateRange = [self.calendarManager dateStatusInRange:self.date];
+    [self.calendarManager.dateRangeDelegate styleDayBackgroundView:backgroundView forDate:self.date inRange:dateRange];
 }
 @end

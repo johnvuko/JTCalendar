@@ -43,6 +43,6 @@
 
 - (void)repositionViews;
 
-- (JTCalendarDateRange)dateBelongsToSelectedRange:(NSDate *)date;
+- (JTCalendarDateRange)dateStatusInRange:(NSDate *)date;
 - (BOOL)calendarIsUsingRangeOfDates;
 @end
