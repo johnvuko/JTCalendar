@@ -9,6 +9,6 @@
 
 @interface JTCircleView : UIView
 
-@property (nonatomic, strong) UIColor *color;
+@property (nonatomic) UIColor *color;
 
 @end

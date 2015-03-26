@@ -23,8 +23,8 @@
 @property (weak, nonatomic) id<JTCalendarDataSource> dataSource;
 @property (weak, nonatomic) id<JTCalendarDateRangeDelegate> dateRangeDelegate;
 
-@property (strong, nonatomic) NSDate *currentDate;
-@property (strong, nonatomic) NSDate *currentDateSelected;
+@property (nonatomic) NSDate *currentDate;
+@property (nonatomic) NSDate *currentDateSelected;
 
 @property (strong, nonatomic) NSDate *startDateInRange;
 @property (strong, nonatomic) NSDate *endDateInRange;

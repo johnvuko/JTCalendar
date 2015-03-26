@@ -121,7 +121,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     circleView.layer.cornerRadius = sizeCircle / 2.;
     
     dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
-    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeDot * 2.5);
+    dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) + sizeCircle / 2 - sizeDot / 2);
     dotView.layer.cornerRadius = sizeDot / 2.;
 }
 
@@ -144,6 +144,12 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 
 - (void)didTouch
 {
+    if([self.calendarManager.dataSource respondsToSelector:@selector(calendar:canSelectDate:)]){
+        if(![self.calendarManager.dataSource calendar:self.calendarManager canSelectDate:self.date]){
+            return;
+        }
+    }
+    
     [self setSelected:YES animated:YES];
     [self.calendarManager setCurrentDateSelected:self.date];
     

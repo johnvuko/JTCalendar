@@ -137,7 +137,7 @@
 }
 
 #pragma mark - JTCalendarDateRangeDelegate
-- (void)styleDayBackgroundView:(UIView *)backgroundView forDateInRange:(JTCalendarDateRange)dateRange {
+- (void)styleDayBackgroundView:(UIView *)backgroundView forDate:(NSDate *)date inRange:(JTCalendarDateRange)dateRange {
     [backgroundView.layer setBorderColor:[UIColor whiteColor].CGColor];
     [backgroundView.layer setBorderWidth:0.5f];
     UIColor *colorForDatesInRange = [UIColor colorWithRed:251.f/255.f green:77.f/255.f blue:0.f/255.f alpha:0.3f];

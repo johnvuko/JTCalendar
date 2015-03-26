@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) JTCalendar *calendarManager;
 
-@property (strong, nonatomic) NSDate *currentDate;
+@property (nonatomic) NSDate *currentDate;
 
 - (void)reloadData;
 - (void)reloadAppearance;
