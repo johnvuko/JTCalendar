@@ -132,6 +132,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         dateFormatter = [NSDateFormatter new];
         dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:self.calendarManager.calendarAppearance.dayFormat];
+        dateFormatter.locale = self.calendarManager.calendarAppearance.locale;
     }
     
     self->_date = date;
@@ -293,6 +294,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         dateFormatter = [NSDateFormatter new];
         dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        dateFormatter.locale = self.calendarManager.calendarAppearance.locale;
     }
     
     if(!cacheCurrentDateText){

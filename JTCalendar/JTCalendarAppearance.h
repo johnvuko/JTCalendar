@@ -60,6 +60,7 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 @property (nonatomic) UIFont *dayTextFont;
 
 @property (nonatomic) NSString *dayFormat;
+@property (nonatomic) NSLocale *locale;
 
 // Day Background and Border
 @property (nonatomic) UIColor *dayBackgroundColor;
