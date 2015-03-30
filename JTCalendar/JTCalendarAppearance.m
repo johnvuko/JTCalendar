@@ -81,8 +81,8 @@
         if(!dateFormatter){
             dateFormatter = [NSDateFormatter new];
             dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
-            dateFormatter.locale = jt_calendar.calendarAppearance.locale;
         }
+        dateFormatter.locale = jt_calendar.calendarAppearance.locale;
         
         while(currentMonthIndex <= 0){
             currentMonthIndex += 12;
