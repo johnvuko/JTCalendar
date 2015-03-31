@@ -5,11 +5,11 @@
 ![License](https://img.shields.io/cocoapods/l/JTCalendar.svg)
 ![Platform](https://img.shields.io/cocoapods/p/JTCalendar.svg)
 
-JTCalendar is a calendar control for iOS easily customizable.
+JTCalendar is an easily customizable calendar control for iOS.
 
 ## Installation
 
-With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
+With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
 
     pod 'JTCalendar', '~> 1.1'
 
@@ -22,13 +22,12 @@ With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
 ### Basic usage
 
-You have to create two views in your UIViewController.
+You have to create two views in your UIViewController:
 
-The first view is `JTCalendarMenuView`, it represents the months.
+- The first view is `JTCalendarMenuView` and it represents the month names.
+- The second view is `JTCalendarContentView` and it represents the calendar itself.
 
-The second view is `JTCalendarContentView`, the calendar itself.
-
-Your UIViewController must implement `JTCalendarDataSource`
+Your `UIViewController` must implement `JTCalendarDataSource`
 
 ```objective-c
 #import <UIKit/UIKit.h>
@@ -82,11 +81,11 @@ Your UIViewController must implement `JTCalendarDataSource`
 
 ```
 
-For more informations about how organize events by date see the Example project.
+For more information about organizing the events by date, see the Example project.
 
 ### Switch to week view
 
-If you want see just one week at time you can switch when you want between the weekMode.
+If you want see just one week at a time, you have to set the `isWeekMode` to `YES` and reload the calendar.
 
 ```objective-c
 self.calendar.calendarAppearance.isWeekMode = YES;
@@ -96,12 +95,12 @@ self.calendar.calendarAppearance.isWeekMode = YES;
 #### WARNING
 
 When you change the mode, it doesn't change the height of `calendarContentView`, you have to do it yourself.
-See the project in example for more details.
+See the Example project for more details.
 
 ### Customize the design
 
-You have a lot of options available for personnalize the design.
-Check the `JTCalendarAppearance.h` file for see all options.
+You have a lot of options available to customize the design.
+Check the `JTCalendarAppearance.h` file to see all the options.
 
 ```objective-c
 self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Monday
@@ -114,11 +113,11 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 
 #### Recommendation
 
-The call to `reloadAppearance` is expensive, `reloadAppearance` is call by `setMenuMonthsView` and `setContentView`.
+The call to `reloadAppearance` is expensive. It is called by `setMenuMonthsView` and `setContentView`.
 
-For better performance define the appearance just after instanciate `JTCalendar`.
+For a better performance, define the appearance just after the `JTCalendar` initialization.
 
-BAD example:
+**Bad** example:
 ```objective-c
 self.calendar = [JTCalendar new];
     
@@ -135,7 +134,7 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 [self.calendar reloadAppearance]; // You have to call reloadAppearance
 ```
 
-GOOD example:
+*Good* example:
 ```objective-c
 self.calendar = [JTCalendar new];
 
@@ -152,23 +151,23 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 // You don't have to call reloadAppearance
 ```
 
-You may also want to open your calendar on a specific date, by defaut it's `[NSDate date].`
+You may also want to open your calendar on a specific date. By default, it is `[NSDate date]`.
 ```objective-c
 [self.calendar setCurrentDate:myDate];
 ```
 
 ### WARNING
 
-The `currentDate` is used for indicate the month and the week visible. When you change the `currentDate` the calendar move to the correct week and month.
+The `currentDate` is used for indicate the month and the week visible. When you change the `currentDate`, the calendar moves to the correct week and month.
 
-The `currentDateSelected` is the last date touched by an user. Currently the only way to set the `currentDateSelected` is by calling
+The `currentDateSelected` is the last date touched by an user. Currently, the only way to set the `currentDateSelected` is by calling
 ```objective-c
 [NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:date];
 ```
 
 ### Data cache
 
-By default a cache is activated for don't have to call `calendarHaveEvent` intensively. For clean the cache you just have to call `reloadData`.
+By default, a cache is activated, so you don't have to call `calendarHaveEvent` intensively. To clean the cache, you just have to call `reloadData`.
 
 If you don't want to use this cache you can disable it with:
 ```objective-c
