@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JTDayViewProtocol.h"
 
-@interface JTCircleView : UIView
+@interface JTCircleView : UIView <JTDayViewProtocol>
 
 @property (nonatomic) UIColor *color;
 
