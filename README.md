@@ -1,3 +1,17 @@
+# What is this?
+This is a forked version of JTCalendar that adds logic to select a range of dates in the calendar. You can customize the backgroundView of the days that go before, after and in between the selected range of dates. 
+
+You can execute the Example project to check how it works.
+
+Here is a video:
+
+And a screenshot:
+http://quick.as/kgyCm1L
+
+And a screenshot: 
+https://cloud.githubusercontent.com/assets/1252619/6599928/c8e491e2-c80c-11e4-8af5-6de78c85a204.png
+
+
 # JTCalendar
 
 [![CI Status](http://img.shields.io/travis/jonathantribouharet/JTCalendar.svg)](https://travis-ci.org/jonathantribouharet/JTCalendar)
