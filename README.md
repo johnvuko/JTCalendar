@@ -18,6 +18,9 @@ With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
 ![Example](./Screens/example.gif "Example View")
 ![Example](./Screens/example.png "Example View")
 
+### Warning
+The part behind the calendar in the 2nd screenshot is not provided.
+
 ## Usage
 
 ### Basic usage
