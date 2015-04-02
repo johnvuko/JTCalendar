@@ -199,17 +199,18 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     circleView.transform = CGAffineTransformIdentity;
     CGAffineTransform tr = CGAffineTransformIdentity;
     CGFloat opacity = 1.;
+	JTCalendarAppearance *calendarAppearance = self.calendarManager.calendarAppearance;
     
     if(selected){
         if(!self.isOtherMonth){
-            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelected];
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelected];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
+            circleView.color = [calendarAppearance dayCircleColorSelected];
+            textLabel.textColor = [calendarAppearance dayTextColorSelected];
+            dotView.color = [calendarAppearance dayDotColorSelected];
         }
         else{
-            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelectedOtherMonth];
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelectedOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelectedOtherMonth];
+            circleView.color = [calendarAppearance dayCircleColorSelectedOtherMonth];
+            textLabel.textColor = [calendarAppearance dayTextColorSelectedOtherMonth];
+            dotView.color = [calendarAppearance dayDotColorSelectedOtherMonth];
         }
         
         circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -217,27 +218,39 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     }
     else if([self isToday]){
         if(!self.isOtherMonth){
-            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorToday];
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorToday];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorToday];
+            circleView.color = [calendarAppearance dayCircleColorToday];
+            textLabel.textColor = [calendarAppearance dayTextColorToday];
+            dotView.color = [calendarAppearance dayDotColorToday];
         }
         else{
-            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorTodayOtherMonth];
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorTodayOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorTodayOtherMonth];
+            circleView.color = [calendarAppearance dayCircleColorTodayOtherMonth];
+            textLabel.textColor = [calendarAppearance dayTextColorTodayOtherMonth];
+            dotView.color = [calendarAppearance dayDotColorTodayOtherMonth];
         }
     }
     else{
         if(!self.isOtherMonth){
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColor];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColor];
+            textLabel.textColor = [calendarAppearance dayTextColor];
+            dotView.color = [calendarAppearance dayDotColor];
         }
         else{
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorOtherMonth];
+            textLabel.textColor = [calendarAppearance dayTextColorOtherMonth];
+            dotView.color = [calendarAppearance dayDotColorOtherMonth];
         }
-        
-        opacity = 0.;
+
+        if(self.date && calendarAppearance){
+            if(self.isOtherMonth){
+                circleView.color = calendarAppearance.dayCircleColorOtherMonthBlock(self.date, self.calendarManager);
+            }
+            else{
+                circleView.color = calendarAppearance.dayCircleColorBlock(self.date, self.calendarManager);
+            }
+
+            opacity = 1;
+        }
+        else{
+            opacity = 0.;
+        }
     }
     
     if(animated){
