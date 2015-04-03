@@ -90,6 +90,9 @@
         return [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
     };
 
+	self.useDayCircleColorForSelected = NO;
+	self.useCustomDayCircleColor = NO;
+
     self.dayCircleColorBlock = self.dayCircleColorOtherMonthBlock = ^UIColor *(NSDate *date, JTCalendar *jt_calendar){
         return [UIColor clearColor];
     };

@@ -74,6 +74,26 @@ typedef UIColor *(^JTCalendarDayCircleColorBlock)(NSDate *date, JTCalendar *jt_c
 @property (copy, nonatomic) JTCalendarMonthBlock monthBlock;
 
 /**
+ *	A Boolean value indicating whether to use the circle's color set with
+ *	@c dayCircleColorBlock or @c dayCircleColorOtherMonthBlock for the currently selected day.
+ *
+ *	@remarks If set to @c YES, the @c dayCircleColorSelected is ignored.
+ *
+ *	The default value of this property is @c NO.
+ */
+@property (assign, nonatomic) BOOL useDayCircleColorForSelected;
+
+/**
+ *	A Boolean value indicating whether to use the circle's color custom color setter blocks.
+ *
+ *	@see dayCircleColorBlock
+ *	@see dayCircleColorOtherMonthBlock
+ *
+ *	The default value of this property is @c NO.
+ */
+@property (assign, nonatomic) BOOL useCustomDayCircleColor;
+
+/**
  *	A function that is called for every day and should return the color to set as background.
  *
  *	The default value that it returns is @c clearColor.
