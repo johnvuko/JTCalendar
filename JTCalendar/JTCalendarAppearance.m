@@ -76,6 +76,7 @@
         NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;
         NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
         NSInteger currentMonthIndex = comps.month;
+        long currentYearIndex = comps.year;
         
         static NSDateFormatter *dateFormatter;
         if(!dateFormatter){
@@ -87,7 +88,7 @@
             currentMonthIndex += 12;
         }
         
-        return [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
+        return [NSString stringWithFormat:@"%@ %ld", [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString], currentYearIndex];
     };
 }
 
