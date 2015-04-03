@@ -22,7 +22,7 @@ With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
 
 ### Basic usage
 
-You have to create two views in your UIViewController:
+You have to create two views in your `UIViewController`:
 
 - The first view is `JTCalendarMenuView` and it represents the month names.
 - The second view is `JTCalendarContentView` and it represents the calendar itself.
@@ -134,7 +134,7 @@ self.calendar.calendarAppearance.dayTextColorSelected = [UIColor whiteColor];
 [self.calendar reloadAppearance]; // You have to call reloadAppearance
 ```
 
-*Good* example:
+**Good** example:
 ```objective-c
 self.calendar = [JTCalendar new];
 
