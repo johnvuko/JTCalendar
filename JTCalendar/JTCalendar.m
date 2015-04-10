@@ -98,7 +98,7 @@
 
 - (void)setCurrentDate:(NSDate *)currentDate
 {
-    NSAssert(currentDate, @"JTCalendar currentDate cannot be null");
+    NSAssert(currentDate, @"JTCalendar currentDate cannot be nil");
 
     self->_currentDate = currentDate;
     
