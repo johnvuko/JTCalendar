@@ -52,7 +52,7 @@
 
 - (void)setCurrentDate:(NSDate *)currentDate
 {
-    textLabel.text = self.calendarManager.calendarAppearance.monthBlock(currentDate, self.calendarManager);
+    textLabel.text = self.calendarManager.calendarAppearance.monthWithYearBlock(currentDate, self.calendarManager.calendarAppearance.menuMonthWithYear, self.calendarManager);
 }
 
 - (void)layoutSubviews
