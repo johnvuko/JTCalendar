@@ -38,6 +38,7 @@
     self.dayDotRatio = 1. / 9.;
     
     self.menuMonthTextFont = [UIFont systemFontOfSize:17.];
+    self.menuMonthWithYear = NO;
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
     self.dayTextFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 
@@ -72,10 +73,11 @@
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
     self.dayDotColorTodayOtherMonth = self.dayDotColorToday;
     
-    self.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
+    self.monthWithYearBlock = ^NSString *(NSDate *date, BOOL withYear, JTCalendar *jt_calendar){
         NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;
         NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
         NSInteger currentMonthIndex = comps.month;
+        long currentYearIndex = comps.year;
         
         static NSDateFormatter *dateFormatter;
         if(!dateFormatter){
@@ -87,8 +89,9 @@
             currentMonthIndex += 12;
         }
         
-        return [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
+        return (withYear) ? [NSString stringWithFormat:@"%@ %ld", [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString], currentYearIndex] : [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
     };
+    
 }
 
 - (NSCalendar *)calendar

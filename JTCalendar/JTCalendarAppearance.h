@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 };
 
 typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar);
-
+typedef NSString *(^JTCalendarMonthWithYearBlock)(NSDate *date, BOOL withYear, JTCalendar *jt_calendar);
 /**
  *	A Boolean value indicating whether the calendar should show a month or a week.
  *
@@ -38,6 +38,14 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  */
 @property (assign, nonatomic) BOOL focusSelectedDayChangeMode;
 @property (assign, nonatomic) BOOL readFromRightToLeft; // For language read from right to left
+
+
+#pragma mark - Year
+/**
+ *	The default value of this property is NO.
+ */
+@property (assign, nonatomic) BOOL menuMonthWithYear;
+@property (copy, nonatomic) JTCalendarMonthWithYearBlock monthWithYearBlock;
 
 #pragma mark - Month
 
