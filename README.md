@@ -163,9 +163,13 @@ You may also want to open your calendar on a specific date. By default, it is `[
 
 The `currentDate` is used for indicate the month and the week visible. When you change the `currentDate`, the calendar moves to the correct week and month.
 
-The `currentDateSelected` is the last date touched by an user. Currently, the only way to set the `currentDateSelected` is by calling
+The `currentDateSelected` is the last date touched by an user. Currently, the only way (hack) to set the `currentDateSelected` is by calling
 ```objective-c
+// Update views
 [NSNotificationCenter defaultCenter] postNotificationName:@"kJTCalendarDaySelected" object:date];
+
+// Store currentDateSelected
+[self.calendar setCurrentDateSelected:date];
 ```
 
 ### Data cache
