@@ -140,7 +140,7 @@
 }
 
 - (BOOL)calendarIsUsingRangeOfDates {
-    return self.dateRangeDelegate;
+    return (BOOL)self.dateRangeDelegate;
 }
 
 #pragma mark - UIScrollView delegate
