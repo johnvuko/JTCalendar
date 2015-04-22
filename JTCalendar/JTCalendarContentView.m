@@ -114,8 +114,7 @@
         else{
             dayComponent.day = 7 * (i - (NUMBER_PAGES_LOADED / 2));
             
-            NSDate *monthDate = [calendar dateByAddingComponents:dayComponent toDate:self.currentDate options:0];
-            monthDate = [self beginningOfWeek:monthDate];
+            NSDate *monthDate = [self beginningOfWeek:currentDate];
             [monthView setBeginningOfMonth:monthDate];
         }
     }
