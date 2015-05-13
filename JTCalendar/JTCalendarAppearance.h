@@ -98,6 +98,12 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  *	The default value of this property is this blue nuance:
  *	@code [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5] @endcode
  */
+@property (nonatomic) UIColor *dayCircleColorTodaySelected;
+
+/**
+ *	The default value of this property is this blue nuance:
+ *	@code [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5] @endcode
+ */
 @property (nonatomic) UIColor *dayCircleColorToday;
 
 /**
