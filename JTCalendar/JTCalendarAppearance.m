@@ -82,9 +82,9 @@
         static NSDateFormatter *dateFormatter;
         if(!dateFormatter){
             dateFormatter = [NSDateFormatter new];
-            dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
         }
-        
+        dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
+
         while(currentMonthIndex <= 0){
             currentMonthIndex += 12;
         }

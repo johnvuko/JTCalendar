@@ -130,10 +130,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:self.calendarManager.calendarAppearance.dayFormat];
     }
-    
+    dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
+
     self->_date = date;
     
     textLabel.text = [dateFormatter stringFromDate:date];
@@ -295,10 +295,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     }
-    
+    dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
+
     if(!cacheCurrentDateText){
         cacheCurrentDateText = [dateFormatter stringFromDate:self.date];
     }
