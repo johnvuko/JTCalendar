@@ -57,6 +57,7 @@ static NSArray *cacheDaysOfWeeks;
     }
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    dateFormatter.locale = self.calendarManager.calendarAppearance.locale;
     NSMutableArray *days = nil;
     
     switch(self.calendarManager.calendarAppearance.weekDayFormat) {
