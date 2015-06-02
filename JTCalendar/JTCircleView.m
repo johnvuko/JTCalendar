@@ -19,7 +19,7 @@
     }
     
     self.backgroundColor = [UIColor clearColor];
-    self.color = [UIColor whiteColor];
+    self.color = [UIColor clearColor];
     
     return self;
 }

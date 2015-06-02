@@ -20,6 +20,16 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar);
 
 /**
+ *	A function that should return a background color to set for the given date.
+ *
+ *	@param date        The date for which to set the background color.
+ *	@param jt_calendar The calendar that contains the date.
+ *
+ *	@return The color to set as a background.
+ */
+typedef UIColor *(^JTCalendarDayCircleColorBlock)(NSDate *date, JTCalendar *jt_calendar);
+
+/**
  *	A Boolean value indicating whether the calendar should show a month or a week.
  *
  *	The default value of this property is @c NO.
@@ -62,6 +72,40 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  */
 @property (assign, nonatomic) BOOL autoChangeMonth;
 @property (copy, nonatomic) JTCalendarMonthBlock monthBlock;
+
+/**
+ *	A Boolean value indicating whether to use the circle's color set with
+ *	@c dayCircleColorBlock or @c dayCircleColorOtherMonthBlock for the currently selected day.
+ *
+ *	@remarks If set to @c YES, the @c dayCircleColorSelected is ignored.
+ *
+ *	The default value of this property is @c NO.
+ */
+@property (assign, nonatomic) BOOL useDayCircleColorForSelected;
+
+/**
+ *	A Boolean value indicating whether to use the circle's color custom color setter blocks.
+ *
+ *	@see dayCircleColorBlock
+ *	@see dayCircleColorOtherMonthBlock
+ *
+ *	The default value of this property is @c NO.
+ */
+@property (assign, nonatomic) BOOL useCustomDayCircleColor;
+
+/**
+ *	A function that is called for every day and should return the color to set as background.
+ *
+ *	The default value that it returns is @c clearColor.
+ */
+@property (copy, nonatomic) JTCalendarDayCircleColorBlock dayCircleColorBlock;
+
+/**
+ *	A function that is called for every day from the other months and should return the color to set as background.
+ *
+ *	The default value that it returns is @c clearColor.
+ */
+@property (copy, nonatomic) JTCalendarDayCircleColorBlock dayCircleColorOtherMonthBlock;
 
 #pragma mark - Weekday
 
