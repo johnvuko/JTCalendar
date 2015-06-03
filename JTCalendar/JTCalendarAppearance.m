@@ -59,12 +59,14 @@
     self.dayCircleColorSelected = [UIColor redColor];
     self.dayTextColorSelected = [UIColor whiteColor];
     self.dayDotColorSelected = [UIColor whiteColor];
-    
+
     self.dayCircleColorSelectedOtherMonth = self.dayCircleColorSelected;
     self.dayTextColorSelectedOtherMonth = self.dayTextColorSelected;
     self.dayDotColorSelectedOtherMonth = self.dayDotColorSelected;
     
     self.dayCircleColorToday = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
+    self.dayCircleColorTodaySelected = self.dayCircleColorToday;
+
     self.dayTextColorToday = [UIColor whiteColor];
     self.dayDotColorToday = [UIColor whiteColor];
     
@@ -80,9 +82,9 @@
         static NSDateFormatter *dateFormatter;
         if(!dateFormatter){
             dateFormatter = [NSDateFormatter new];
-            dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
         }
-        
+        dateFormatter.timeZone = jt_calendar.calendarAppearance.calendar.timeZone;
+
         while(currentMonthIndex <= 0){
             currentMonthIndex += 12;
         }

@@ -130,10 +130,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:self.calendarManager.calendarAppearance.dayFormat];
     }
-    
+    dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
+
     self->_date = date;
     
     textLabel.text = [dateFormatter stringFromDate:date];
@@ -201,15 +201,19 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     CGFloat opacity = 1.;
     
     if(selected){
-        if(!self.isOtherMonth){
-            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelected];
-            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelected];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
-        }
-        else{
+        if(self.isOtherMonth){
             circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelectedOtherMonth];
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelectedOtherMonth];
             dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelectedOtherMonth];
+        } else if ([self isToday]) {
+            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorTodaySelected];
+            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelected];
+            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
+        }
+        else {
+            circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelected];
+            textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelected];
+            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
         }
         
         circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -291,10 +295,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
         [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     }
-    
+    dateFormatter.timeZone = self.calendarManager.calendarAppearance.calendar.timeZone;
+
     if(!cacheCurrentDateText){
         cacheCurrentDateText = [dateFormatter stringFromDate:self.date];
     }
