@@ -35,5 +35,5 @@ typedef enum : NSUInteger {
 
 @protocol JTCalendarDateRangeDelegate <NSObject>
 @required
-- (void)styleDayBackgroundView:(UIView *)backgroundView forDate:(NSDate *)date inRange:(JTCalendarDateRange)dateRange;
+- (void)styleDayBackgroundView:(UIView *)backgroundView withTextLabel:(UILabel *)text forDate:(NSDate *)date inRange:(JTCalendarDateRange)dateRange;
 @end

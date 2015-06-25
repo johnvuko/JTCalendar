@@ -321,8 +321,10 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = self.calendarManager.calendarAppearance.dayTextFont;
     backgroundView.backgroundColor = self.calendarManager.calendarAppearance.dayBackgroundColor;
-    backgroundView.layer.borderWidth = self.calendarManager.calendarAppearance.dayBorderWidth;
-    backgroundView.layer.borderColor = self.calendarManager.calendarAppearance.dayBorderColor.CGColor;
+    
+    self.layer.borderWidth = self.calendarManager.calendarAppearance.dayBorderWidth;
+    self.layer.borderColor = self.calendarManager.calendarAppearance.dayBorderColor.CGColor;
+    
     [self styleBackgroundForDateRangeIfNeeded];
 
     [self configureConstraintsForSubviews];
@@ -330,7 +332,32 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
 }
 
 - (void)styleBackgroundForDateRangeIfNeeded {
-    JTCalendarDateRange dateRange = [self.calendarManager dateStatusInRange:self.date];
-    [self.calendarManager.dateRangeDelegate styleDayBackgroundView:backgroundView forDate:self.date inRange:dateRange];
+    if (self.calendarManager.calendarIsUsingRangeOfDates) {
+        if (circleView) {
+            [circleView removeFromSuperview];
+            circleView = nil;
+        }
+        if (dotView) {
+            [dotView removeFromSuperview];
+            dotView = nil;
+        }
+        
+        JTCalendarDateRange dateRange = [self.calendarManager dateStatusInRange:self.date];
+        switch (dateRange) {
+            case JTCalendarDateRangeBeginDate:
+                [self setSelected:YES animated:NO];
+                break;
+            case JTCalendarDateRangeEndDate:
+                [self setSelected:YES animated:NO];
+                break;
+            case JTCalendarDateRangeMiddleDate:
+                [self setSelected:YES animated:NO];
+                break;
+            default:
+                [self setSelected:NO animated:NO];
+                break;
+        }
+        [self.calendarManager.dateRangeDelegate styleDayBackgroundView:backgroundView withTextLabel:textLabel forDate:self.date inRange:dateRange];
+    }
 }
 @end

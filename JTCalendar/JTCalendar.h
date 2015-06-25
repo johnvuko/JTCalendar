@@ -43,6 +43,13 @@
 
 - (void)repositionViews;
 
+/**
+ *  Returns the JTCalendarDateRange representing the date in the range
+ *  If range has no startDate, it will consider it as Today
+ *  @param date the date to check in current range
+ *
+ *  @return the JTCalendarDateRange for that date
+ */
 - (JTCalendarDateRange)dateStatusInRange:(NSDate *)date;
 - (BOOL)calendarIsUsingRangeOfDates;
 @end

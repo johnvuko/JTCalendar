@@ -122,8 +122,9 @@
 }
 
 - (JTCalendarDateRange)dateStatusInRange:(NSDate *)date {
-    if ([self calendarIsUsingRangeOfDates] && self.startDateInRange) {
-        return [self date:date isBetweenDate:self.startDateInRange andDate:self.endDateInRange];
+    if ([self calendarIsUsingRangeOfDates]) {
+        NSDate *from = self.startDateInRange ? self.startDateInRange : [NSDate date];
+        return [self date:date isBetweenDate:from andDate:self.endDateInRange];
     } else {
         return JTCalendarDateNoRangeSelected;
     }

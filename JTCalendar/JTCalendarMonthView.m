@@ -89,7 +89,7 @@
     
     CGFloat y = 0;
     CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height / weeksToDisplay;
+    CGFloat height = roundf(self.frame.size.height / weeksToDisplay);
     
     for(int i = 0; i < self.subviews.count; ++i){
         UIView *view = self.subviews[i];
