@@ -7,6 +7,11 @@
 
 #import "AppDelegate.h"
 
+#import "BasicViewController.h"
+#import "CustomViewController.h"
+#import "SelectionViewController.h"
+#import "VerticalViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -15,7 +20,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    
+    UITabBarController *controller = [UITabBarController new];
+    self.window.rootViewController = controller;
+    
+    controller.viewControllers = @[
+                                   [BasicViewController new],
+                                   [CustomViewController new],
+                                   [SelectionViewController new],
+                                   [VerticalViewController new]
+                                   ];
+    
     return YES;
 }
 
