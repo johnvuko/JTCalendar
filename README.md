@@ -198,6 +198,16 @@ If you use `JTVerticalCalendarView` for having a vertical calendar, you have som
 }
 ```
 
+### Internationalization / Localization
+
+For changing the locale and the timeZone just do:
+
+```objective-c
+_calendarManager.dateHelper.calendar.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"CDT"];
+_calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
+[_calendarManager reload]; // Not always needed
+```
+
 ## Requirements
 
 - iOS 7 or higher

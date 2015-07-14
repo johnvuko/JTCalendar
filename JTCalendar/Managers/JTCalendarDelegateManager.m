@@ -44,7 +44,13 @@
         NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
         NSInteger currentMonthIndex = comps.month;
         
-        NSDateFormatter *dateFormatter = [_manager.dateHelper createDateFormatter];
+        static NSDateFormatter *dateFormatter = nil;
+        if(!dateFormatter){
+            dateFormatter = [_manager.dateHelper createDateFormatter];
+        }
+
+        dateFormatter.timeZone = _manager.dateHelper.calendar.timeZone;
+        dateFormatter.locale = _manager.dateHelper.calendar.locale;
         
         while(currentMonthIndex <= 0){
             currentMonthIndex += 12;
