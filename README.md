@@ -19,13 +19,14 @@ With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
 ![Example](./Screens/example.png "Example View")
 
 ### Warning
+
 The part below the calendar in the 2nd screenshot is not provided.
 
 ## Features
 
 - horizontal and verical calendar
 - highly customizable either by subclassing default class provided or by creating your own class implementing a protocol
-- support Internationalization
+- support internationalization
 - week view mode
 - limited range, you can define a start and an end to you calendar
 
@@ -81,15 +82,17 @@ The Example project contains some use cases you may check before asking question
 ### Advanced usage
 
 Even if all methods of `JTCalendarManager` are optional you won't get far without implementing at least the two next methods:
-- `calendar:prepareDayView:` this method is used to customize the design of the day view for a specific date.
+- `calendar:prepareDayView:` this method is used to customize the design of the day view for a specific date. This method is called each time a new date is set in a dayView or each time the current page change. You can force the call to this method by calling `[_calendarManager reload];`.
+
 
 ```objective-c
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
     dayView.hidden = NO;
     
-    // Other month
-    if([dayView isFromAnotherMonth]){
+    // Test if the dayView is from another month than the page
+    // Use only in month mode for indicate the day of the previous or next month
+    if([dayView isFromAnotherMonth]){ 
         dayView.hidden = YES;
     }
     // Today
@@ -113,6 +116,7 @@ Even if all methods of `JTCalendarManager` are optional you won't get far withou
         dayView.textLabel.textColor = [UIColor blackColor];
     }
     
+    // Your method to test if a date have an event for example
     if([self haveEventForDay:dayView.date]){
         dayView.dotView.hidden = NO;
     }
@@ -127,7 +131,18 @@ Even if all methods of `JTCalendarManager` are optional you won't get far withou
 ```objective-c
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
+    // Use to indicate the selected date
     _dateSelected = dayView.date;
+    
+    // Animation for the circleView
+    dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
+    [UIView transitionWithView:dayView
+                      duration:.3
+                       options:0
+                    animations:^{
+                        dayView.circleView.transform = CGAffineTransformIdentity;
+                        [_calendarManager reload];
+                    } completion:nil];
     
     // Load the previous or next page if touch a day from another month
     if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
@@ -162,6 +177,8 @@ For customize the design you have to implement some methods depending of what pa
 For example:
 
 ```objective-c
+// This method is independent from the date, it's call only at the creation of the dayView.
+// For customize the dayView depending of the date use `prepareDayView` method
 - (UIView<JTCalendarDay> *)calendarBuildDayView:(JTCalendarManager *)calendar
 {
     JTCalendarDayView *view = [JTCalendarDayView new];
@@ -169,6 +186,21 @@ For example:
     view.textLabel.textColor = [UIColor blackColor];
     
     return view;
+}
+```
+
+### Pagination
+
+The content views (`JTHorizontalCalendarView` and `JTVerticalCalendarView`) are just subclass of `UIScrollView`.
+Each time the current page change, `calendarDidLoadNextPage` or `calendarDidLoadPreviousPage` is called.
+The content views provide two method for display the previous or next page with an animation `loadNextPageWithAnimation` and `loadPreviousPageWithAnimation`.
+You can limit the range of the calendar by implementing `canDisplayPageWithDate` method.
+
+```objective-c
+// Used to limit the date for the calendar
+- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
+{
+    return [_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
 }
 ```
 
@@ -188,7 +220,7 @@ If you use `JTVerticalCalendarView` for having a vertical calendar, you have som
     _calendarManager.settings.pageViewNumberOfWeeks = 0; // Automatic number of weeks
     
     _weekDayView.manager = _calendarManager; // You set the manager for WeekDaysView
-    [_weekDayView reload]; // You load WeekDaysView
+    [_weekDayView reload]; // You load WeekDaysView manually
 
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
@@ -205,8 +237,28 @@ For changing the locale and the timeZone just do:
 ```objective-c
 _calendarManager.dateHelper.calendar.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"CDT"];
 _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
-[_calendarManager reload]; // Not always needed
+[_calendarManager reload];
 ```
+
+### Date comparaison
+
+Be careful when you compare two different dates, you have to take care of the tme zone.
+An helper is provided for some basic operations:
+
+```objective-c
+[_calendarManager.dateHelper date:dateA isTheSameMonthThan:dateB];
+[_calendarManager.dateHelper date:dateA isTheSameWeekThan:dateB];
+[_calendarManager.dateHelper date:dateA isTheSameDayThan:dateB];
+
+// Use to limit the calendar range
+[_calendarManager.dateHelper date:date isEqualOrAfter:minDate andEqualOrBefore:maxDate];
+
+```
+
+## Questions
+
+Before asking any questions be sure to explore the Example project.
+Check also [JTCalendarDelegate](JTCalendar/JTCalendarDelegate.h) and [JTCalendarSettings](JTCalendar/JTCalendarSettings.h) files.
 
 ## Requirements
 

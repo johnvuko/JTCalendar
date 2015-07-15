@@ -158,18 +158,18 @@
     return componentsA.year == componentsB.year && componentsA.month == componentsB.month && componentsA.day == componentsB.day;
 }
 
-- (BOOL)date:(NSDate *)dateA isBefore:(NSDate *)dateB
+- (BOOL)date:(NSDate *)dateA isEqualOrBefore:(NSDate *)dateB
 {
-    if([dateA compare:dateB] == NSOrderedAscending){
+    if([dateA compare:dateB] == NSOrderedAscending || [self date:dateA isTheSameDayThan:dateB]){
         return YES;
     }
     
     return NO;
 }
 
-- (BOOL)date:(NSDate *)dateA isAfter:(NSDate *)dateB
+- (BOOL)date:(NSDate *)dateA isEqualOrAfter:(NSDate *)dateB
 {
-    if([dateA compare:dateB] == NSOrderedDescending){
+    if([dateA compare:dateB] == NSOrderedDescending || [self date:dateA isTheSameDayThan:dateB]){
         return YES;
     }
     
@@ -178,7 +178,7 @@
 
 - (BOOL)date:(NSDate *)date isEqualOrAfter:(NSDate *)startDate andEqualOrBefore:(NSDate *)endDate
 {
-    if(([self date:date isAfter:startDate] || [self date:date isTheSameDayThan:startDate]) && ([self date:date isBefore:endDate] || [self date:date isTheSameDayThan:endDate])){
+    if([self date:date isEqualOrAfter:startDate] && [self date:date isEqualOrBefore:endDate]){
         return YES;
     }
     

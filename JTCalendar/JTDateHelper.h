@@ -16,7 +16,7 @@
 - (NSDate *)addToDate:(NSDate *)date weeks:(NSInteger)weeks;
 - (NSDate *)addToDate:(NSDate *)date days:(NSInteger)days;
 
-// Must be less or equalt to 6
+// Must be less or equal to 6
 - (NSUInteger)numberOfWeeks:(NSDate *)date;
 
 - (NSDate *)firstDayOfMonth:(NSDate *)date;
@@ -27,6 +27,8 @@
 - (BOOL)date:(NSDate *)dateA isTheSameWeekThan:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)dateA isTheSameDayThan:(NSDate *)dateB;
 
+- (BOOL)date:(NSDate *)dateA isEqualOrBefore:(NSDate *)dateB;
+- (BOOL)date:(NSDate *)dateA isEqualOrAfter:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)date isEqualOrAfter:(NSDate *)startDate andEqualOrBefore:(NSDate *)endDate;
 
 @end

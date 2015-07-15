@@ -225,7 +225,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
             break;
     }
     
-    // Update subviews
+    // Update dayViews becuase current month changed
     [_rightView reload];
     [_centerView reload];
     
@@ -304,7 +304,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
             break;
     }
     
-    // Update subviews
+    // Update dayViews becuase current month changed
     [_leftView reload];
     [_centerView reload];
     
