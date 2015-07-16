@@ -255,6 +255,13 @@ An helper is provided for some basic operations:
 
 ```
 
+### Optimization
+
+Every methods in the delegate are called in the main thread, you have to be really careful, in particular in the `prepareDayView` method which is called very often.
+
+If you have to fetch some data from something slow, I recommend to create a cache and query this cache in `prepareDayView` method.
+You have to cache the data from the next pages and update this cache asynchronously (in another thread via `dispatch_async`) when a new page is loaded (via `calendarDidLoadNextPage` and `calendarDidLoadPreviousPage` methods).
+
 ## Questions
 
 Before asking any questions be sure to explore the Example project.
