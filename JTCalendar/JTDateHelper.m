@@ -114,7 +114,7 @@
     componentsNewDate.month = componentsCurrentDate.month;
     componentsNewDate.weekOfMonth = 1;
     componentsNewDate.weekday = self.calendar.firstWeekday;
-    
+
     return [self.calendar dateFromComponents:componentsNewDate];
 }
 
@@ -138,7 +138,7 @@
 {
     NSDateComponents *componentsA = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:dateA];
     NSDateComponents *componentsB = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:dateB];
-    
+
     return componentsA.year == componentsB.year && componentsA.month == componentsB.month;
 }
 

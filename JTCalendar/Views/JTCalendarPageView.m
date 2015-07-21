@@ -104,11 +104,11 @@
         weekView.hidden = NO;
         
         // Process the check on another month for the 1st, 4th and 5th weeks
-        if(i == 0 || i == 4 || i == 5){
+        if(i == 0 || i >= 4){
             [weekView setStartDate:weekDate updateAnotherMonth:YES monthDate:_date];
         }
         else{
-            [weekView setStartDate:weekDate updateAnotherMonth:NO monthDate:nil];
+            [weekView setStartDate:weekDate updateAnotherMonth:NO monthDate:_date];
         }
         
         weekDate = [_manager.dateHelper addToDate:weekDate weeks:1];

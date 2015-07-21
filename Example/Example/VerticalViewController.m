@@ -58,7 +58,9 @@
 // Used to customize the appearance of dayView
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
-    // Other month
+    dayView.hidden = NO;
+    
+    // Hide if from another month
     if([dayView isFromAnotherMonth]){
         dayView.hidden = YES;
     }

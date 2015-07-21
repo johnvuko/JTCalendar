@@ -52,6 +52,9 @@
 {
     NSAssert(startDate != nil, @"startDate cannot be nil");
     NSAssert(_manager != nil, @"manager cannot be nil");
+    if(enable){
+        NSAssert(monthDate != nil, @"monthDate cannot be nil");
+    }
     
     self->_startDate = startDate;
     
