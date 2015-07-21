@@ -107,6 +107,9 @@
 - (NSDate *)firstWeekDayOfMonth:(NSDate *)date
 {
     NSDateComponents *componentsCurrentDate = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitWeekOfMonth fromDate:date];
+
+    // Very important
+    componentsCurrentDate.weekday = self.calendar.firstWeekday;
     
     NSDateComponents *componentsNewDate = [NSDateComponents new];
     
