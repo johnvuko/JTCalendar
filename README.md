@@ -161,7 +161,7 @@ Even if all methods of `JTCalendarManager` are optional you won't get far withou
 If you want see just one week at a time, you have to set the `isWeekMode` to `YES` and reload the calendar.
 
 ```objective-c
-_calendarManager.settings.weekModeEnalbed = = YES;
+_calendarManager.settings.weekModeEnabled = YES;
 [_calendarManager reload];
 ```
 
