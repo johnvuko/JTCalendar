@@ -90,7 +90,7 @@
         return [_manager.delegate calendar:self.manager dateForPreviousPageWithCurrentDate:currentDate];
     }
     
-    if(_manager.settings.weekModeEnalbed){
+    if(_manager.settings.weekModeEnabled){
         return [_manager.dateHelper addToDate:currentDate weeks:-1];
     }
     else{
@@ -106,7 +106,7 @@
         return [_manager.delegate calendar:self.manager dateForNextPageWithCurrentDate:currentDate];
     }
     
-    if(_manager.settings.weekModeEnalbed){
+    if(_manager.settings.weekModeEnabled){
         return [_manager.dateHelper addToDate:currentDate weeks:1];
     }
     else{

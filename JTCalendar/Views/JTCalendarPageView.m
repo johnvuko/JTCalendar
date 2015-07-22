@@ -84,7 +84,7 @@
     
     NSDate *weekDate = nil;
     
-    if(_manager.settings.weekModeEnalbed){
+    if(_manager.settings.weekModeEnabled){
         _numberOfWeeksDisplayed = 1;
         
         weekDate = [_manager.dateHelper firstWeekDayOfWeek:_date];

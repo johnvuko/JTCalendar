@@ -61,11 +61,11 @@
 
 - (IBAction)didChangeModeTouch
 {
-    _calendarManager.settings.weekModeEnalbed = !_calendarManager.settings.weekModeEnalbed;
+    _calendarManager.settings.weekModeEnabled = !_calendarManager.settings.weekModeEnabled;
     [_calendarManager reload];
     
     CGFloat newHeight = 300;
-    if(_calendarManager.settings.weekModeEnalbed){
+    if(_calendarManager.settings.weekModeEnabled){
         newHeight = 85.;
     }
     
