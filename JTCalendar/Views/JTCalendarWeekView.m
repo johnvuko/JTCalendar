@@ -13,6 +13,7 @@
 
 @interface JTCalendarWeekView (){
     NSMutableArray *_daysViews;
+    UIView<JTCalendarDay> *_weekNumberView;
 }
 
 @end
@@ -66,6 +67,10 @@
 {
     NSDate *dayDate = _startDate;
     
+    if (_manager.settings.weekNumber) {
+        _weekNumberView.date = dayDate;
+    }
+    
     for(UIView<JTCalendarDay> *dayView in _daysViews){
         // Must done before setDate to dayView for `prepareDayView` method
         if(!enable){
@@ -88,6 +93,13 @@
 - (void)createDayViews
 {
     if(!_daysViews){
+        
+        if (_manager.settings.weekNumber) {
+            _weekNumberView = [_manager.delegateManager buildWeekNumberView];
+            _weekNumberView.manager = _manager;
+            [self addSubview:_weekNumberView];
+        }
+        
         _daysViews = [NSMutableArray new];
         
         for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
@@ -106,9 +118,20 @@
         return;
     }
     
+    int numberOfDays = NUMBER_OF_DAY_BY_WEEK;
+    
+    if (_manager.settings.weekNumber) {
+        numberOfDays ++;
+    }
+    
     CGFloat x = 0;
-    CGFloat dayWidth = self.frame.size.width / NUMBER_OF_DAY_BY_WEEK;
+    CGFloat dayWidth = self.frame.size.width / numberOfDays;
     CGFloat dayHeight = self.frame.size.height;
+    
+    if (_manager.settings.weekNumber) {
+        _weekNumberView.frame = CGRectMake(x, 0, dayWidth, dayHeight);
+        x += dayWidth;
+    }
     
     for(UIView *dayView in _daysViews){
         dayView.frame = CGRectMake(x, 0, dayWidth, dayHeight);

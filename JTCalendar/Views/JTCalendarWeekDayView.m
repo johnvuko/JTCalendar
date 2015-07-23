@@ -41,6 +41,16 @@
 {
     NSMutableArray *dayViews = [NSMutableArray new];
     
+    if (_manager.settings.weekNumber) {
+        UILabel *label = [UILabel new];
+        [self addSubview:label];
+        _weekNumberView = label;
+        
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
+        label.font = [UIFont systemFontOfSize:11];
+    }
+    
     for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
         UILabel *label = [UILabel new];
         [self addSubview:label];
@@ -105,9 +115,21 @@
         return;
     }
     
+    int numberOfDays = NUMBER_OF_DAY_BY_WEEK;
+    
+    if (_manager.settings.weekNumber) {
+        numberOfDays ++;
+    }
+    
     CGFloat x = 0;
-    CGFloat dayWidth = self.frame.size.width / NUMBER_OF_DAY_BY_WEEK;
+    CGFloat dayWidth = self.frame.size.width / numberOfDays;
     CGFloat dayHeight = self.frame.size.height;
+    
+    if (_manager.settings.weekNumber) {
+        _weekNumberView.frame = CGRectMake(x, 0, dayWidth, dayHeight);
+        x += dayWidth;
+
+    }
     
     for(UIView *dayView in _dayViews){
         dayView.frame = CGRectMake(x, 0, dayWidth, dayHeight);

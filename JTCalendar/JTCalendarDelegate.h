@@ -99,6 +99,13 @@
 - (UIView<JTCalendarDay> *)calendarBuildDayView:(JTCalendarManager *)calendar;
 
 
+/*!
+ * Provide a view conforming to `JTCalendarDay` protocol.
+ * Return an instance of `JTCalendarDayView` by default.
+ */
+- (UIView<JTCalendarDay> *)calendarBuildWeekNumberView:(JTCalendarManager *)calendar;
+
+
 // Day view
 
 
@@ -111,5 +118,16 @@
  * Indicate the dayView just get touched.
  */
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(UIView<JTCalendarDay> *)dayView;
+
+
+/*!
+ * Used to customize the dayView.
+ */
+- (void)calendar:(JTCalendarManager *)calendar prepareWeekNumberView:(UIView<JTCalendarDay> *)weekNumberView;
+
+/*!
+ * Indicate the dayView just get touched.
+ */
+- (void)calendar:(JTCalendarManager *)calendar didTouchWeekNumberView:(UIView<JTCalendarDay> *)weekNumberView;
 
 @end

@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 @property (nonatomic) BOOL pageViewHideWhenPossible;
 @property (nonatomic) BOOL weekModeEnabled;
 
+@property (nonatomic) BOOL weekNumber;
+
 
 // Page view
 

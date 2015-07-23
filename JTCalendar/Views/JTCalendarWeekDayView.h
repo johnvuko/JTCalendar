@@ -14,6 +14,7 @@
 @property (nonatomic, weak) JTCalendarManager *manager;
 
 @property (nonatomic, readonly) NSArray *dayViews;
+@property (nonatomic, readonly) UILabel *weekNumberView;
 
 /*!
  * Must be call if override the class
