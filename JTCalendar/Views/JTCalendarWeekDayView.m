@@ -46,6 +46,10 @@
         [self addSubview:label];
         [dayViews addObject:label];
         
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
+        [label addGestureRecognizer:tap];
+        label.userInteractionEnabled = YES;
+        
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
         label.font = [UIFont systemFontOfSize:11];
@@ -96,7 +100,12 @@
     for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
         UILabel *label =  _dayViews[i];
         label.text = days[i];
+        [_manager.delegateManager prepareWeekDayView:label];
     }
+}
+
+- (void) didTap:(UITapGestureRecognizer *) recongnizer {
+    [_manager.delegateManager didTouchWeekDayView:recongnizer.view];
 }
 
 - (void)layoutSubviews

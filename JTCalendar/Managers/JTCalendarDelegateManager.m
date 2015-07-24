@@ -145,6 +145,23 @@
     return [JTCalendarDayView new];
 }
 
+#pragma mark - Week day view
+
+- (void)prepareWeekDayView:(UIView *)weekdayView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareWeekDayView:)]){
+        [_manager.delegate calendar:self.manager prepareWeekDayView:weekdayView];
+    }
+}
+
+- (void)didTouchWeekDayView:(UIView *)weekdayView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:didTouchWeekDayView:)]){
+        [_manager.delegate calendar:self.manager didTouchWeekDayView:weekdayView];
+    }
+}
+
+
 #pragma mark - Day view
 
 - (void)prepareDayView:(UIView<JTCalendarDay> *)dayView

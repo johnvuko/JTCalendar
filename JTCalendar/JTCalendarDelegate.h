@@ -82,6 +82,9 @@
  */
 - (UIView<JTCalendarWeekDay> *)calendarBuildWeekDayView:(JTCalendarManager *)calendar;
 
+- (void)calendar:(JTCalendarManager *)calendar prepareWeekDayView:(UIView *)weekdayView;
+- (void)calendar:(JTCalendarManager *)calendar didTouchWeekDayView:(UIView *)weekdayView;
+
 /*!
  * Provide a view conforming to `JTCalendarWeek` protocol.
  * Return an instance of `JTCalendarWeekView` by default.

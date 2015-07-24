@@ -141,6 +141,10 @@
     }
 }
 
+- (void) calendar:(JTCalendarManager *)calendar didTouchWeekDayView:(UIView *)weekdayView {
+    NSLog(@"%@", weekdayView);
+}
+
 #pragma mark - CalendarManager delegate - Page mangement
 
 // Used to limit the date for the calendar, optional
