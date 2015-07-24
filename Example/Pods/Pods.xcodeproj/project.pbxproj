@@ -27,6 +27,7 @@
 		6E6B4735427D9DE057ACA947 /* JTCalendarScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 837230946C9C46E9D592152F /* JTCalendarScrollManager.m */; };
 		6E9235BFD8F4362E8995BD6F /* JTCalendarPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EC77A1AF2B2F88E04EEB4AB /* JTCalendarPage.h */; };
 		708A4890B35EB9148538DA60 /* JTCalendarDayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 87121E4F054A873D16671082 /* JTCalendarDayView.h */; };
+		7C98FD9B1B60B0FE0002707B /* JTCalendarWeekNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C98FD9A1B60B0FE0002707B /* JTCalendarWeekNumberView.m */; };
 		7D78FCAF6FFB94273EFE9681 /* JTHorizontalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E4F93A7AEAD6D9D60F93 /* JTHorizontalCalendarView.m */; };
 		8F6B6EEEA76B790B0BECE205 /* Pods-JTCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5DC245EDA9760EDF225A1A /* Pods-JTCalendar-dummy.m */; };
 		9BD0F9C535FB6FDECDB6CD7A /* JTCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7F25B5D91DDE7202AFBD7 /* JTCalendarWeekDayView.m */; };
@@ -72,6 +73,8 @@
 		5B12459D667FDC3D9C753E68 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		6CC7F25B5D91DDE7202AFBD7 /* JTCalendarWeekDayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekDayView.m; sourceTree = "<group>"; };
 		7728F46D4B561F1741D21CD2 /* JTVerticalCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTVerticalCalendarView.h; sourceTree = "<group>"; };
+		7C98FD991B60B0FE0002707B /* JTCalendarWeekNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekNumberView.h; sourceTree = "<group>"; };
+		7C98FD9A1B60B0FE0002707B /* JTCalendarWeekNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekNumberView.m; sourceTree = "<group>"; };
 		7EC77A1AF2B2F88E04EEB4AB /* JTCalendarPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarPage.h; sourceTree = "<group>"; };
 		7EF51380491D008D5FFFCC9A /* JTContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTContent.h; sourceTree = "<group>"; };
 		837230946C9C46E9D592152F /* JTCalendarScrollManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarScrollManager.m; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				2485E4F93A7AEAD6D9D60F93 /* JTHorizontalCalendarView.m */,
 				7728F46D4B561F1741D21CD2 /* JTVerticalCalendarView.h */,
 				E63600F546283EA29DC17612 /* JTVerticalCalendarView.m */,
+				7C98FD991B60B0FE0002707B /* JTCalendarWeekNumberView.h */,
+				7C98FD9A1B60B0FE0002707B /* JTCalendarWeekNumberView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F121133B93355085A69C04 /* Pods-dummy.m in Sources */,
+				7C98FD9B1B60B0FE0002707B /* JTCalendarWeekNumberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #import "JTCalendarWeekDayView.h"
 #import "JTCalendarWeekView.h"
 #import "JTCalendarDayView.h"
+#import "JTCalendarWeekNumberView.h"
 
 @implementation JTCalendarDelegateManager
 
@@ -145,6 +146,15 @@
     return [JTCalendarDayView new];
 }
 
+- (UIView<JTCalendarDay> *)buildWeekNumberView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarBuildWeekNumberView:)]){
+        return [_manager.delegate calendarBuildWeekNumberView:self.manager];
+    }
+    
+    return [JTCalendarWeekNumberView new];
+}
+
 #pragma mark - Day view
 
 - (void)prepareDayView:(UIView<JTCalendarDay> *)dayView
@@ -160,5 +170,22 @@
         [_manager.delegate calendar:self.manager didTouchDayView:dayView];
     }
 }
+
+#pragma mark - Week number view
+
+- (void)prepareWeekNumberView:(UIView<JTCalendarDay> *)weekNumberView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareWeekNumberView:)]){
+        [_manager.delegate calendar:self.manager prepareWeekNumberView:weekNumberView];
+    }
+}
+
+- (void)didTouchWeekNumberView:(UIView<JTCalendarDay> *)weekNumberView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:didTouchWeekNumberView:)]){
+        [_manager.delegate calendar:self.manager didTouchWeekNumberView:weekNumberView];
+    }
+}
+
 
 @end
