@@ -80,6 +80,10 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if(_scrollView.contentSize.width <= 0){
+        return;
+    }
+
     [_manager.scrollManager updateHorizontalContentOffset:(_scrollView.contentOffset.x / _scrollView.contentSize.width)];
 }
 

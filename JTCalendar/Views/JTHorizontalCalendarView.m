@@ -89,6 +89,10 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
 - (void)viewDidScroll
 {
+    if(self.contentSize.width <= 0){
+        return;
+    }
+
     CGSize size = self.frame.size;
     
     switch (_pageMode) {
