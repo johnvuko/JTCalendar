@@ -106,19 +106,8 @@
 
 - (NSDate *)firstWeekDayOfMonth:(NSDate *)date
 {
-    NSDateComponents *componentsCurrentDate = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitWeekOfMonth fromDate:date];
-
-    // Very important
-    componentsCurrentDate.weekday = self.calendar.firstWeekday;
-    
-    NSDateComponents *componentsNewDate = [NSDateComponents new];
-    
-    componentsNewDate.year = componentsCurrentDate.year;
-    componentsNewDate.month = componentsCurrentDate.month;
-    componentsNewDate.weekOfMonth = 1;
-    componentsNewDate.weekday = self.calendar.firstWeekday;
-
-    return [self.calendar dateFromComponents:componentsNewDate];
+    NSDate *firstDayOfMonth = [self firstDayOfMonth:date];
+    return [self firstWeekDayOfWeek:firstDayOfMonth];
 }
 
 - (NSDate *)firstWeekDayOfWeek:(NSDate *)date

@@ -46,7 +46,7 @@
     
     // Create a min and max date for limit the calendar, optional
     [self createMinAndMaxDate];
-        
+    
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:_todayDate];
