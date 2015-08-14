@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 // Must be less or equalt to 6, 0 for automatic
 @property (nonatomic) NSUInteger pageViewNumberOfWeeks;
 @property (nonatomic) BOOL pageViewHaveWeekDaysView;
-
+@property (nonatomic) NSUInteger pageViewWeekModeNumberOfWeeks;
 
 // WeekDay view
 

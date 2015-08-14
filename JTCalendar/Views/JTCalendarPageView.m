@@ -85,8 +85,7 @@
     NSDate *weekDate = nil;
     
     if(_manager.settings.weekModeEnabled){
-        _numberOfWeeksDisplayed = 1;
-        
+        _numberOfWeeksDisplayed = MIN(MAX(_manager.settings.pageViewWeekModeNumberOfWeeks, 1), MAX_WEEKS_BY_MONTH);
         weekDate = [_manager.dateHelper firstWeekDayOfWeek:_date];
     }
     else{
