@@ -395,6 +395,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 - (void)repositionViews
 {
     CGSize size = self.frame.size;
+    self.contentInset = UIEdgeInsetsZero;
     
     switch (_pageMode) {
         case JTCalendarPageModeFull:
