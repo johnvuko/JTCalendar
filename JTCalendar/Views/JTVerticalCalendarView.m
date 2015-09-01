@@ -290,7 +290,9 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
             _centerView.frame = CGRectMake(0, size.height, size.width, size.height);
             _rightView.frame = CGRectMake(0, size.height * 2, size.width, size.height);
             
-            self.contentOffset = CGPointMake(0, self.contentOffset.y - size.height);
+            if(previousPageMode != JTCalendarPageModeCenterRight){
+//                self.contentOffset = CGPointMake(0, self.contentOffset.x - size.width);
+            }
             
             // Must be set a the end else the scroll freeze
             self.contentSize = CGSizeMake(size.width, size.height * 2);
