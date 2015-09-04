@@ -16,7 +16,13 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     JTCalendarPageModeCenterRight
 };
 
-@interface JTHorizontalCalendarView (){
+typedef NS_ENUM(NSInteger, JTCalendarScrollingDirection) {
+    JTCalendarScrollingDirectionNone = 0,
+    JTCalendarScrollingDirectionPrevious,
+    JTCalendarScrollingDirectionNext
+};
+
+@interface JTHorizontalCalendarView () <UIScrollViewDelegate> {
     CGSize _lastSize;
     
     UIView<JTCalendarPage> *_leftView;
@@ -25,6 +31,11 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     
     JTCalendarPageMode _pageMode;
 }
+
+// This class needs to hook into some of the UIScrollViewDelegate methods, so after it does that it will forward the messages on to the external delegate.
+@property (nonatomic, weak) id<UIScrollViewDelegate> externalDelegate;
+@property (nonatomic, assign) BOOL animatingOffset;
+@property (nonatomic, assign) JTCalendarScrollingDirection scrollingDirection;
 
 @end
 
@@ -60,7 +71,23 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     self.showsVerticalScrollIndicator = NO;
     self.pagingEnabled = YES;
     self.clipsToBounds = YES;
+    // Deliberately using super here to avoid the overridden setter
+    [super setDelegate:self];
 }
+
+#pragma mark - Properties
+
+- (void)setDelegate:(id<UIScrollViewDelegate>)delegate
+{
+    self.externalDelegate = delegate;
+}
+
+- (BOOL)scrolling
+{
+    return self.dragging || self.decelerating || self.animatingOffset;
+}
+
+#pragma mark -
 
 - (void)layoutSubviews
 {
@@ -232,6 +259,8 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     // Update dayViews becuase current month changed
     [_rightView reload];
     [_centerView reload];
+
+    self.scrollingDirection = JTCalendarScrollingDirectionPrevious;
     
     if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarDidLoadPreviousPage:)]){
         [_manager.delegate calendarDidLoadPreviousPage:_manager];
@@ -313,7 +342,9 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     // Update dayViews becuase current month changed
     [_leftView reload];
     [_centerView reload];
-    
+
+    self.scrollingDirection = JTCalendarScrollingDirectionNext;
+
     if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarDidLoadNextPage:)]){
         [_manager.delegate calendarDidLoadNextPage:_manager];
     }
@@ -444,6 +475,65 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     [_manager.scrollManager setMenuPreviousDate:_leftView.date
                                     currentDate:_centerView.date
                                        nextDate:_rightView.date];
+}
+
+#pragma mark - UIScrollView
+
+- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
+{
+    if(animated){
+        self.animatingOffset = YES;
+    }
+    [super setContentOffset:contentOffset animated:animated];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if(!decelerate){
+        [self notifyEndOfScrolling];
+    }
+
+    if(self.externalDelegate){
+        [self.externalDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self notifyEndOfScrolling];
+
+    if(self.externalDelegate){
+        [self.externalDelegate scrollViewDidEndDecelerating:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self notifyEndOfScrolling];
+
+    if(self.externalDelegate){
+        [self.externalDelegate scrollViewDidEndScrollingAnimation:scrollView];
+    }
+}
+
+/**
+ *  Private helper for the above delegate methods
+ */
+- (void)notifyEndOfScrolling
+{
+    if(_manager.delegate){
+        if(self.scrollingDirection == JTCalendarScrollingDirectionPrevious && [_manager.delegate respondsToSelector:@selector(calendarDidFinishScrollingToPreviousPage:)]){
+            [_manager.delegate calendarDidFinishScrollingToPreviousPage:_manager];
+        }
+        else if(self.scrollingDirection == JTCalendarScrollingDirectionNext && [_manager.delegate respondsToSelector:@selector(calendarDidFinishScrollingToNextPage:)]){
+            [_manager.delegate calendarDidFinishScrollingToNextPage:_manager];
+        }
+    }
+
+    self.animatingOffset = NO;
+    self.scrollingDirection = JTCalendarScrollingDirectionNone;
 }
 
 @end

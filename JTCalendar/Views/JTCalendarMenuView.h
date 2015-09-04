@@ -17,6 +17,8 @@
 
 @property (nonatomic, readonly) UIScrollView *scrollView;
 
+@property (nonatomic, assign, readonly) BOOL scrolling;
+
 /*!
  * Must be call if override the class
  */

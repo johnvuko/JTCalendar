@@ -78,6 +78,15 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     [self resizeViewsIfWidthChanged];
 }
 
+#pragma mark - Properties
+
+- (BOOL)scrolling
+{
+    return self.scrollView.dragging || self.scrollView.decelerating;
+}
+
+#pragma mark - UIScrollViewDelegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if(_scrollView.contentSize.width <= 0){
@@ -86,6 +95,25 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
     [_manager.scrollManager updateHorizontalContentOffset:(_scrollView.contentOffset.x / _scrollView.contentSize.width)];
 }
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if(!decelerate){
+        [_manager.scrollManager endDragging];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [_manager.scrollManager endDecelerating];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [_manager.scrollManager endHorizontalScrollingAnimation];
+}
+
+#pragma mark -
 
 - (void)resizeViewsIfWidthChanged
 {
