@@ -112,4 +112,9 @@
  */
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(UIView<JTCalendarDay> *)dayView;
 
+/*!
+ * Indicate the dayView just get double tapped.
+ */
+- (void)calendar:(JTCalendarManager *)calendar didDoubleTapDayView:(UIView<JTCalendarDay> *)dayView;
+
 @end
