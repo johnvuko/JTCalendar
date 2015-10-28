@@ -139,7 +139,10 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     }
     
     CGSize size = self.frame.size;
-    CGPoint point = CGPointMake(self.contentOffset.x - size.width, 0);
+    CGFloat x = self.contentOffset.x - size.width;
+    x -= (fmod(x, size.width));
+    CGPoint point = CGPointMake(x, 0);
+    
     [self setContentOffset:point animated:YES];
 }
 
@@ -154,7 +157,10 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     }
     
     CGSize size = self.frame.size;
-    CGPoint point = CGPointMake(self.contentOffset.x + size.width, 0);
+    CGFloat x = self.contentOffset.x + size.width;
+    x -= (fmod(x, size.width));
+    CGPoint point = CGPointMake(x, 0);
+    
     [self setContentOffset:point animated:YES];
 }
 
