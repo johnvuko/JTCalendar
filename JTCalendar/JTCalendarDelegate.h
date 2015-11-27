@@ -32,7 +32,7 @@
  * Used to customize the menuItemView.
  * Set text attribute to the name of the month by default.
  */
-- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date;
+- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date itemIndex:(NSUInteger)index;
 
 
 // Content view

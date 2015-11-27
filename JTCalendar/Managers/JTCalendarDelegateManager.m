@@ -30,10 +30,10 @@
     return label;
 }
 
-- (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date
+- (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date itemIndex:(NSUInteger)index
 {
-    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareMenuItemView:date:)]){
-        [_manager.delegate calendar:self.manager prepareMenuItemView:menuItemView date:date];
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareMenuItemView:date:itemIndex:)]){
+        [_manager.delegate calendar:self.manager prepareMenuItemView:menuItemView date:date itemIndex:index];
         return;
     }
     

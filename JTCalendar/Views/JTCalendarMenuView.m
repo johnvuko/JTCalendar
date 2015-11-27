@@ -181,9 +181,9 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
         [_scrollView addSubview:_rightView];
     }
     
-    [_manager.delegateManager prepareMenuItemView:_leftView date:previousDate];
-    [_manager.delegateManager prepareMenuItemView:_centerView date:currentDate];
-    [_manager.delegateManager prepareMenuItemView:_rightView date:nextDate];
+    [_manager.delegateManager prepareMenuItemView:_leftView date:previousDate itemIndex:0];
+    [_manager.delegateManager prepareMenuItemView:_centerView date:currentDate itemIndex:1];
+    [_manager.delegateManager prepareMenuItemView:_rightView date:nextDate itemIndex:2];
     
     BOOL haveLeftPage = [_manager.delegateManager canDisplayPageWithDate:previousDate];
     BOOL haveRightPage = [_manager.delegateManager canDisplayPageWithDate:nextDate];
