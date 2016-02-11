@@ -22,4 +22,6 @@
 - (void)loadPreviousPageWithAnimation;
 - (void)loadNextPageWithAnimation;
 
+- (void)reloadPageViews;
+
 @end
