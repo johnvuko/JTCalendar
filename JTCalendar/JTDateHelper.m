@@ -74,14 +74,6 @@
     NSDateComponents *componentsB = [self.calendar components:NSCalendarUnitWeekOfYear fromDate:lastDay];
     
     // weekOfYear may return 53 for the first week of the year
-    // hack
-    if(componentsB.weekOfYear == 53){
-        componentsB.weekOfYear = 0;
-    }
-    if(componentsA.weekOfYear == 53){
-        componentsA.weekOfYear = 0;
-    }
-    
     return (componentsB.weekOfYear - componentsA.weekOfYear + 52 + 1) % 52;
 }
 
