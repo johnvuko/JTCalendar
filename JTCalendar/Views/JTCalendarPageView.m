@@ -122,6 +122,8 @@
 
 - (void)layoutSubviews
 {    
+    [super layoutSubviews];
+    
     if(!_weeksViews){
         return;
     }

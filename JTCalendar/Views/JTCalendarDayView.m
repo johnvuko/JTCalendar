@@ -83,6 +83,8 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     _textLabel.frame = self.bounds;
     
     CGFloat sizeCircle = MIN(self.frame.size.width, self.frame.size.height);
