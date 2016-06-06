@@ -75,6 +75,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
     [self resizeViewsIfWidthChanged];
 }
 
