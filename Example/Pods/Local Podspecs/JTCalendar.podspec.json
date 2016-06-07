@@ -1,6 +1,6 @@
 {
   "name": "JTCalendar",
-  "version": "2.1.1",
+  "version": "2.1.5",
   "summary": "A customizable calendar view for iOS.",
   "homepage": "https://github.com/jonathantribouharet/JTCalendar",
   "license": {
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/jonathantribouharet/JTCalendar.git",
-    "tag": "2.1.1"
+    "tag": "2.1.5"
   },
   "source_files": "JTCalendar/**/*",
   "requires_arc": true,

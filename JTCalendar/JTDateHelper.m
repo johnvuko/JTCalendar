@@ -73,8 +73,8 @@
     NSDateComponents *componentsA = [self.calendar components:NSCalendarUnitWeekOfYear fromDate:firstDay];
     NSDateComponents *componentsB = [self.calendar components:NSCalendarUnitWeekOfYear fromDate:lastDay];
     
-    // Avoid bug at the end of the year
-    return (componentsB.weekOfYear - componentsA.weekOfYear + 1 + 52) % 52;
+    // weekOfYear may return 53 for the first week of the year
+    return (componentsB.weekOfYear - componentsA.weekOfYear + 52 + 1) % 52;
 }
 
 - (NSDate *)firstDayOfMonth:(NSDate *)date

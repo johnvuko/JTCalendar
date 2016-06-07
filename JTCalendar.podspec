@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JTCalendar"
-  s.version      = "2.1.1"
+  s.version      = "2.1.7"
   s.summary      = "A customizable calendar view for iOS."
   s.homepage     = "https://github.com/jonathantribouharet/JTCalendar"
   s.license      = { :type => 'MIT' }

@@ -102,6 +102,8 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     if(!_daysViews){
         return;
     }

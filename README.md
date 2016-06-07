@@ -267,6 +267,14 @@ You have to cache the data from the next pages and update this cache asynchronou
 Before asking any questions be sure to explore the Example project.
 Check also [JTCalendarDelegate](JTCalendar/JTCalendarDelegate.h) and [JTCalendarSettings](JTCalendar/JTCalendarSettings.h) files.
 
+Don't use `NSLog` to print date use a `NSDateFormatter`, `NSLog`doesn't take care of the timezone.
+
+```objective-c
+NSDateFormatter *dateFormatter = [_calendarManager.dateHelper createDateFormatter];
+dateFormatter.dateFormat = @"yyyy'-'MM'-'dd' 'HH':'mm':'ss";
+NSLog(@"%@", [dateFormatter stringFromDate:yourDate]);
+```
+
 ## Requirements
 
 - iOS 7 or higher

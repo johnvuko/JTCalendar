@@ -44,7 +44,7 @@
     
     // Generate random events sort by date using a dateformatter for the demonstration
     [self createRandomEvents];
-        
+    
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:[NSDate date]];
