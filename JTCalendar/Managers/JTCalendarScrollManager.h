@@ -13,13 +13,13 @@
 #import "JTContent.h"
 
 // Synchronize JTHorizontalCalendarView and JTCalendarMenuView
-
+NS_ASSUME_NONNULL_BEGIN
 @interface JTCalendarScrollManager : NSObject
 
-@property (nonatomic, weak) JTCalendarManager *manager;
+@property (nonatomic, weak, nullable) JTCalendarManager *manager;
 
-@property (nonatomic, weak) UIView<JTMenu> *menuView;
-@property (nonatomic, weak) UIScrollView<JTContent> *horizontalContentView;
+@property (nonatomic, weak, nullable) UIView<JTMenu> *menuView;
+@property (nonatomic, weak, nullable) UIScrollView<JTContent> *horizontalContentView;
 
 - (void)setMenuPreviousDate:(NSDate *)previousDate
                 currentDate:(NSDate *)currentDate
@@ -29,3 +29,4 @@
 - (void)updateHorizontalContentOffset:(CGFloat)percentage;
 
 @end
+NS_ASSUME_NONNULL_END

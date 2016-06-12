@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
     JTCalendarWeekDayFormatFull
 };
 
+NS_ASSUME_NONNULL_BEGIN
 @interface JTCalendarSettings : NSObject
 
 
@@ -38,3 +39,4 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 - (void)commonInit;
 
 @end
+NS_ASSUME_NONNULL_END
