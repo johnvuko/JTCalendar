@@ -66,6 +66,7 @@
         _weekDayView = [_manager.delegateManager buildWeekDayView];
         [self addSubview:_weekDayView];
     }
+	_weekDayView.hidden = !_manager.settings.pageViewHaveWeekDaysView;
     _weekDayView.manager = _manager;
     [_weekDayView reload];
     
@@ -131,12 +132,7 @@
     CGFloat weekWidth = self.frame.size.width;
     
     if(_manager.settings.pageViewHaveWeekDaysView){
-        CGFloat weekDayHeight = _weekDayView.frame.size.height; // Force use default height
-        
-        if(weekDayHeight == 0){ // Or use the same height than weeksViews
-            weekDayHeight = self.frame.size.height / (_numberOfWeeksDisplayed + 1);
-        }
-        
+		CGFloat weekDayHeight = self.frame.size.height / (_numberOfWeeksDisplayed + 1);
         _weekDayView.frame = CGRectMake(0, 0, weekWidth, weekDayHeight);
         y = weekDayHeight;
     }
