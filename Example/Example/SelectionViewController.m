@@ -113,6 +113,10 @@
                         } completion:nil];
     }
     
+    // Don't change page in week mode because block the selection of days in first and last weeks of the month
+    if(_calendarManager.settings.weekModeEnabled){
+        return;
+    }
     
     // Load the previous or next page if touch a day from another month
     
