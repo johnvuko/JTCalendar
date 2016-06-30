@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectionViewController">
@@ -31,14 +31,23 @@
                         <constraint firstAttribute="height" constant="300" id="nds-VX-S9x"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-Ca-gGo">
+                    <rect key="frame" x="247" y="436" width="107" height="30"/>
+                    <state key="normal" title="Selection mode"/>
+                    <connections>
+                        <action selector="didSelectionModeTouch" destination="-2" eventType="touchUpInside" id="8tr-sc-WhV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Mcv-lL-bYA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="127-aD-NZz"/>
                 <constraint firstItem="Z8Q-6B-nUk" firstAttribute="top" secondItem="Mcv-lL-bYA" secondAttribute="bottom" id="9Po-GZ-VbS"/>
                 <constraint firstItem="Mcv-lL-bYA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G2M-tM-UEO"/>
+                <constraint firstItem="IgJ-Ca-gGo" firstAttribute="top" secondItem="Z8Q-6B-nUk" secondAttribute="bottom" constant="66" id="IK9-jk-dxA"/>
                 <constraint firstAttribute="trailing" secondItem="Mcv-lL-bYA" secondAttribute="trailing" id="gCo-gm-dcb"/>
                 <constraint firstItem="Z8Q-6B-nUk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uxH-nP-dm4"/>
+                <constraint firstItem="IgJ-Ca-gGo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="v0Y-w8-mFs"/>
                 <constraint firstAttribute="trailing" secondItem="Z8Q-6B-nUk" secondAttribute="trailing" id="xqM-Js-28R"/>
             </constraints>
         </view>

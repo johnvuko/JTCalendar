@@ -11,6 +11,7 @@
     NSMutableDictionary *_eventsByDate;
     
     NSMutableArray *_datesSelected;
+    BOOL _selectionMode;
 }
 
 @end
@@ -44,6 +45,19 @@
     [_calendarManager setDate:[NSDate date]];
     
     _datesSelected = [NSMutableArray new];
+    _selectionMode = NO;
+}
+
+#pragma mark - Buttons callback
+
+- (IBAction)didSelectionModeTouch
+{
+    _selectionMode = !_selectionMode;
+    
+    if(_selectionMode){
+        [_datesSelected removeAllObjects];
+        [_calendarManager reload];
+    }
 }
 
 #pragma mark - CalendarManager delegate
@@ -89,6 +103,15 @@
 
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
+    if(_selectionMode && _datesSelected.count == 1 && ![_calendarManager.dateHelper date:[_datesSelected firstObject] isTheSameDayThan:dayView.date]){
+        [_datesSelected addObject:dayView.date];
+        [self selectDates];
+        _selectionMode = NO;
+        [_calendarManager reload];
+        return;
+    }
+    
+    
     if([self isInDatesSelected:dayView.date]){
          [_datesSelected removeObject:dayView.date];
         
@@ -111,6 +134,10 @@
                             [_calendarManager reload];
                             dayView.circleView.transform = CGAffineTransformIdentity;
                         } completion:nil];
+    }
+    
+    if(_selectionMode) {
+        return;
     }
     
     // Don't change page in week mode because block the selection of days in first and last weeks of the month
@@ -141,6 +168,27 @@
     }
     
     return NO;
+}
+
+- (void)selectDates
+{
+    NSDate * startDate = [_datesSelected firstObject];
+    NSDate * endDate = [_datesSelected lastObject];
+    
+    if([_calendarManager.dateHelper date:startDate isEqualOrAfter:endDate]){
+        NSDate *nextDate = endDate;
+        while ([nextDate compare:startDate] == NSOrderedAscending) {
+            [_datesSelected addObject:nextDate];
+            nextDate = [_calendarManager.dateHelper addToDate:nextDate days:1];
+        }
+    }
+    else {
+        NSDate *nextDate = startDate;
+        while ([nextDate compare:endDate] == NSOrderedAscending) {
+            [_datesSelected addObject:nextDate];
+            nextDate = [_calendarManager.dateHelper addToDate:nextDate days:1];
+        }
+    }
 }
 
 #pragma mark - Fake data
