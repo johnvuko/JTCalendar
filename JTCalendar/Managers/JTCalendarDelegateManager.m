@@ -161,4 +161,11 @@
     }
 }
 
+- (void)didDoubleTapDayView:(UIView<JTCalendarDay> *)dayView
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:didDoubleTapDayView:)]){
+        [_manager.delegate calendar:self.manager didDoubleTapDayView:dayView];
+    }
+}
+
 @end

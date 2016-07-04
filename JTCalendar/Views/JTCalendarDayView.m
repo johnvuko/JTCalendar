@@ -74,10 +74,19 @@
     }
     
     {
-        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouch)];
+        // adding both single and double tap action
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouch)];
+        singleTap.numberOfTouchesRequired = 1;
+        singleTap.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:singleTap];
         
-        self.userInteractionEnabled = YES;
-        [self addGestureRecognizer:gesture];
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap)];
+        doubleTap.numberOfTouchesRequired = 1;
+        doubleTap.numberOfTapsRequired = 2;
+        [self addGestureRecognizer:doubleTap];
+        
+        [singleTap requireGestureRecognizerToFail : doubleTap];
+        [singleTap setDelaysTouchesBegan : YES];
     }
 }
 
@@ -130,6 +139,11 @@
 - (void)didTouch
 {
     [_manager.delegateManager didTouchDayView:self];
+}
+
+- (void)didDoubleTap {
+    
+    [_manager.delegateManager didDoubleTapDayView:self];
 }
 
 @end

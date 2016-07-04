@@ -116,6 +116,41 @@
 
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
+    [self performCalendarActionsForDayView:dayView];
+    
+    NSLog(@"Did touch day: %@", dayView.date);
+}
+
+// performs action when a day view is double tapped
+- (void)calendar:(JTCalendarManager *)calendar didDoubleTapDayView:(JTCalendarDayView *)dayView {
+    
+    [self performCalendarActionsForDayView:dayView];
+    
+    NSLog(@"Did double tap day: %@", dayView.date);
+}
+
+#pragma mark - CalendarManager delegate - Page mangement
+
+// Used to limit the date for the calendar, optional
+- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
+{
+    return [_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
+}
+
+- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
+{
+    //    NSLog(@"Next page loaded");
+}
+
+- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
+{
+    //    NSLog(@"Previous page loaded");
+}
+
+#pragma mark - Calendar animations 
+
+- (void)performCalendarActionsForDayView:(JTCalendarDayView *)dayView {
+    
     _dateSelected = dayView.date;
     
     // Animation for the circleView
@@ -144,24 +179,6 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
-}
-
-#pragma mark - CalendarManager delegate - Page mangement
-
-// Used to limit the date for the calendar, optional
-- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
-{
-    return [_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
-}
-
-- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Next page loaded");
-}
-
-- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Previous page loaded");
 }
 
 #pragma mark - Fake data

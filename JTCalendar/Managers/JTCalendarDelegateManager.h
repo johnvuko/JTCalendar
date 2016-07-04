@@ -44,5 +44,6 @@
 
 - (void)prepareDayView:(UIView<JTCalendarDay> *)dayView;
 - (void)didTouchDayView:(UIView<JTCalendarDay> *)dayView;
+- (void)didDoubleTapDayView:(UIView<JTCalendarDay> *)dayView;
 
 @end
