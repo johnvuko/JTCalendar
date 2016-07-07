@@ -38,6 +38,7 @@
 - (void)commonInit
 {
     self.clipsToBounds = YES;
+    self.isCircle = YES;
     
     _circleRatio = .9;
     _dotRatio = 1. / 9.;
@@ -98,7 +99,10 @@
     
     _circleView.frame = CGRectMake(0, 0, sizeCircle, sizeCircle);
     _circleView.center = CGPointMake(self.frame.size.width / 2., self.frame.size.height / 2.);
-    _circleView.layer.cornerRadius = sizeCircle / 2.;
+    
+    if (self.isCircle) {
+        _circleView.layer.cornerRadius = sizeCircle / 2.;
+    }
     
     _dotView.frame = CGRectMake(0, 0, sizeDot, sizeDot);
     _dotView.center = CGPointMake(self.frame.size.width / 2., (self.frame.size.height / 2.) +sizeDot * 2.5);

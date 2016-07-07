@@ -25,6 +25,13 @@
 @property (nonatomic) BOOL isFromAnotherMonth;
 
 /*!
+ *  If set to YES, the day view will be circular by default.
+ *
+ *  @default: YES
+ */
+@property (nonatomic) BOOL isCircle;
+
+/*!
  * Must be call if override the class
  */
 - (void)commonInit;
