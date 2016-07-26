@@ -126,9 +126,14 @@
     static NSDateFormatter *dateFormatter = nil;
     if(!dateFormatter){
         dateFormatter = [_manager.dateHelper createDateFormatter];
-        [dateFormatter setDateFormat:@"dd"];
+        [dateFormatter setDateFormat:self.dayFormat];
     }
     return dateFormatter;
+}
+
+- (NSString *)dayFormat
+{
+    return self.manager.settings.zeroPaddedDayFormat ? @"dd" : @"d";
 }
 
 - (void)didTouch
