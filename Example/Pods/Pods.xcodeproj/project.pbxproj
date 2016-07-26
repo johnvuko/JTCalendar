@@ -1,590 +1,1766 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		017FAF31FA9851BCD0A60C87304027BA /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35855B3C41573A36923B25A6FBDBF1D8 /* JTCalendarWeekView.m */; };
-		06CB20ED87D40B777BB661DE4A76C4E5 /* JTCalendarDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC53D90D62703BF12A7A13411B9DAEE /* JTCalendarDelegateManager.m */; };
-		0DE740C62A5A43DEEC8D502C8797131B /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		0F0404ABC4E5A8471D2A4BAFFCEEC368 /* JTCalendarWeekDay.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9C609799645B7EB80D8265617616E /* JTCalendarWeekDay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AC7B3601540D77E019A8188A4F14A8C /* JTCalendarMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = B53F718D0BCD413FB899087170AE77DF /* JTCalendarMenuView.m */; };
-		339DE1498372AB6611307FAE98577BB8 /* JTCalendarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F73D8A460BCDC92B9FA9514838679ECF /* JTCalendarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F5E00AA2714A18BADFA722F15253625 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D47C35BD4B1BB79EB19A0DE87A905E0 /* JTDateHelper.m */; };
-		4C54165A8D85D0F08D39B340232CCD4F /* JTVerticalCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = A66F122197252EF18A2B5BEAE96C1DE7 /* JTVerticalCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C8BAF7624AA7CA8BF46ED9200D211CA /* JTHorizontalCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D63337D196CB500380C3D27853510 /* JTHorizontalCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CDE973E5D606F354BBC0A464E1EC92B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		53322AA26EFE1EA185B024806F809A1F /* JTCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6640F57AF8CB226E38BFB2E8EE026667 /* JTCalendarDayView.m */; };
-		58DA18258CF2220116C4785DA6172851 /* JTCalendarDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A49CD470E013FDFB3B3DD84A7EDFA192 /* JTCalendarDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60A2DD856FC1CD1A4FC298DECD666E37 /* JTDateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = BF20EF09CE6B351E7B268D888DE85D6A /* JTDateHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61DBD8944489020ADE2146FBD5DDF0B8 /* JTCalendarDayView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABD971CCAD5510FD61695DFD36A31027 /* JTCalendarDayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6792CF67C43DA75B8481D0EDDC6D93BE /* JTCalendarMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 605134405BBDE34B2153F09B4BA540BE /* JTCalendarMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A452DBC805FDF0CAEDC50AA40438B1F /* JTCalendarPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 748E3027A10AFF96C31848FA2228C06B /* JTCalendarPageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		796BDC2EA0AA6CB6C4DC9C44CE36E05E /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164C3BCC750D779D47D753E5A81FAEC /* JTVerticalCalendarView.m */; };
-		7DEA2101D239753B065CC58B5818563E /* JTCalendarWeekView.h in Headers */ = {isa = PBXBuildFile; fileRef = 375D0B89C8FBC384F84FBE6779F63768 /* JTCalendarWeekView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		832DB4B44E29DD2A8251BBD01E61042E /* JTMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A202F3B1E013E0FA8BBDA245B60D5BDC /* JTMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85B34D65F968043BA1AE7160DD03B520 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D41098052C9ABFFCE6E1E066DCE37A7C /* JTCalendarSettings.m */; };
-		8C7D0ED89FBEED7156515FE47CEAD375 /* JTCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 62D0EEC264E29DCA01255A4C1BFB76ED /* JTCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94B45548D473AA841D3CC5A02B3B034C /* JTCalendarWeek.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A3982C162868FB610E406ACCD469B0 /* JTCalendarWeek.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B426181DA62E3207EECA79AC1620D82 /* JTCalendarPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C59F5EF5494A2D3F76A138414FF2CF6 /* JTCalendarPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE9E9628A26B050FB6F0B10C79237356 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		B18C43F858FA9C749ECA419866DB3910 /* JTCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A76A9B2469E6024B0BDA5B20250D29F8 /* JTCalendarWeekDayView.m */; };
-		C97CF4BFA8797BD4A11401A754EA42CA /* JTContent.h in Headers */ = {isa = PBXBuildFile; fileRef = A3691B402B77F1F8154269ED5711BB3E /* JTContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0308BB631AEE5F24715E08B78E46F7B /* JTCalendarPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A68D36704DFDE6DE4B931488F3BA5 /* JTCalendarPageView.m */; };
-		D522925D3136D8527D46C3BBD27440B0 /* JTCalendarSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8D2A11451A69F0BCE08D728EBE8AE7 /* JTCalendarSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D59AD1405B5F0B2A43154AB7B63ED407 /* JTCalendarScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DD5990F4A232AED1E5C00D592A26DC /* JTCalendarScrollManager.m */; };
-		D5F37B08289F0F7D9B00D4AC6E760803 /* JTHorizontalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC17AE234AD4C0CF888B69FFB37F51 /* JTHorizontalCalendarView.m */; };
-		D8B72A708926BE27DDC4FABCB05DB08A /* JTCalendarWeekDayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 396074F40834C53151BE7C37684EF740 /* JTCalendarWeekDayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6518F239488781CDEDAD379454637FE /* JTCalendarScrollManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 51B5A44D2103D42488AB1A4667F55B8B /* JTCalendarScrollManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8D7B85A9C83E72242C61A5389D05FA5 /* JTCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FBFE068CD66FAC115FD3FEB0D36208 /* JTCalendar-dummy.m */; };
-		EB69E663FAA91A30EF43D0EE09382302 /* JTCalendarDay.h in Headers */ = {isa = PBXBuildFile; fileRef = ACF0DCE3097DF2E4F566C78CA33765EB /* JTCalendarDay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED607E6C4D5E4FEBE0FB7BFA8171227E /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2657C7D50DE40670DCA26636CE28818 /* JTCalendarManager.m */; };
-		F823E7707F0A63251E2CE0A4C3142568 /* JTCalendarDelegateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2763BF266C9F959C5CC594145C7E4C01 /* JTCalendarDelegateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		15223A982CB0431E6C4EC1CEB6080ED3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C3AD7E342840A1BEA026D1D3A2D9C1A7;
-			remoteInfo = JTCalendar;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		0C80C44A92963FE1EEBB4873B465D0E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		1E2A68D36704DFDE6DE4B931488F3BA5 /* JTCalendarPageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarPageView.m; sourceTree = "<group>"; };
-		2164C3BCC750D779D47D753E5A81FAEC /* JTVerticalCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTVerticalCalendarView.m; sourceTree = "<group>"; };
-		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		2763BF266C9F959C5CC594145C7E4C01 /* JTCalendarDelegateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegateManager.h; sourceTree = "<group>"; };
-		2C59F5EF5494A2D3F76A138414FF2CF6 /* JTCalendarPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarPage.h; sourceTree = "<group>"; };
-		35855B3C41573A36923B25A6FBDBF1D8 /* JTCalendarWeekView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekView.m; sourceTree = "<group>"; };
-		375D0B89C8FBC384F84FBE6779F63768 /* JTCalendarWeekView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekView.h; sourceTree = "<group>"; };
-		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		396074F40834C53151BE7C37684EF740 /* JTCalendarWeekDayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekDayView.h; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4CC53D90D62703BF12A7A13411B9DAEE /* JTCalendarDelegateManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarDelegateManager.m; sourceTree = "<group>"; };
-		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		4F3D63337D196CB500380C3D27853510 /* JTHorizontalCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTHorizontalCalendarView.h; sourceTree = "<group>"; };
-		4F8D2A11451A69F0BCE08D728EBE8AE7 /* JTCalendarSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarSettings.h; sourceTree = "<group>"; };
-		51B5A44D2103D42488AB1A4667F55B8B /* JTCalendarScrollManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarScrollManager.h; sourceTree = "<group>"; };
-		5D47C35BD4B1BB79EB19A0DE87A905E0 /* JTDateHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTDateHelper.m; sourceTree = "<group>"; };
-		605134405BBDE34B2153F09B4BA540BE /* JTCalendarMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarMenuView.h; sourceTree = "<group>"; };
-		62D0EEC264E29DCA01255A4C1BFB76ED /* JTCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendar.h; sourceTree = "<group>"; };
-		6640F57AF8CB226E38BFB2E8EE026667 /* JTCalendarDayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarDayView.m; sourceTree = "<group>"; };
-		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		748E3027A10AFF96C31848FA2228C06B /* JTCalendarPageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarPageView.h; sourceTree = "<group>"; };
-		7D0280917E364E9E67C904CD980780CA /* JTCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTCalendar-prefix.pch"; sourceTree = "<group>"; };
-		813B3554FE5430060EA3FD961FB15051 /* JTCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTCalendar.xcconfig; sourceTree = "<group>"; };
-		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		A1DD5990F4A232AED1E5C00D592A26DC /* JTCalendarScrollManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarScrollManager.m; sourceTree = "<group>"; };
-		A202F3B1E013E0FA8BBDA245B60D5BDC /* JTMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTMenu.h; sourceTree = "<group>"; };
-		A2329925309B9A62ACC7328984DF02B9 /* libJTCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJTCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3691B402B77F1F8154269ED5711BB3E /* JTContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTContent.h; sourceTree = "<group>"; };
-		A49CD470E013FDFB3B3DD84A7EDFA192 /* JTCalendarDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegate.h; sourceTree = "<group>"; };
-		A66F122197252EF18A2B5BEAE96C1DE7 /* JTVerticalCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTVerticalCalendarView.h; sourceTree = "<group>"; };
-		A76A9B2469E6024B0BDA5B20250D29F8 /* JTCalendarWeekDayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekDayView.m; sourceTree = "<group>"; };
-		ABD971CCAD5510FD61695DFD36A31027 /* JTCalendarDayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarDayView.h; sourceTree = "<group>"; };
-		ACF0DCE3097DF2E4F566C78CA33765EB /* JTCalendarDay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarDay.h; sourceTree = "<group>"; };
-		B3FBFE068CD66FAC115FD3FEB0D36208 /* JTCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTCalendar-dummy.m"; sourceTree = "<group>"; };
-		B53F718D0BCD413FB899087170AE77DF /* JTCalendarMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarMenuView.m; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BF20EF09CE6B351E7B268D888DE85D6A /* JTDateHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTDateHelper.h; sourceTree = "<group>"; };
-		C2A3982C162868FB610E406ACCD469B0 /* JTCalendarWeek.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeek.h; sourceTree = "<group>"; };
-		D2657C7D50DE40670DCA26636CE28818 /* JTCalendarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarManager.m; sourceTree = "<group>"; };
-		D41098052C9ABFFCE6E1E066DCE37A7C /* JTCalendarSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTCalendarSettings.m; sourceTree = "<group>"; };
-		D9EC17AE234AD4C0CF888B69FFB37F51 /* JTHorizontalCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JTHorizontalCalendarView.m; sourceTree = "<group>"; };
-		DED9C609799645B7EB80D8265617616E /* JTCalendarWeekDay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekDay.h; sourceTree = "<group>"; };
-		F73D8A460BCDC92B9FA9514838679ECF /* JTCalendarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JTCalendarManager.h; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		3A157FC54B6D2FAEEB284F08C1FAAB4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE9E9628A26B050FB6F0B10C79237356 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5255A603403359F6C54CFE25080CFEA1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CDE973E5D606F354BBC0A464E1EC92B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3D1D13E0C6553800746CB8FD61CF946 /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		12A3FCC9856E4BEE29ECFAE0C9F574F9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A2329925309B9A62ACC7328984DF02B9 /* libJTCalendar.a */,
-				0C80C44A92963FE1EEBB4873B465D0E4 /* libPods.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		42F6B6A7398A191C2A4F8EE4A392737E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				ACF0DCE3097DF2E4F566C78CA33765EB /* JTCalendarDay.h */,
-				2C59F5EF5494A2D3F76A138414FF2CF6 /* JTCalendarPage.h */,
-				C2A3982C162868FB610E406ACCD469B0 /* JTCalendarWeek.h */,
-				DED9C609799645B7EB80D8265617616E /* JTCalendarWeekDay.h */,
-				A3691B402B77F1F8154269ED5711BB3E /* JTContent.h */,
-				A202F3B1E013E0FA8BBDA245B60D5BDC /* JTMenu.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		511CC8F856486BEB79A18603F751CFD4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				813B3554FE5430060EA3FD961FB15051 /* JTCalendar.xcconfig */,
-				B3FBFE068CD66FAC115FD3FEB0D36208 /* JTCalendar-dummy.m */,
-				7D0280917E364E9E67C904CD980780CA /* JTCalendar-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JTCalendar";
-			sourceTree = "<group>";
-		};
-		5FD743ABC86E76446A270831B9F933DE /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6DCEE98CF73368AA1D20AEDBC8544358 /* JTCalendar */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		69FD30276F9566359AD73DC878602576 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				2763BF266C9F959C5CC594145C7E4C01 /* JTCalendarDelegateManager.h */,
-				4CC53D90D62703BF12A7A13411B9DAEE /* JTCalendarDelegateManager.m */,
-				51B5A44D2103D42488AB1A4667F55B8B /* JTCalendarScrollManager.h */,
-				A1DD5990F4A232AED1E5C00D592A26DC /* JTCalendarScrollManager.m */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		6DCEE98CF73368AA1D20AEDBC8544358 /* JTCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				720F023B75CE1BA094673E2667C158E0 /* JTCalendar */,
-				511CC8F856486BEB79A18603F751CFD4 /* Support Files */,
-			);
-			name = JTCalendar;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		720F023B75CE1BA094673E2667C158E0 /* JTCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				62D0EEC264E29DCA01255A4C1BFB76ED /* JTCalendar.h */,
-				A49CD470E013FDFB3B3DD84A7EDFA192 /* JTCalendarDelegate.h */,
-				F73D8A460BCDC92B9FA9514838679ECF /* JTCalendarManager.h */,
-				D2657C7D50DE40670DCA26636CE28818 /* JTCalendarManager.m */,
-				4F8D2A11451A69F0BCE08D728EBE8AE7 /* JTCalendarSettings.h */,
-				D41098052C9ABFFCE6E1E066DCE37A7C /* JTCalendarSettings.m */,
-				BF20EF09CE6B351E7B268D888DE85D6A /* JTDateHelper.h */,
-				5D47C35BD4B1BB79EB19A0DE87A905E0 /* JTDateHelper.m */,
-				69FD30276F9566359AD73DC878602576 /* Managers */,
-				42F6B6A7398A191C2A4F8EE4A392737E /* Protocols */,
-				F3B3D5CACDF3AD6D7F04BB56299927A4 /* Views */,
-			);
-			path = JTCalendar;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				5FD743ABC86E76446A270831B9F933DE /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				12A3FCC9856E4BEE29ECFAE0C9F574F9 /* Products */,
-				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */,
-				10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */,
-				272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */,
-				6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */,
-				A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */,
-				4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */,
-				98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F3B3D5CACDF3AD6D7F04BB56299927A4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				ABD971CCAD5510FD61695DFD36A31027 /* JTCalendarDayView.h */,
-				6640F57AF8CB226E38BFB2E8EE026667 /* JTCalendarDayView.m */,
-				605134405BBDE34B2153F09B4BA540BE /* JTCalendarMenuView.h */,
-				B53F718D0BCD413FB899087170AE77DF /* JTCalendarMenuView.m */,
-				748E3027A10AFF96C31848FA2228C06B /* JTCalendarPageView.h */,
-				1E2A68D36704DFDE6DE4B931488F3BA5 /* JTCalendarPageView.m */,
-				396074F40834C53151BE7C37684EF740 /* JTCalendarWeekDayView.h */,
-				A76A9B2469E6024B0BDA5B20250D29F8 /* JTCalendarWeekDayView.m */,
-				375D0B89C8FBC384F84FBE6779F63768 /* JTCalendarWeekView.h */,
-				35855B3C41573A36923B25A6FBDBF1D8 /* JTCalendarWeekView.m */,
-				4F3D63337D196CB500380C3D27853510 /* JTHorizontalCalendarView.h */,
-				D9EC17AE234AD4C0CF888B69FFB37F51 /* JTHorizontalCalendarView.m */,
-				A66F122197252EF18A2B5BEAE96C1DE7 /* JTVerticalCalendarView.h */,
-				2164C3BCC750D779D47D753E5A81FAEC /* JTVerticalCalendarView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		D717E80A0B742FF75271B153488C840B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C7D0ED89FBEED7156515FE47CEAD375 /* JTCalendar.h in Headers */,
-				EB69E663FAA91A30EF43D0EE09382302 /* JTCalendarDay.h in Headers */,
-				61DBD8944489020ADE2146FBD5DDF0B8 /* JTCalendarDayView.h in Headers */,
-				58DA18258CF2220116C4785DA6172851 /* JTCalendarDelegate.h in Headers */,
-				F823E7707F0A63251E2CE0A4C3142568 /* JTCalendarDelegateManager.h in Headers */,
-				339DE1498372AB6611307FAE98577BB8 /* JTCalendarManager.h in Headers */,
-				6792CF67C43DA75B8481D0EDDC6D93BE /* JTCalendarMenuView.h in Headers */,
-				9B426181DA62E3207EECA79AC1620D82 /* JTCalendarPage.h in Headers */,
-				6A452DBC805FDF0CAEDC50AA40438B1F /* JTCalendarPageView.h in Headers */,
-				E6518F239488781CDEDAD379454637FE /* JTCalendarScrollManager.h in Headers */,
-				D522925D3136D8527D46C3BBD27440B0 /* JTCalendarSettings.h in Headers */,
-				94B45548D473AA841D3CC5A02B3B034C /* JTCalendarWeek.h in Headers */,
-				0F0404ABC4E5A8471D2A4BAFFCEEC368 /* JTCalendarWeekDay.h in Headers */,
-				D8B72A708926BE27DDC4FABCB05DB08A /* JTCalendarWeekDayView.h in Headers */,
-				7DEA2101D239753B065CC58B5818563E /* JTCalendarWeekView.h in Headers */,
-				C97CF4BFA8797BD4A11401A754EA42CA /* JTContent.h in Headers */,
-				60A2DD856FC1CD1A4FC298DECD666E37 /* JTDateHelper.h in Headers */,
-				4C8BAF7624AA7CA8BF46ED9200D211CA /* JTHorizontalCalendarView.h in Headers */,
-				832DB4B44E29DD2A8251BBD01E61042E /* JTMenu.h in Headers */,
-				4C54165A8D85D0F08D39B340232CCD4F /* JTVerticalCalendarView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		39C1EAAD769BF31CA163ABE2803B4A01 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9FACC170E0283C786D4454CA790CF243 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				5DCD813289C721C883C892EF0D4CAFAE /* Sources */,
-				5255A603403359F6C54CFE25080CFEA1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8A7E1B1CDD54091739118760C8FFE178 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 0C80C44A92963FE1EEBB4873B465D0E4 /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		C3AD7E342840A1BEA026D1D3A2D9C1A7 /* JTCalendar */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79EAA5712C6816A162C8ADFC8F2D3993 /* Build configuration list for PBXNativeTarget "JTCalendar" */;
-			buildPhases = (
-				77FE27FEBA06C639BDD594FD06748E99 /* Sources */,
-				3A157FC54B6D2FAEEB284F08C1FAAB4F /* Frameworks */,
-				D717E80A0B742FF75271B153488C840B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JTCalendar;
-			productName = JTCalendar;
-			productReference = A2329925309B9A62ACC7328984DF02B9 /* libJTCalendar.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 12A3FCC9856E4BEE29ECFAE0C9F574F9 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				C3AD7E342840A1BEA026D1D3A2D9C1A7 /* JTCalendar */,
-				39C1EAAD769BF31CA163ABE2803B4A01 /* Pods */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		5DCD813289C721C883C892EF0D4CAFAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0DE740C62A5A43DEEC8D502C8797131B /* Pods-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		77FE27FEBA06C639BDD594FD06748E99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8D7B85A9C83E72242C61A5389D05FA5 /* JTCalendar-dummy.m in Sources */,
-				53322AA26EFE1EA185B024806F809A1F /* JTCalendarDayView.m in Sources */,
-				06CB20ED87D40B777BB661DE4A76C4E5 /* JTCalendarDelegateManager.m in Sources */,
-				ED607E6C4D5E4FEBE0FB7BFA8171227E /* JTCalendarManager.m in Sources */,
-				1AC7B3601540D77E019A8188A4F14A8C /* JTCalendarMenuView.m in Sources */,
-				D0308BB631AEE5F24715E08B78E46F7B /* JTCalendarPageView.m in Sources */,
-				D59AD1405B5F0B2A43154AB7B63ED407 /* JTCalendarScrollManager.m in Sources */,
-				85B34D65F968043BA1AE7160DD03B520 /* JTCalendarSettings.m in Sources */,
-				B18C43F858FA9C749ECA419866DB3910 /* JTCalendarWeekDayView.m in Sources */,
-				017FAF31FA9851BCD0A60C87304027BA /* JTCalendarWeekView.m in Sources */,
-				3F5E00AA2714A18BADFA722F15253625 /* JTDateHelper.m in Sources */,
-				D5F37B08289F0F7D9B00D4AC6E760803 /* JTHorizontalCalendarView.m in Sources */,
-				796BDC2EA0AA6CB6C4DC9C44CE36E05E /* JTVerticalCalendarView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8A7E1B1CDD54091739118760C8FFE178 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JTCalendar;
-			target = C3AD7E342840A1BEA026D1D3A2D9C1A7 /* JTCalendar */;
-			targetProxy = 15223A982CB0431E6C4EC1CEB6080ED3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		052A17875CB827423D627183396CEB60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		08575B17FAA44280AFE6286AC7536F4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 813B3554FE5430060EA3FD961FB15051 /* JTCalendar.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JTCalendar/JTCalendar-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		3894ADCC0EDF8A14170435E0853FDAA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6ABB98F5DD59DB7643BFB28C514CE1C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		D0474B66B2CFC0B7E7663D092325633A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 813B3554FE5430060EA3FD961FB15051 /* JTCalendar.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JTCalendar/JTCalendar-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
-				052A17875CB827423D627183396CEB60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79EAA5712C6816A162C8ADFC8F2D3993 /* Build configuration list for PBXNativeTarget "JTCalendar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				08575B17FAA44280AFE6286AC7536F4F /* Debug */,
-				D0474B66B2CFC0B7E7663D092325633A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9FACC170E0283C786D4454CA790CF243 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3894ADCC0EDF8A14170435E0853FDAA4 /* Debug */,
-				6ABB98F5DD59DB7643BFB28C514CE1C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>017FAF31FA9851BCD0A60C87304027BA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>35855B3C41573A36923B25A6FBDBF1D8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>037C0CA694176A3C0915F62C9D20B3E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B3D1D13E0C6553800746CB8FD61CF946</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>052A17875CB827423D627183396CEB60</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>06CB20ED87D40B777BB661DE4A76C4E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4CC53D90D62703BF12A7A13411B9DAEE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>08575B17FAA44280AFE6286AC7536F4F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>813B3554FE5430060EA3FD961FB15051</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JTCalendar/JTCalendar-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>0C80C44A92963FE1EEBB4873B465D0E4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0DE740C62A5A43DEEC8D502C8797131B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>272643F56613CA0D336AE3DBF19DC404</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0F0404ABC4E5A8471D2A4BAFFCEEC368</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DED9C609799645B7EB80D8265617616E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>10834806BD7B412BC24F347361FA2C8E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>12A3FCC9856E4BEE29ECFAE0C9F574F9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A2329925309B9A62ACC7328984DF02B9</string>
+				<string>0C80C44A92963FE1EEBB4873B465D0E4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15223A982CB0431E6C4EC1CEB6080ED3</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>C3AD7E342840A1BEA026D1D3A2D9C1A7</string>
+			<key>remoteInfo</key>
+			<string>JTCalendar</string>
+		</dict>
+		<key>1AC7B3601540D77E019A8188A4F14A8C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B53F718D0BCD413FB899087170AE77DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1E2A68D36704DFDE6DE4B931488F3BA5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarPageView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2164C3BCC750D779D47D753E5A81FAEC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTVerticalCalendarView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>272643F56613CA0D336AE3DBF19DC404</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2763BF266C9F959C5CC594145C7E4C01</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarDelegateManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C59F5EF5494A2D3F76A138414FF2CF6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarPage.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B37F0F91F85060E28F1DAAB522DC7EC1</string>
+				<string>052A17875CB827423D627183396CEB60</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>339DE1498372AB6611307FAE98577BB8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F73D8A460BCDC92B9FA9514838679ECF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>35855B3C41573A36923B25A6FBDBF1D8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarWeekView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>375D0B89C8FBC384F84FBE6779F63768</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarWeekView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>37DB56D75062CC75FCB0966E1C6E8A8E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3894ADCC0EDF8A14170435E0853FDAA4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4E762F23EC34ED4A6FF3312D84E33A40</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>396074F40834C53151BE7C37684EF740</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarWeekDayView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>39C1EAAD769BF31CA163ABE2803B4A01</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9FACC170E0283C786D4454CA790CF243</string>
+			<key>buildPhases</key>
+			<array>
+				<string>5DCD813289C721C883C892EF0D4CAFAE</string>
+				<string>5255A603403359F6C54CFE25080CFEA1</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8A7E1B1CDD54091739118760C8FFE178</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>0C80C44A92963FE1EEBB4873B465D0E4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>3A157FC54B6D2FAEEB284F08C1FAAB4F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AE9E9628A26B050FB6F0B10C79237356</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3E4E89230EF59BC255123B67864ACF77</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>3F5E00AA2714A18BADFA722F15253625</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5D47C35BD4B1BB79EB19A0DE87A905E0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>42F6B6A7398A191C2A4F8EE4A392737E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ACF0DCE3097DF2E4F566C78CA33765EB</string>
+				<string>2C59F5EF5494A2D3F76A138414FF2CF6</string>
+				<string>C2A3982C162868FB610E406ACCD469B0</string>
+				<string>DED9C609799645B7EB80D8265617616E</string>
+				<string>A3691B402B77F1F8154269ED5711BB3E</string>
+				<string>A202F3B1E013E0FA8BBDA245B60D5BDC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Protocols</string>
+			<key>path</key>
+			<string>Protocols</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C54165A8D85D0F08D39B340232CCD4F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A66F122197252EF18A2B5BEAE96C1DE7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4C8BAF7624AA7CA8BF46ED9200D211CA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4F3D63337D196CB500380C3D27853510</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4CC53D90D62703BF12A7A13411B9DAEE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarDelegateManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4CDE973E5D606F354BBC0A464E1EC92B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4E762F23EC34ED4A6FF3312D84E33A40</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F3D63337D196CB500380C3D27853510</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTHorizontalCalendarView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F8D2A11451A69F0BCE08D728EBE8AE7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarSettings.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>511CC8F856486BEB79A18603F751CFD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>813B3554FE5430060EA3FD961FB15051</string>
+				<string>B3FBFE068CD66FAC115FD3FEB0D36208</string>
+				<string>7D0280917E364E9E67C904CD980780CA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/JTCalendar</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>51B5A44D2103D42488AB1A4667F55B8B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarScrollManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5255A603403359F6C54CFE25080CFEA1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4CDE973E5D606F354BBC0A464E1EC92B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>53322AA26EFE1EA185B024806F809A1F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6640F57AF8CB226E38BFB2E8EE026667</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>58DA18258CF2220116C4785DA6172851</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A49CD470E013FDFB3B3DD84A7EDFA192</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>5D47C35BD4B1BB79EB19A0DE87A905E0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTDateHelper.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5DCD813289C721C883C892EF0D4CAFAE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0DE740C62A5A43DEEC8D502C8797131B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5FD743ABC86E76446A270831B9F933DE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6DCEE98CF73368AA1D20AEDBC8544358</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>605134405BBDE34B2153F09B4BA540BE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarMenuView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60A2DD856FC1CD1A4FC298DECD666E37</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF20EF09CE6B351E7B268D888DE85D6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>61DBD8944489020ADE2146FBD5DDF0B8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ABD971CCAD5510FD61695DFD36A31027</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>62D0EEC264E29DCA01255A4C1BFB76ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendar.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6640F57AF8CB226E38BFB2E8EE026667</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarDayView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6792CF67C43DA75B8481D0EDDC6D93BE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>605134405BBDE34B2153F09B4BA540BE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6911BECA35E7518D864239B7E898EEF3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>69FD30276F9566359AD73DC878602576</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2763BF266C9F959C5CC594145C7E4C01</string>
+				<string>4CC53D90D62703BF12A7A13411B9DAEE</string>
+				<string>51B5A44D2103D42488AB1A4667F55B8B</string>
+				<string>A1DD5990F4A232AED1E5C00D592A26DC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Managers</string>
+			<key>path</key>
+			<string>Managers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A452DBC805FDF0CAEDC50AA40438B1F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>748E3027A10AFF96C31848FA2228C06B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6ABB98F5DD59DB7643BFB28C514CE1C5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>98C98CDFB3F20F2925F6CD1F141BB14F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6DCEE98CF73368AA1D20AEDBC8544358</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>720F023B75CE1BA094673E2667C158E0</string>
+				<string>511CC8F856486BEB79A18603F751CFD4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JTCalendar</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>720F023B75CE1BA094673E2667C158E0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>62D0EEC264E29DCA01255A4C1BFB76ED</string>
+				<string>A49CD470E013FDFB3B3DD84A7EDFA192</string>
+				<string>F73D8A460BCDC92B9FA9514838679ECF</string>
+				<string>D2657C7D50DE40670DCA26636CE28818</string>
+				<string>4F8D2A11451A69F0BCE08D728EBE8AE7</string>
+				<string>D41098052C9ABFFCE6E1E066DCE37A7C</string>
+				<string>BF20EF09CE6B351E7B268D888DE85D6A</string>
+				<string>5D47C35BD4B1BB79EB19A0DE87A905E0</string>
+				<string>69FD30276F9566359AD73DC878602576</string>
+				<string>42F6B6A7398A191C2A4F8EE4A392737E</string>
+				<string>F3B3D5CACDF3AD6D7F04BB56299927A4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JTCalendar</string>
+			<key>path</key>
+			<string>JTCalendar</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>748E3027A10AFF96C31848FA2228C06B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarPageView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>77FE27FEBA06C639BDD594FD06748E99</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E8D7B85A9C83E72242C61A5389D05FA5</string>
+				<string>53322AA26EFE1EA185B024806F809A1F</string>
+				<string>06CB20ED87D40B777BB661DE4A76C4E5</string>
+				<string>ED607E6C4D5E4FEBE0FB7BFA8171227E</string>
+				<string>1AC7B3601540D77E019A8188A4F14A8C</string>
+				<string>D0308BB631AEE5F24715E08B78E46F7B</string>
+				<string>D59AD1405B5F0B2A43154AB7B63ED407</string>
+				<string>85B34D65F968043BA1AE7160DD03B520</string>
+				<string>B18C43F858FA9C749ECA419866DB3910</string>
+				<string>017FAF31FA9851BCD0A60C87304027BA</string>
+				<string>3F5E00AA2714A18BADFA722F15253625</string>
+				<string>D5F37B08289F0F7D9B00D4AC6E760803</string>
+				<string>796BDC2EA0AA6CB6C4DC9C44CE36E05E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>796BDC2EA0AA6CB6C4DC9C44CE36E05E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2164C3BCC750D779D47D753E5A81FAEC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>79EAA5712C6816A162C8ADFC8F2D3993</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>08575B17FAA44280AFE6286AC7536F4F</string>
+				<string>D0474B66B2CFC0B7E7663D092325633A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>7D0280917E364E9E67C904CD980780CA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendar-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>5FD743ABC86E76446A270831B9F933DE</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>12A3FCC9856E4BEE29ECFAE0C9F574F9</string>
+				<string>037C0CA694176A3C0915F62C9D20B3E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DEA2101D239753B065CC58B5818563E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>375D0B89C8FBC384F84FBE6779F63768</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>813B3554FE5430060EA3FD961FB15051</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>JTCalendar.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>832DB4B44E29DD2A8251BBD01E61042E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A202F3B1E013E0FA8BBDA245B60D5BDC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>85B34D65F968043BA1AE7160DD03B520</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D41098052C9ABFFCE6E1E066DCE37A7C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8A7E1B1CDD54091739118760C8FFE178</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JTCalendar</string>
+			<key>target</key>
+			<string>C3AD7E342840A1BEA026D1D3A2D9C1A7</string>
+			<key>targetProxy</key>
+			<string>15223A982CB0431E6C4EC1CEB6080ED3</string>
+		</dict>
+		<key>8C7D0ED89FBEED7156515FE47CEAD375</key>
+		<dict>
+			<key>fileRef</key>
+			<string>62D0EEC264E29DCA01255A4C1BFB76ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>94B45548D473AA841D3CC5A02B3B034C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C2A3982C162868FB610E406ACCD469B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>98C98CDFB3F20F2925F6CD1F141BB14F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9B426181DA62E3207EECA79AC1620D82</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C59F5EF5494A2D3F76A138414FF2CF6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9FACC170E0283C786D4454CA790CF243</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3894ADCC0EDF8A14170435E0853FDAA4</string>
+				<string>6ABB98F5DD59DB7643BFB28C514CE1C5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A1A36D34413696BE466E2CA0AFF194DA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A1DD5990F4A232AED1E5C00D592A26DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarScrollManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A202F3B1E013E0FA8BBDA245B60D5BDC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTMenu.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A2329925309B9A62ACC7328984DF02B9</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libJTCalendar.a</string>
+			<key>path</key>
+			<string>libJTCalendar.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A3691B402B77F1F8154269ED5711BB3E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTContent.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A49CD470E013FDFB3B3DD84A7EDFA192</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A66F122197252EF18A2B5BEAE96C1DE7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTVerticalCalendarView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A76A9B2469E6024B0BDA5B20250D29F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarWeekDayView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ABD971CCAD5510FD61695DFD36A31027</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarDayView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ACF0DCE3097DF2E4F566C78CA33765EB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarDay.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AE9E9628A26B050FB6F0B10C79237356</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B18C43F858FA9C749ECA419866DB3910</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A76A9B2469E6024B0BDA5B20250D29F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B37F0F91F85060E28F1DAAB522DC7EC1</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B3D1D13E0C6553800746CB8FD61CF946</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>37DB56D75062CC75FCB0966E1C6E8A8E</string>
+				<string>10834806BD7B412BC24F347361FA2C8E</string>
+				<string>272643F56613CA0D336AE3DBF19DC404</string>
+				<string>6911BECA35E7518D864239B7E898EEF3</string>
+				<string>A1A36D34413696BE466E2CA0AFF194DA</string>
+				<string>4E762F23EC34ED4A6FF3312D84E33A40</string>
+				<string>98C98CDFB3F20F2925F6CD1F141BB14F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>path</key>
+			<string>Target Support Files/Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B3FBFE068CD66FAC115FD3FEB0D36208</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendar-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B53F718D0BCD413FB899087170AE77DF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarMenuView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BF20EF09CE6B351E7B268D888DE85D6A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTDateHelper.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E4E89230EF59BC255123B67864ACF77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C2A3982C162868FB610E406ACCD469B0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarWeek.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C3AD7E342840A1BEA026D1D3A2D9C1A7</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>79EAA5712C6816A162C8ADFC8F2D3993</string>
+			<key>buildPhases</key>
+			<array>
+				<string>77FE27FEBA06C639BDD594FD06748E99</string>
+				<string>3A157FC54B6D2FAEEB284F08C1FAAB4F</string>
+				<string>D717E80A0B742FF75271B153488C840B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JTCalendar</string>
+			<key>productName</key>
+			<string>JTCalendar</string>
+			<key>productReference</key>
+			<string>A2329925309B9A62ACC7328984DF02B9</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>C97CF4BFA8797BD4A11401A754EA42CA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A3691B402B77F1F8154269ED5711BB3E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D0308BB631AEE5F24715E08B78E46F7B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1E2A68D36704DFDE6DE4B931488F3BA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D0474B66B2CFC0B7E7663D092325633A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>813B3554FE5430060EA3FD961FB15051</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JTCalendar/JTCalendar-prefix.pch</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string></string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D2657C7D50DE40670DCA26636CE28818</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41098052C9ABFFCE6E1E066DCE37A7C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendarSettings.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>12A3FCC9856E4BEE29ECFAE0C9F574F9</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>C3AD7E342840A1BEA026D1D3A2D9C1A7</string>
+				<string>39C1EAAD769BF31CA163ABE2803B4A01</string>
+			</array>
+		</dict>
+		<key>D522925D3136D8527D46C3BBD27440B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4F8D2A11451A69F0BCE08D728EBE8AE7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D59AD1405B5F0B2A43154AB7B63ED407</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A1DD5990F4A232AED1E5C00D592A26DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D5F37B08289F0F7D9B00D4AC6E760803</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9EC17AE234AD4C0CF888B69FFB37F51</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D717E80A0B742FF75271B153488C840B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8C7D0ED89FBEED7156515FE47CEAD375</string>
+				<string>EB69E663FAA91A30EF43D0EE09382302</string>
+				<string>61DBD8944489020ADE2146FBD5DDF0B8</string>
+				<string>58DA18258CF2220116C4785DA6172851</string>
+				<string>F823E7707F0A63251E2CE0A4C3142568</string>
+				<string>339DE1498372AB6611307FAE98577BB8</string>
+				<string>6792CF67C43DA75B8481D0EDDC6D93BE</string>
+				<string>9B426181DA62E3207EECA79AC1620D82</string>
+				<string>6A452DBC805FDF0CAEDC50AA40438B1F</string>
+				<string>E6518F239488781CDEDAD379454637FE</string>
+				<string>D522925D3136D8527D46C3BBD27440B0</string>
+				<string>94B45548D473AA841D3CC5A02B3B034C</string>
+				<string>0F0404ABC4E5A8471D2A4BAFFCEEC368</string>
+				<string>D8B72A708926BE27DDC4FABCB05DB08A</string>
+				<string>7DEA2101D239753B065CC58B5818563E</string>
+				<string>C97CF4BFA8797BD4A11401A754EA42CA</string>
+				<string>60A2DD856FC1CD1A4FC298DECD666E37</string>
+				<string>4C8BAF7624AA7CA8BF46ED9200D211CA</string>
+				<string>832DB4B44E29DD2A8251BBD01E61042E</string>
+				<string>4C54165A8D85D0F08D39B340232CCD4F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D8B72A708926BE27DDC4FABCB05DB08A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>396074F40834C53151BE7C37684EF740</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D9EC17AE234AD4C0CF888B69FFB37F51</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTHorizontalCalendarView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DED9C609799645B7EB80D8265617616E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarWeekDay.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6518F239488781CDEDAD379454637FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>51B5A44D2103D42488AB1A4667F55B8B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>E8D7B85A9C83E72242C61A5389D05FA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B3FBFE068CD66FAC115FD3FEB0D36208</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EB69E663FAA91A30EF43D0EE09382302</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ACF0DCE3097DF2E4F566C78CA33765EB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>ED607E6C4D5E4FEBE0FB7BFA8171227E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2657C7D50DE40670DCA26636CE28818</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F3B3D5CACDF3AD6D7F04BB56299927A4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ABD971CCAD5510FD61695DFD36A31027</string>
+				<string>6640F57AF8CB226E38BFB2E8EE026667</string>
+				<string>605134405BBDE34B2153F09B4BA540BE</string>
+				<string>B53F718D0BCD413FB899087170AE77DF</string>
+				<string>748E3027A10AFF96C31848FA2228C06B</string>
+				<string>1E2A68D36704DFDE6DE4B931488F3BA5</string>
+				<string>396074F40834C53151BE7C37684EF740</string>
+				<string>A76A9B2469E6024B0BDA5B20250D29F8</string>
+				<string>375D0B89C8FBC384F84FBE6779F63768</string>
+				<string>35855B3C41573A36923B25A6FBDBF1D8</string>
+				<string>4F3D63337D196CB500380C3D27853510</string>
+				<string>D9EC17AE234AD4C0CF888B69FFB37F51</string>
+				<string>A66F122197252EF18A2B5BEAE96C1DE7</string>
+				<string>2164C3BCC750D779D47D753E5A81FAEC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>path</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F73D8A460BCDC92B9FA9514838679ECF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendarManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F823E7707F0A63251E2CE0A4C3142568</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2763BF266C9F959C5CC594145C7E4C01</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

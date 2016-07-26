@@ -115,21 +115,25 @@
 }
 
 - (void)reload
-{
-    static NSDateFormatter *dateFormatter = nil;
-    if(!dateFormatter){
-        dateFormatter = [_manager.dateHelper createDateFormatter];
-        [dateFormatter setDateFormat:@"dd"];
-    }
-    
-    _textLabel.text = [dateFormatter stringFromDate:_date];
-        
+{    
+    _textLabel.text = [[self dateFormatter] stringFromDate:_date];       
     [_manager.delegateManager prepareDayView:self];
 }
 
 - (void)didTouch
 {
     [_manager.delegateManager didTouchDayView:self];
+}
+
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter = nil;
+    if(!dateFormatter){
+        dateFormatter = [_manager.dateHelper createDateFormatter];
+        [dateFormatter setDateFormat:@"dd"];
+    }
+
+    return dateFormatter;
 }
 
 @end
