@@ -34,6 +34,11 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 @property (nonatomic) JTCalendarWeekDayFormat weekDayFormat;
 
 
+// Day view
+
+@property (nonatomic) BOOL zeroPaddedDayFormat;
+
+
 // Use for override
 - (void)commonInit;
 

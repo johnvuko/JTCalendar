@@ -116,7 +116,13 @@
 
 - (void)reload
 {    
-    _textLabel.text = [[self dateFormatter] stringFromDate:_date];       
+    static NSDateFormatter *dateFormatter = nil;
+    if(!dateFormatter){
+        dateFormatter = [_manager.dateHelper createDateFormatter];
+    }
+    [dateFormatter setDateFormat:self.dayFormat];
+
+    _textLabel.text = [ dateFormatter stringFromDate:_date];       
     [_manager.delegateManager prepareDayView:self];
 }
 
@@ -125,15 +131,9 @@
     [_manager.delegateManager didTouchDayView:self];
 }
 
-- (NSDateFormatter *)dateFormatter
+- (NSString *)dayFormat
 {
-    static NSDateFormatter *dateFormatter = nil;
-    if(!dateFormatter){
-        dateFormatter = [_manager.dateHelper createDateFormatter];
-        [dateFormatter setDateFormat:@"dd"];
-    }
-
-    return dateFormatter;
+    return self.manager.settings.zeroPaddedDayFormat ? @"dd" : @"d";
 }
 
 @end

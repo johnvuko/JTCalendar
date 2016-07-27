@@ -29,6 +29,4 @@
  */
 - (void)commonInit;
 
-- (NSDateFormatter *)dateFormatter;
-
 @end
