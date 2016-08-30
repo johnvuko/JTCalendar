@@ -6,6 +6,9 @@
 //
 
 #import "CustomViewController.h"
+#import <JTCalendar/JTCalendarManager.h>
+#import <JTCalendar/JTCalendarDayView.h>
+#import <JTCalendar/JTCalendarWeekDayView.h>
 
 @interface CustomViewController (){
     NSMutableDictionary *_eventsByDate;
