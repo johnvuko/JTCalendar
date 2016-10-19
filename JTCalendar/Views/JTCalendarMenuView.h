@@ -22,5 +22,5 @@
  */
 - (void)commonInit;
 
-- (UIView*)centerView;
+- (CGSize)centerTextSize;
 @end
