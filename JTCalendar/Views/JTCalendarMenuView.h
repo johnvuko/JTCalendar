@@ -22,4 +22,5 @@
  */
 - (void)commonInit;
 
+- (UIView*)centerView;
 @end

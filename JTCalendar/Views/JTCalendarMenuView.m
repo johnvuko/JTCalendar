@@ -73,6 +73,11 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     }
 }
 
+- (UIView*)centerView
+{
+	return _centerView;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
