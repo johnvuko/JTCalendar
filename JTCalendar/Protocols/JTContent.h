@@ -19,7 +19,7 @@
 - (void)loadPreviousPage;
 - (void)loadNextPage;
 
-- (void)loadPreviousPageWithAnimation;
-- (void)loadNextPageWithAnimation;
+- (void)loadPreviousPage:(BOOL)animated;
+- (void)loadNextPage:(BOOL)animated;
 
 @end
