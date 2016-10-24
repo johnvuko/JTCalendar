@@ -66,6 +66,13 @@
  */
 - (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar;
 
+
+/*!
+ * Indicate the next/previous page with the selete date and mark it(default is 1st).
+ */
+- (void)calendar:(JTCalendarManager *)calendar didLoadCalendar:(NSDate *)currentDate;
+
+
 /*!
  * Provide a view conforming to `JTCalendarPage` protocol, used as page for the contentView.
  * Return an instance of `JTCalendarPageView` by default.

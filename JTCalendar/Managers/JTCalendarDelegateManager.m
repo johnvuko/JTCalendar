@@ -114,6 +114,14 @@
     }
 }
 
+- (void)didLoadCurrentMonthSeletedDayWithCurrentDate:(NSDate *)currentDate {
+    NSAssert(currentDate != nil, @"currentDate cannot be nil");
+    
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:didLoadCalendar:)]){
+        [_manager.delegate calendar:self.manager didLoadCalendar:currentDate];
+    }
+}
+
 #pragma mark - Page view
 
 - (UIView<JTCalendarWeekDay> *)buildWeekDayView

@@ -29,6 +29,9 @@
 - (NSDate *)dateForPreviousPageWithCurrentDate:(NSDate *)currentDate;
 - (NSDate *)dateForNextPageWithCurrentDate:(NSDate *)currentDate;
 
+//default is 1st
+- (void)didLoadCurrentMonthSeletedDayWithCurrentDate:(NSDate *)currentDate;
+
 // Page view
 
 - (UIView<JTCalendarWeekDay> *)buildWeekDayView;

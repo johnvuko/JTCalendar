@@ -50,6 +50,19 @@
 
 #pragma mark - CalendarManager delegate
 
+- (void)calendar:(JTCalendarManager *)calendar didLoadCalendar:(NSDate *)currentDate {
+    
+    BOOL isCurrentMonth = [_calendarManager.dateHelper date:currentDate isTheSameMonthThan:[NSDate date]];
+    if (isCurrentMonth) {
+        _dateSelected = [NSDate date];
+    } else {
+        _dateSelected = [_calendarManager.dateHelper firstDayOfMonth:currentDate];
+    }
+    NSLog(@"%s == currentDate = %@", __FUNCTION__, currentDate);
+    
+}
+
+
 // Exemple of implementation of prepareDayView method
 // Used to customize the appearance of dayView
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
