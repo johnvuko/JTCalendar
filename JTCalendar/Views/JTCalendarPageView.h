@@ -13,6 +13,9 @@
 
 @property (nonatomic, weak) JTCalendarManager *manager;
 
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) NSDate *endDate;
+
 @property (nonatomic) NSDate *date;
 
 /*!

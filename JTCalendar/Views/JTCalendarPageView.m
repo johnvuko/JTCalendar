@@ -96,6 +96,8 @@
         weekDate = [_manager.dateHelper firstWeekDayOfMonth:_date];
     }
     
+    _startDate = weekDate;
+    
     for(NSUInteger i = 0; i < _numberOfWeeksDisplayed; i++){
         UIView<JTCalendarWeek> *weekView = _weeksViews[i];
         
@@ -111,6 +113,8 @@
         
         weekDate = [_manager.dateHelper addToDate:weekDate weeks:1];
     }
+    
+    _endDate = [_manager.dateHelper addToDate:weekDate days:-1];
     
     for(NSUInteger i = _numberOfWeeksDisplayed; i < MAX_WEEKS_BY_MONTH; i++){
         UIView<JTCalendarWeek> *weekView = _weeksViews[i];

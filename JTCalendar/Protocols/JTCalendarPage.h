@@ -16,6 +16,9 @@
 - (NSDate *)date;
 - (void)setDate:(NSDate *)date;
 
+- (NSDate *)startDate;
+- (NSDate *)endDate;
+
 - (void)reload;
 
 @end
