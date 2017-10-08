@@ -24,7 +24,7 @@ The part below the calendar in the 2nd screenshot is not provided.
 
 ## Features
 
-- horizontal and verical calendar
+- horizontal and vertical calendar
 - highly customizable either by subclassing default class provided or by creating your own class implementing a protocol
 - support internationalization
 - week view mode
@@ -126,7 +126,7 @@ Even if all methods of `JTCalendarManager` are optional you won't get far withou
 }
 ```
 
-- `calendar:didTouchDayView:` this method is used to respond to a touch on a dayView. For exemple you can indicate to display another month if dayView is from another month.
+- `calendar:didTouchDayView:` this method is used to respond to a touch on a dayView. For example you can indicate to display another month if dayView is from another month.
 
 ```objective-c
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
@@ -242,7 +242,7 @@ _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifi
 
 ### Date comparaison
 
-Be careful when you compare two different dates, you have to take care of the tme zone.
+Be careful when you compare two different dates, you have to take care of the time zone.
 An helper is provided for some basic operations:
 
 ```objective-c
