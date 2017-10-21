@@ -133,7 +133,8 @@
     if(_manager.settings.pageViewHaveWeekDaysView){
         CGFloat weekDayHeight = _weekDayView.frame.size.height; // Force use default height
         
-        if(weekDayHeight == 0){ // Or use the same height than weeksViews
+        // Or use the same height than weeksViews
+        if(weekDayHeight == 0 || _manager.settings.pageViewWeekDaysViewAutomaticHeight){
             weekDayHeight = self.frame.size.height / (_numberOfWeeksDisplayed + 1);
         }
         
