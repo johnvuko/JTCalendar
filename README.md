@@ -230,7 +230,7 @@ If you use `JTVerticalCalendarView` for having a vertical calendar, you have som
 }
 ```
 
-### Internationalization / Localization
+### Internationalization / Localization (change first weekday)
 
 For changing the locale and the timeZone just do:
 
