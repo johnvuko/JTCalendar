@@ -2,7 +2,7 @@
 //  JTCalendar.h
 //  JTCalendar
 //
-//  Created by Vangeli Ontiveros on 12/3/17.
+//  Created by Created by Jonathan Tribouharet
 //
 
 #import <UIKit/UIKit.h>
