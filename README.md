@@ -2,6 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/jonathantribouharet/JTCalendar.svg)](https://travis-ci.org/jonathantribouharet/JTCalendar)
 ![Version](https://img.shields.io/cocoapods/v/JTCalendar.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/cocoapods/l/JTCalendar.svg)
 ![Platform](https://img.shields.io/cocoapods/p/JTCalendar.svg)
 
@@ -12,6 +13,12 @@ JTCalendar is an easily customizable calendar control for iOS.
 With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
 
     pod 'JTCalendar', '~> 2.0'
+
+### Carthage
+
+To use this project with [Carthage](https://github.com/Carthage/Carthage), add this line to your Cartfile.
+
+    github "jonathantribouharet/JTCalendar" ~> 2.2
 
 ## Screenshots
 
