@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    _calendarManager = [JTCalendarManager new];
+    _calendarManager = [[JTCalendarManager alloc] initWithLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"] andTimeZone:[NSTimeZone localTimeZone]];
     _calendarManager.delegate = self;
     
     // Generate random events sort by date using a dateformatter for the demonstration
@@ -41,7 +41,6 @@
     
     _calendarMenuView.contentRatio = .75;
     _calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
-    _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
     
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
