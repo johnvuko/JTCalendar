@@ -246,6 +246,13 @@ _calendarManager.dateHelper.calendar.timeZone = [NSTimeZone timeZoneWithAbbrevia
 _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
 [_calendarManager reload];
 ```
+For changing locale and timeZone in Swift use:
+
+```swift
+let locale = Locale(identifier: "fr_FR")
+let timeZone = TimeZone.init(abbreviation: "CDT")
+calendarManager = JTCalendarManager(locale: locale, andTimeZone: timeZone)
+```
 
 ### Date comparaison
 
