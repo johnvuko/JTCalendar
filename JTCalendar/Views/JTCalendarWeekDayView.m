@@ -112,7 +112,7 @@
     CGFloat dayHeight = self.frame.size.height;
     
     for(UIView *dayView in _dayViews){
-        dayView.frame = CGRectMake(x, 0, dayWidth, dayHeight);
+        dayView.frame = CGRectMake(x, 0, ceil(dayWidth), ceil(dayHeight));
         x += dayWidth;
     }
 }
