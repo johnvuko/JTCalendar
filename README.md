@@ -296,7 +296,7 @@ NSLog(@"%@", [dateFormatter stringFromDate:yourDate]);
 
 ## Author
 
-- [Jonathan Tribouharet](https://github.com/jonathantribouharet) ([@johntribouharet](https://twitter.com/johntribouharet))
+- [Jonathan VUKOVICH TRIBOUHARET](https://github.com/jonathantribouharet) ([@johnvuko](https://twitter.com/johnvuko))
 
 ## License
 
