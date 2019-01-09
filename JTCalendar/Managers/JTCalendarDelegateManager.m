@@ -32,14 +32,18 @@
 
 - (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date
 {
-    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareMenuItemView:date:)]){
-        [_manager.delegate calendar:self.manager prepareMenuItemView:menuItemView date:date];
+    if(menuItemView == nil || [menuItemView isEqual:[NSNull null]]) {
         return;
     }
     
     NSString *text = nil;
     
-    if(date){
+    if(date != nil && ![date isEqual:[NSNull null]]){
+        if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendar:prepareMenuItemView:date:)]){
+            [_manager.delegate calendar:self.manager prepareMenuItemView:menuItemView date:date];
+            return;
+        }
+        
         NSCalendar *calendar = _manager.dateHelper.calendar;
         NSDateComponents *comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
         NSInteger currentMonthIndex = comps.month;
@@ -48,7 +52,7 @@
         if(!dateFormatter){
             dateFormatter = [_manager.dateHelper createDateFormatter];
         }
-
+        
         dateFormatter.timeZone = _manager.dateHelper.calendar.timeZone;
         dateFormatter.locale = _manager.dateHelper.calendar.locale;
         
@@ -58,7 +62,7 @@
         
         text = [[dateFormatter standaloneMonthSymbols][currentMonthIndex - 1] capitalizedString];
     }
-        
+    
     [(UILabel *)menuItemView setText:text];
 }
 
