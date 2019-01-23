@@ -9,6 +9,7 @@
 
 @class JTCalendarManager;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol JTContent <NSObject>
 
 - (void)setManager:(JTCalendarManager *)manager;
@@ -23,3 +24,4 @@
 - (void)loadNextPageWithAnimation;
 
 @end
+NS_ASSUME_NONNULL_END

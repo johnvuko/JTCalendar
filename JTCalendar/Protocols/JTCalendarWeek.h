@@ -9,6 +9,7 @@
 
 @class JTCalendarManager;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol JTCalendarWeek <NSObject>
 
 - (void)setManager:(JTCalendarManager *)manager;
@@ -17,3 +18,4 @@
 - (void)setStartDate:(NSDate *)startDate updateAnotherMonth:(BOOL)enable monthDate:(NSDate *)monthDate;
 
 @end
+NS_ASSUME_NONNULL_END

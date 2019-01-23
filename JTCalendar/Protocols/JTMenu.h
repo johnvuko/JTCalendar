@@ -9,6 +9,7 @@
 
 @class JTCalendarManager;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol JTMenu <NSObject>
 
 - (void)setManager:(JTCalendarManager *)manager;
@@ -22,3 +23,4 @@
 - (UIScrollView *)scrollView;
 
 @end
+NS_ASSUME_NONNULL_END

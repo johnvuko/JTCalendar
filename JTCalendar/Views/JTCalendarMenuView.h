@@ -9,9 +9,10 @@
 
 #import "JTMenu.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface JTCalendarMenuView : UIView<JTMenu, UIScrollViewDelegate>
 
-@property (nonatomic, weak) JTCalendarManager *manager;
+@property (nonatomic, weak, nullable) JTCalendarManager *manager;
 
 @property (nonatomic) CGFloat contentRatio;
 
@@ -23,3 +24,4 @@
 - (void)commonInit;
 
 @end
+NS_ASSUME_NONNULL_END

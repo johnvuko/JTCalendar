@@ -11,9 +11,10 @@
 
 // Provide a default behavior when no delegate are provided
 
+NS_ASSUME_NONNULL_BEGIN
 @interface JTCalendarDelegateManager : NSObject
 
-@property (nonatomic, weak) JTCalendarManager *manager;
+@property (nonatomic, weak, nullable) JTCalendarManager *manager;
 
 // Menu view
 
@@ -46,3 +47,4 @@
 - (void)didTouchDayView:(UIView<JTCalendarDay> *)dayView;
 
 @end
+NS_ASSUME_NONNULL_END

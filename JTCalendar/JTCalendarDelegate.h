@@ -14,6 +14,7 @@
 
 @class JTCalendarManager;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol JTCalendarDelegate <NSObject>
 
 @optional
@@ -113,3 +114,4 @@
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(UIView<JTCalendarDay> *)dayView;
 
 @end
+NS_ASSUME_NONNULL_END
