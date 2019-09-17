@@ -18,7 +18,7 @@
 // Menu view
 
 - (UIView *)buildMenuItemView;
-- (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date;
+- (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date itemIndex:(NSUInteger)index;
 
 // Content view
 

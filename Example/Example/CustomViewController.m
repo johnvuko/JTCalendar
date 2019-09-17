@@ -39,7 +39,7 @@
     // Generate random events sort by date using a dateformatter for the demonstration
     [self createRandomEvents];
     
-    _calendarMenuView.contentRatio = .75;
+    _calendarMenuView.contentRatio = 0.5;
     _calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
     
     [_calendarManager setMenuView:_calendarMenuView];
@@ -132,7 +132,7 @@
     return label;
 }
 
-- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UILabel *)menuItemView date:(NSDate *)date
+- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UILabel *)menuItemView date:(NSDate *)date itemIndex:(NSUInteger)index
 {
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
@@ -141,6 +141,12 @@
         
         dateFormatter.locale = _calendarManager.dateHelper.calendar.locale;
         dateFormatter.timeZone = _calendarManager.dateHelper.calendar.timeZone;
+    }
+    
+    if (index == 1){
+        menuItemView.textColor = [UIColor blackColor];
+    }else{
+        menuItemView.textColor = [UIColor grayColor];
     }
     
     menuItemView.text = [dateFormatter stringFromDate:date];
