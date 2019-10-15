@@ -20,23 +20,23 @@
 
 @interface JTCalendarManager : NSObject
 
-@property (nonatomic, weak) id<JTCalendarDelegate> delegate;
+@property (nonatomic, weak, nullable) id<JTCalendarDelegate> delegate;
 
-@property (nonatomic, weak) UIView<JTMenu> *menuView;
-@property (nonatomic, weak) UIScrollView<JTContent> *contentView;
+@property (nonatomic, weak) UIView<JTMenu> * _Nullable menuView;
+@property (nonatomic, weak) UIScrollView<JTContent> * _Nullable contentView;
 
-@property (nonatomic, readonly) JTDateHelper *dateHelper;
-@property (nonatomic, readonly) JTCalendarSettings *settings;
+@property (nonatomic, readonly) JTDateHelper * _Nullable dateHelper;
+@property (nonatomic, readonly) JTCalendarSettings * _Nullable settings;
 
 // Intern methods
 
-@property (nonatomic, readonly) JTCalendarDelegateManager *delegateManager;
-@property (nonatomic, readonly) JTCalendarScrollManager *scrollManager;
+@property (nonatomic, readonly) JTCalendarDelegateManager * _Nullable delegateManager;
+@property (nonatomic, readonly) JTCalendarScrollManager * _Nullable scrollManager;
 
-- (instancetype)initWithLocale:(NSLocale *)locale andTimeZone:(NSTimeZone *)timeZone;
+- (instancetype _Nullable )initWithLocale:(NSLocale *_Nullable)locale andTimeZone:(NSTimeZone *_Nullable)timeZone;
 
-- (NSDate *)date;
-- (void)setDate:(NSDate *)date;
+- (NSDate *_Nonnull)date;
+- (void)setDate:(NSDate *_Nullable)date;
 - (void)reload;
 
 
