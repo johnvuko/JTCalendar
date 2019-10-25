@@ -117,6 +117,8 @@
         
         weekView.hidden = YES;
     }
+	
+	[self layoutSubviews];
 }
 
 - (void)layoutSubviews
