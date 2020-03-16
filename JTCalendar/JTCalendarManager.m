@@ -22,14 +22,35 @@
     if(!self){
         return nil;
     }
-    [self commonInit:locale andTimeZone:timeZone];
+    
+#ifdef __IPHONE_8_0
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
+    
+    calendar.timeZone = timeZone;
+    calendar.locale = locale;
+    
+    [self commonInit:calendar];
     
     return self;
 }
 
-- (void)commonInit:(NSLocale *)locale andTimeZone:(NSTimeZone *)timeZone
+- (instancetype _Nullable )initWithCalendar:(NSCalendar *_Nullable)calendar
 {
-    _dateHelper = [[JTDateHelper alloc] initWithLocale:locale andTimeZone:timeZone];
+    self = [super init];
+    if(!self){
+        return nil;
+    }
+    [self commonInit:calendar];
+    
+    return self;
+}
+
+- (void)commonInit:(NSCalendar *)calendar
+{
+    _dateHelper = [[JTDateHelper alloc] initWithCalendar:calendar];
     _settings = [JTCalendarSettings new];
     
     _delegateManager = [JTCalendarDelegateManager new];

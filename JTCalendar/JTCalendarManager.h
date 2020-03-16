@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) JTCalendarScrollManager * _Nullable scrollManager;
 
 - (instancetype _Nullable )initWithLocale:(NSLocale *_Nullable)locale andTimeZone:(NSTimeZone *_Nullable)timeZone;
+- (instancetype _Nullable )initWithCalendar:(NSCalendar *_Nullable)calendar;
 
 - (NSDate *_Nonnull)date;
 - (void)setDate:(NSDate *_Nullable)date;
