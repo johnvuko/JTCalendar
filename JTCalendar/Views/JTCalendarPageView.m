@@ -117,6 +117,12 @@
         
         weekView.hidden = YES;
     }
+    
+    /*
+     * Forces the view to re-render the height of each weekView
+     * adjusted for the new `_numberOfWeeksDisplayed`
+     */
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
