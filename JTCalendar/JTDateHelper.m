@@ -85,7 +85,7 @@
     NSDateComponents *componentsA = [self.calendar components:NSCalendarUnitWeekOfMonth fromDate:firstDay];
     NSDateComponents *componentsB = [self.calendar components:NSCalendarUnitWeekOfMonth fromDate:lastDay];
     
-    return (componentsB.NSCalendarUnitWeekOfMonth - componentsA.NSCalendarUnitWeekOfMonth + 1);
+    return (componentsB.weekOfMonth - componentsA.weekOfMonth + 1);
 }
 
 - (NSDate *)firstDayOfMonth:(NSDate *)date
