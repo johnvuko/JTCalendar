@@ -161,6 +161,24 @@
     return componentsA.year == componentsB.year && componentsA.month == componentsB.month && componentsA.day == componentsB.day;
 }
 
+- (BOOL)date:(NSDate *)dateA isBefore:(NSDate *)dateB
+{
+    if([dateA compare:dateB] == NSOrderedAscending) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)date:(NSDate *)dateA isAfter:(NSDate *)dateB
+{
+    if([dateA compare:dateB] == NSOrderedDescending) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (BOOL)date:(NSDate *)dateA isEqualOrBefore:(NSDate *)dateB
 {
     if([dateA compare:dateB] == NSOrderedAscending || [self date:dateA isTheSameDayThan:dateB]){

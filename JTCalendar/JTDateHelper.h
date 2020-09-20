@@ -29,6 +29,8 @@
 - (BOOL)date:(NSDate *)dateA isTheSameWeekThan:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)dateA isTheSameDayThan:(NSDate *)dateB;
 
+- (BOOL)date:(NSDate *)dateA isBefore:(NSDate *)dateB;
+- (BOOL)date:(NSDate *)dateA isAfter:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)dateA isEqualOrBefore:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)dateA isEqualOrAfter:(NSDate *)dateB;
 - (BOOL)date:(NSDate *)date isEqualOrAfter:(NSDate *)startDate andEqualOrBefore:(NSDate *)endDate;

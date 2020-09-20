@@ -445,4 +445,12 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
                                     currentDate:_centerView.date
                                        nextDate:_rightView.date];
 }
+
+- (void)reloadPageViews
+{
+    [_leftView reload];
+    [_centerView reload];
+    [_rightView reload];
+}
+
 @end
