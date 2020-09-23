@@ -77,7 +77,7 @@ Your `UIViewController` have to implement `JTCalendarDelegate`, all methods are 
     
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
-    [_calendarManager setDate:[NSDate date]];
+    [_calendarManager setDate:[NSDate date]]; // 'date' must be set after 'menuView' and 'contentView'
 }
 
 @end
