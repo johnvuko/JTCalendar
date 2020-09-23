@@ -160,6 +160,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
 - (void)loadPreviousPage
 {
+    [_manager.delegateManager didLoadCurrentMonthSeletedDayWithCurrentDate:_rightView.date];
     NSDate *nextDate = [_manager.delegateManager dateForPreviousPageWithCurrentDate:_leftView.date];
     
     // Must be set before chaging date for PageView for updating day views
@@ -240,6 +241,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
 
 - (void)loadNextPage
 {
+    [_manager.delegateManager didLoadCurrentMonthSeletedDayWithCurrentDate:_rightView.date];
     NSDate *nextDate = [_manager.delegateManager dateForNextPageWithCurrentDate:_rightView.date];
     
     // Must be set before chaging date for PageView for updating day views
