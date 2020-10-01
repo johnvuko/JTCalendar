@@ -9,37 +9,19 @@
 
 @interface JTDateHelper (){
     NSCalendar *_calendar;
-    NSLocale *_locale;
-    NSTimeZone *_timeZone;
 }
 
 @end
 
 @implementation JTDateHelper
 
-- (instancetype)initWithLocale:(NSLocale *)locale andTimeZone:(NSTimeZone *)timeZone
+- (instancetype)initWithCalendar:(NSCalendar *)calendar
 {
     self = [super init];
     if (self) {
-        _locale = locale;
-        _timeZone = timeZone;
+        _calendar = calendar;
     }
     return self;
-}
-
-- (NSCalendar *)calendar
-{
-    if(!_calendar){
-#ifdef __IPHONE_8_0
-        _calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-#else
-        _calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-#endif
-        _calendar.timeZone = _timeZone;
-        _calendar.locale = _locale;
-    }
-    
-    return _calendar;
 }
 
 - (NSDateFormatter *)createDateFormatter
@@ -50,6 +32,10 @@
     dateFormatter.locale = self.calendar.locale;
     
     return dateFormatter;
+}
+
+- (NSCalendar *)calendar {
+    return _calendar;
 }
 
 #pragma mark - Operations
