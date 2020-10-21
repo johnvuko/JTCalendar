@@ -16,6 +16,9 @@
 - (NSDate *)date;
 - (void)setDate:(NSDate *)date;
 
+- (NSDate *)visibleStartDate;
+- (NSDate *)visibleEndDate;
+
 - (void)loadPreviousPage;
 - (void)loadNextPage;
 

@@ -349,6 +349,14 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     [self repositionViews];
 }
 
+- (NSDate *)visibleStartDate {
+    return _centerView.startDate;
+}
+
+- (NSDate *)visibleEndDate {
+    return _centerView.endDate;
+}
+
 - (void)setManager:(JTCalendarManager *)manager
 {
     self->_manager = manager;

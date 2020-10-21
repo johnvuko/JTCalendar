@@ -14,6 +14,8 @@
 @property (nonatomic, weak) JTCalendarManager *manager;
 
 @property (nonatomic) NSDate *date;
+@property (nonatomic, readonly) NSDate *visibleStartDate;
+@property (nonatomic, readonly) NSDate *visibleEndDate;
 
 /*!
  * Must be call if override the class
