@@ -27,6 +27,17 @@
     return self;
 }
 
+- (instancetype)initWithCalendar:(NSCalendar *)calendar
+{
+    self = [super init];
+    if (self) {
+        _calendar = calendar;
+        _locale = calendar.locale;
+        _timeZone = calendar.timeZone;
+    }
+    return self;
+}
+
 - (NSCalendar *)calendar
 {
     if(!_calendar){

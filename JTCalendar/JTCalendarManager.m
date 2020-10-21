@@ -27,9 +27,24 @@
     return self;
 }
 
+- (instancetype)initWithCalendar:(NSCalendar*)calendar
+{
+    self = [super init];
+    if(!self){
+        return nil;
+    }
+    
+    _dateHelper = [[JTDateHelper alloc] initWithCalendar:calendar];
+    [self commonInit:calendar.locale andTimeZone:calendar.timeZone];
+    
+    return self;
+}
+
 - (void)commonInit:(NSLocale *)locale andTimeZone:(NSTimeZone *)timeZone
 {
-    _dateHelper = [[JTDateHelper alloc] initWithLocale:locale andTimeZone:timeZone];
+    if (_dateHelper == nil){
+        _dateHelper = [[JTDateHelper alloc] initWithLocale:locale andTimeZone:timeZone];
+    }
     _settings = [JTCalendarSettings new];
     
     _delegateManager = [JTCalendarDelegateManager new];
