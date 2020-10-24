@@ -73,6 +73,16 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     }
 }
 
+- (CGSize)centerTextSize
+{
+	if (_centerView && [_centerView isKindOfClass:[UILabel class]])
+	{
+       UILabel* label = (UILabel*)_centerView;
+	   return [label.text sizeWithAttributes:@{NSFontAttributeName:[label font]}];
+	}
+	return CGSizeZero;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

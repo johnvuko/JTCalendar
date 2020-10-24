@@ -22,4 +22,5 @@
  */
 - (void)commonInit;
 
+- (CGSize)centerTextSize;
 @end
