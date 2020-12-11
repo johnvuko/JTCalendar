@@ -27,5 +27,8 @@
 
 - (void)updateMenuContentOffset:(CGFloat)percentage pageMode:(NSUInteger)pageMode;
 - (void)updateHorizontalContentOffset:(CGFloat)percentage;
+- (void)endDragging;
+- (void)endDecelerating;
+- (void)endHorizontalScrollingAnimation;
 
 @end

@@ -15,6 +15,8 @@
 
 @property (nonatomic) NSDate *date;
 
+@property (nonatomic, assign, readonly) BOOL scrolling;
+
 /*!
  * Must be call if override the class
  */

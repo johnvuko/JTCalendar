@@ -61,10 +61,20 @@
  */
 - (void)calendarDidLoadPreviousPage:(JTCalendarManager *_Nullable)calendar;
 
+/**
+ *  Indicates the previous page finished scrolling after becoming the current page.
+ */
+- (void)calendarDidFinishScrollingToPreviousPage:(JTCalendarManager *)calendar;
+
 /*!
  * Indicate the next page became the current page.
  */
 - (void)calendarDidLoadNextPage:(JTCalendarManager *_Nullable)calendar;
+
+/**
+ *  Indicates the next page finished scrolling after becoming the current page.
+ */
+- (void)calendarDidFinishScrollingToNextPage:(JTCalendarManager *)calendar;
 
 /*!
  * Provide a view conforming to `JTCalendarPage` protocol, used as page for the contentView.
