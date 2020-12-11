@@ -128,7 +128,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     [_manager.scrollManager updateMenuContentOffset:(self.contentOffset.x / self.contentSize.width) pageMode:_pageMode];
 }
 
-- (void)loadPreviousPageWithAnimation
+- (void)loadPreviousPage:(BOOL)animated
 {
     switch (_pageMode) {
         case JTCalendarPageModeCenterRight:
@@ -140,10 +140,10 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     
     CGSize size = self.frame.size;
     CGPoint point = CGPointMake(self.contentOffset.x - size.width, 0);
-    [self setContentOffset:point animated:YES];
+    [self setContentOffset:point animated:animated];
 }
 
-- (void)loadNextPageWithAnimation
+- (void)loadNextPage:(BOOL)animated
 {
     switch (_pageMode) {
         case JTCalendarPageModeCenterLeft:
@@ -155,7 +155,7 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     
     CGSize size = self.frame.size;
     CGPoint point = CGPointMake(self.contentOffset.x + size.width, 0);
-    [self setContentOffset:point animated:YES];
+    [self setContentOffset:point animated:animated];
 }
 
 - (void)loadPreviousPage
